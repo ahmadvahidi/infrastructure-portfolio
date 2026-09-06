@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Einen produktiven Linux-Server um zwei Versionen auf einmal upgraden</title>
+<meta name="description" content="Ubuntu 22.04 auf 24.04 und Java 17 auf 25 auf einem Server, der ein Integrationstool hostet, ausgeführt nach einem geschriebenen Runbook statt improvisiert.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/linux-major-version-upgrade-runbook/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/linux-major-version-upgrade-runbook/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/linux-major-version-upgrade-runbook/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Einen produktiven Linux-Server um zwei Versionen auf einmal upgraden">
+<meta property="og:description" content="Ubuntu 22.04 auf 24.04 und Java 17 auf 25 auf einem Server, der ein Integrationstool hostet, ausgeführt nach einem geschriebenen Runbook statt improvisiert.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/linux-major-version-upgrade-runbook/" class="active" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/linux-major-version-upgrade-runbook/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/linux-major-version-upgrade-runbook/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/de/">Start</a>
+    <a href="/infrastructure-portfolio/de/projects/">Projekte</a>
+    <a href="/infrastructure-portfolio/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Einen produktiven Linux-Server um zwei Versionen auf einmal upgraden</h1>
+<p class="lead">Ubuntu 22.04 auf 24.04 und Java 17 auf 25 auf einem Server, der ein Integrationstool hostet, ausgeführt nach einem geschriebenen Runbook statt improvisiert.</p>
+<h2>Problem</h2>
+<p>Ein Synchronisationstool, das zwei Issue-Tracking-Systeme synchron hält, brauchte eine neuere Version. Diese Version brauchte eine neuere Java-Laufzeit, die wiederum eine neuere Distributionsversion brauchte. Drei Upgrades übereinander gestapelt, auf einem Server, von dem andere Teams während der Arbeitszeit abhingen.</p>
+<h2>Vorgehen</h2>
+<p>Ich schrieb vor dem Start ein Runbook: Bestandsaufnahme des aktuellen Zustands, Snapshot und Rollback-Punkt, Abhängigkeitsprüfung für jedes installierte Paket, dann das Upgrade in Phasen mit einem Verifikationsschritt nach jeder Phase. Ich habe die Schritte bewusst nicht verkettet, damit ein Fehler an jedem Punkt ein System hinterlässt, das noch bootet und noch die alte Version bedient.</p>
+<h2>Lösung</h2>
+<p>Zuerst das Distributions-Upgrade, dann die Java-Laufzeit, dann die Anwendung. Nebenbei behob ich eine systemd-Unit, die monatelang einen falschen Monitoring-Alarm erzeugt hatte, weil der Dienst sich als bereit meldete, bevor er es tatsächlich war.</p>
+<h2>Ergebnis</h2>
+<p>Der Upgrade-Pfad wurde Phase für Phase ohne ungeplante Ausfallzeit ausgeführt, und ein langjähriger Fehlalarm verschwand als Nebeneffekt.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Wenn drei Upgrades voneinander abhängen, schreibe die Reihenfolge auf. Die Abhängigkeitskette ist unter Zeitdruck nicht offensichtlich.</li>
+  <li>Ein Monitoring-Alarm, den alle gelernt haben zu ignorieren, ist ein Bug, kein Hintergrundrauschen.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Ubuntu</span>
+  <span class="tag">Java</span>
+  <span class="tag">systemd</span>
+  <span class="tag">Zabbix</span>
+  <span class="tag">Runbook writing</span>
+  <span class="tag">Change management</span>
+  <span class="tag">Linux administration</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/de/projects/wazuh-siem-rollout/">← Einführung eines selbst gehosteten SIEM in sechs Phasen</a>
+  <a href="/infrastructure-portfolio/de/projects/self-hosted-service-stack/">Einen selbst gehosteten Service-Stack von Grund auf aufbauen →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

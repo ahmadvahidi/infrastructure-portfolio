@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zwei neue interne Portale per DNS veröffentlichen</title>
+<meta name="description" content="Zwei neue Hostnamen, die auf einen bestehenden Webserver zeigen, als Aliase erstellt, Ende-zu-Ende verifiziert und mit einem Rollback-Pfad dokumentiert.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/internal-dns-records/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/internal-dns-records/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/internal-dns-records/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zwei neue interne Portale per DNS veröffentlichen">
+<meta property="og:description" content="Zwei neue Hostnamen, die auf einen bestehenden Webserver zeigen, als Aliase erstellt, Ende-zu-Ende verifiziert und mit einem Rollback-Pfad dokumentiert.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/internal-dns-records/" class="active" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/internal-dns-records/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/internal-dns-records/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/de/">Start</a>
+    <a href="/infrastructure-portfolio/de/projects/">Projekte</a>
+    <a href="/infrastructure-portfolio/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Zwei neue interne Portale per DNS veröffentlichen</h1>
+<p class="lead">Zwei neue Hostnamen, die auf einen bestehenden Webserver zeigen, als Aliase erstellt, Ende-zu-Ende verifiziert und mit einem Rollback-Pfad dokumentiert.</p>
+<h2>Problem</h2>
+<p>Zwei neue interne Portale brauchten ihre eigenen Hostnamen. Die Webserver-Bindings existierten bereits, also fehlte nur die Namensauflösung.</p>
+<h2>Vorgehen</h2>
+<p>Zuerst das Ziel verifizieren: bestätigen, dass der Webserver in beide Richtungen auf die erwartete Adresse auflöst, und prüfen, welche Ports tatsächlich antworten. Dann zwischen einem direkten Adressdatensatz und einem Alias-Datensatz entscheiden. Ich wählte Aliase, damit bei einem Umzug des Webservers ein Datensatz sich ändert statt mehrerer.</p>
+<h2>Lösung</h2>
+<p>Zwei Alias-Datensätze per PowerShell erstellt, nachdem ich entdeckte, dass das DNS-Modul auf der ersten Maschine nicht verfügbar war, und auf eine wechselte, wo es war. Verifiziert in der Verwaltungskonsole, im Subdomain-Knoten und mit einer echten HTTP-Anfrage, die einen Erfolgsstatus zurückgab.</p>
+<h2>Ergebnis</h2>
+<p>Beide Portale per Name erreichbar, bestehende Datensätze unberührt, und ein geschriebenes Runbook mit Entscheidungsbegründung, Befehlen, Schnittstellenschritten und dem Rollback.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Alias-Datensätze über Adressdatensätze, wenn mehrere Namen auf einen Host zeigen. Es macht eine zukünftige Migration zu einer einzeiligen Änderung.</li>
+  <li>Verifiziere das Ziel, bevor du den Datensatz erstellst. Ein Name, der auf etwas zeigt, das nicht antwortet, ist schlimmer als kein Name.</li>
+  <li>Schreibe den Rollback-Befehl ins Runbook, solange du dich noch erinnerst, was du geändert hast.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Windows DNS</span>
+  <span class="tag">PowerShell</span>
+  <span class="tag">IIS</span>
+  <span class="tag">DNS administration</span>
+  <span class="tag">Verification discipline</span>
+  <span class="tag">Runbook writing</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/infrastructure-portfolio/de/projects/self-hosted-vpn/">Ein selbst gehostetes VPN und der Client, der sich weigerte zu verbinden →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

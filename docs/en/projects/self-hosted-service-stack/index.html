@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building a self-hosted service stack from scratch</title>
+<meta name="description" content="Deployed and documented ten open source services behind a reverse proxy, replacing a set of missing or paid tools.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/self-hosted-service-stack/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/self-hosted-service-stack/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/self-hosted-service-stack/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Building a self-hosted service stack from scratch">
+<meta property="og:description" content="Deployed and documented ten open source services behind a reverse proxy, replacing a set of missing or paid tools.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/self-hosted-service-stack/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/self-hosted-service-stack/" class="active" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/self-hosted-service-stack/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/en/">Home</a>
+    <a href="/infrastructure-portfolio/en/projects/">Projects</a>
+    <a href="/infrastructure-portfolio/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Building a self-hosted service stack from scratch</h1>
+<p class="lead">Deployed and documented ten open source services behind a reverse proxy, replacing a set of missing or paid tools.</p>
+<h2>Problem</h2>
+<p>Several basic functions had no owner: no asset database, no internal wiki, no identity provider, no automation platform, no monitoring. Every gap was being filled by spreadsheets or by nothing at all.</p>
+<h2>Approach</h2>
+<p>I picked open source tools that could run on existing hardware, deployed each one as a container, and put them all behind a single reverse proxy with proper certificates. Every service got a written documentation page covering what it is for, how it is deployed, how to back it up and how to restore it.</p>
+<h2>Solution</h2>
+<p>The stack covers asset management, monitoring, SIEM, identity and single sign-on, file sharing, automation, documentation and ERP, managed through Portainer with a reverse proxy in front.</p>
+<h2>Result</h2>
+<p>Functions that previously lived in spreadsheets now live in systems with access control and history. Because every service was documented at deployment time, none of them is a black box that only one person can operate.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>Documentation written at deployment time takes twenty minutes. Written six months later it takes a day and is wrong.</li>
+  <li>One reverse proxy and one identity provider in front of everything is worth more than any individual service in the stack.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Docker</span>
+  <span class="tag">Portainer</span>
+  <span class="tag">Nginx Proxy Manager</span>
+  <span class="tag">GLPI</span>
+  <span class="tag">Zabbix</span>
+  <span class="tag">Keycloak</span>
+  <span class="tag">Nextcloud</span>
+  <span class="tag">n8n</span>
+  <span class="tag">BookStack</span>
+  <span class="tag">Dolibarr</span>
+  <span class="tag">Service architecture</span>
+  <span class="tag">Reverse proxy and TLS</span>
+  <span class="tag">Technical documentation</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/en/projects/linux-major-version-upgrade-runbook/">← Upgrading a production Linux server two versions at once</a>
+  <a href="/infrastructure-portfolio/en/projects/self-hosted-password-vault/">Running a self-hosted password vault, including the day someone gets locked out →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Triaging a security report without creating panic</title>
+<meta name="description" content="Five alerts on domain controllers and a Linux build runner, sorted into real findings, misconfigurations and false positives.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/security-report-triage/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/security-report-triage/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/security-report-triage/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Triaging a security report without creating panic">
+<meta property="og:description" content="Five alerts on domain controllers and a Linux build runner, sorted into real findings, misconfigurations and false positives.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/security-report-triage/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/security-report-triage/" class="active" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/security-report-triage/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/en/">Home</a>
+    <a href="/infrastructure-portfolio/en/projects/">Projects</a>
+    <a href="/infrastructure-portfolio/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Triaging a security report without creating panic</h1>
+<p class="lead">Five alerts on domain controllers and a Linux build runner, sorted into real findings, misconfigurations and false positives.</p>
+<h2>Problem</h2>
+<p>A generated security analysis landed on my desk listing pass the hash alerts on both domain controllers, a performance counter error, a virtualization tool error, low hardening scores and a full disk warning. Read literally, it looked like an active intrusion.</p>
+<h2>Approach</h2>
+<p>I worked through the findings one by one instead of reacting to the headline. For each alert the question was the same: what would this look like if it were normal behavior, and what would it look like if it were real.</p>
+<h2>Solution</h2>
+<p>The pass the hash alerts matched the pattern of ordinary directory replication between two domain controllers and were false positives from a detection rule that does not know which accounts are replication accounts. The disk warning on the build runner turned out to be transient, but investigating it surfaced a real finding: over a hundred pending updates including security patches. The virtualization error came from an incompletely removed toolset left over from an earlier platform migration, on a machine that no longer runs on that platform at all. The hardening scores were genuine and became a separate backlog item.</p>
+<h2>Result</h2>
+<p>Two false positives closed with an explanation, two real findings scheduled, and no emergency reboot of a domain controller on a Monday morning. The remediation was moved to the regular maintenance window later in the week.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>A detection rule that does not know your environment will call your replication traffic an attack. Tune it or document it.</li>
+  <li>Refusing to reboot a domain controller at the start of the week is a technical decision, not procrastination.</li>
+  <li>Leftovers from an old migration keep generating alerts for years. Removal is part of migration, not a nice to have.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Active Directory</span>
+  <span class="tag">Wazuh</span>
+  <span class="tag">PowerShell</span>
+  <span class="tag">CIS Benchmarks</span>
+  <span class="tag">Alert triage</span>
+  <span class="tag">False positive analysis</span>
+  <span class="tag">Risk based scheduling</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <span></span>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

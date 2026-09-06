@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The firewall change that turned out to be unnecessary</title>
+<meta name="description" content="A vendor announced a new IP range with a deadline. Testing showed the traffic already worked, so nothing was changed.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/verify-before-changing-firewall/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/verify-before-changing-firewall/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/verify-before-changing-firewall/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The firewall change that turned out to be unnecessary">
+<meta property="og:description" content="A vendor announced a new IP range with a deadline. Testing showed the traffic already worked, so nothing was changed.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/verify-before-changing-firewall/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/verify-before-changing-firewall/" class="active" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/verify-before-changing-firewall/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/en/">Home</a>
+    <a href="/infrastructure-portfolio/en/projects/">Projects</a>
+    <a href="/infrastructure-portfolio/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>The firewall change that turned out to be unnecessary</h1>
+<p class="lead">A vendor announced a new IP range with a deadline. Testing showed the traffic already worked, so nothing was changed.</p>
+<h2>Problem</h2>
+<p>A backup vendor announced it was routing traffic through a new provider, introducing a new address range that agents had to reach before a fixed deadline. The obvious reaction is to open the range on the firewall immediately.</p>
+<h2>Approach</h2>
+<p>Before touching any rule I tested whether the traffic actually worked. That meant testing the right thing: agents use encrypted connections on a specific port, so a successful ping proves nothing. I ran real connection tests on that port from two different network segments, including the isolated one, using tools appropriate to each operating system.</p>
+<h2>Solution</h2>
+<p>Both segments reached the new range successfully and the encrypted session was established unmodified, meaning nothing in between was interfering. No firewall change was required. I documented what the change would have looked like if it had been needed, so the knowledge exists if the situation recurs.</p>
+<h2>Result</h2>
+<p>Deadline met with zero changes to the firewall, and a written briefing explaining to colleagues why no action was the correct action.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>Test before you change. A rule added unnecessarily is permanent attack surface that nobody remembers adding.</li>
+  <li>Ping tests reachability, not the port your application uses. Test the actual port and the actual protocol.</li>
+  <li>Document the change you did not make. Next time the question comes up, the answer already exists.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">WatchGuard</span>
+  <span class="tag">TLS</span>
+  <span class="tag">PowerShell</span>
+  <span class="tag">Bash</span>
+  <span class="tag">curl</span>
+  <span class="tag">Connectivity testing</span>
+  <span class="tag">Change avoidance</span>
+  <span class="tag">Stakeholder briefing</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/en/projects/self-hosted-vpn/">← A self-hosted VPN and the client that refused to connect</a>
+  <span></span>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

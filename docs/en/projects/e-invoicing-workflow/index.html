@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A prototype for automated electronic invoice processing</title>
+<meta name="description" content="An MVP for reading structured electronic invoice formats, built with data protection and licensing constraints designed in from the start.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/e-invoicing-workflow/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/e-invoicing-workflow/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/e-invoicing-workflow/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A prototype for automated electronic invoice processing">
+<meta property="og:description" content="An MVP for reading structured electronic invoice formats, built with data protection and licensing constraints designed in from the start.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/e-invoicing-workflow/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/e-invoicing-workflow/" class="active" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/e-invoicing-workflow/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/en/">Home</a>
+    <a href="/infrastructure-portfolio/en/projects/">Projects</a>
+    <a href="/infrastructure-portfolio/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>A prototype for automated electronic invoice processing</h1>
+<p class="lead">An MVP for reading structured electronic invoice formats, built with data protection and licensing constraints designed in from the start.</p>
+<h2>Problem</h2>
+<p>Electronic invoicing in structured formats is becoming mandatory in Germany. Incoming invoices in these formats still had to be read and entered by hand.</p>
+<h2>Approach</h2>
+<p>I built a minimum viable workflow that parses the structured formats, extracts the fields that matter, and prepares them for booking. Before choosing any AI component I worked through two constraints: whether invoice data may legally leave the company under data protection rules, and whether the model provider's licensing allows commercial use.</p>
+<h2>Solution</h2>
+<p>A working prototype with a documented evaluation of model providers, including which free tiers are usable commercially and which throughput is realistic for this kind of workload.</p>
+<h2>Result</h2>
+<p>A prototype plus a decision document. The compliance analysis turned out to be as valuable as the code, because it is the part that decides whether the project can go live at all.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>For any automation touching invoices or personal data, answer the data protection question before writing code. Retrofitting compliance means rewriting.</li>
+  <li>Free tier does not mean free to use commercially. Read the license, not the pricing page.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">n8n</span>
+  <span class="tag">XRechnung</span>
+  <span class="tag">ZUGFeRD</span>
+  <span class="tag">LLM APIs</span>
+  <span class="tag">E-invoicing standards</span>
+  <span class="tag">Data protection assessment</span>
+  <span class="tag">Vendor evaluation</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/en/projects/bulk-inventory-import/">← Importing 735 inventory records without creating duplicates</a>
+  <a href="/infrastructure-portfolio/en/projects/automated-offsite-backup/">Solving a full disk with automation instead of a bigger disk →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

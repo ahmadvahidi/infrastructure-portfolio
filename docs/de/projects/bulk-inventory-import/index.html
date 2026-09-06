@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>735 Inventardatensätze importieren, ohne Duplikate zu erzeugen</title>
+<meta name="description" content="Ein automatisierter Import, der eine Tabelle liest und in ein Asset-System schreibt, mit Deduplizierung, die tatsächlich funktioniert.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/bulk-inventory-import/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/bulk-inventory-import/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/bulk-inventory-import/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="735 Inventardatensätze importieren, ohne Duplikate zu erzeugen">
+<meta property="og:description" content="Ein automatisierter Import, der eine Tabelle liest und in ein Asset-System schreibt, mit Deduplizierung, die tatsächlich funktioniert.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/bulk-inventory-import/" class="active" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/bulk-inventory-import/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/bulk-inventory-import/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/de/">Start</a>
+    <a href="/infrastructure-portfolio/de/projects/">Projekte</a>
+    <a href="/infrastructure-portfolio/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>735 Inventardatensätze importieren, ohne Duplikate zu erzeugen</h1>
+<p class="lead">Ein automatisierter Import, der eine Tabelle liest und in ein Asset-System schreibt, mit Deduplizierung, die tatsächlich funktioniert.</p>
+<h2>Problem</h2>
+<p>Das gesamte Inventar existierte als Tabelle mit 735 Zeilen und musste in ein echtes System. Manuelle Eingabe kam nicht in Frage, und ein naiver Import hätte bei jedem erneuten Lauf Duplikate erzeugt.</p>
+<h2>Vorgehen</h2>
+<p>Ich baute den Import als Automatisierungsworkflow statt als Einmalskript, damit er sicher erneut ausgeführt und für das zweite Zielsystem angepasst werden konnte. Die Deduplizierung war der schwierige Teil.</p>
+<h2>Lösung</h2>
+<p>Die Deduplizierung läuft gegen einen paginierten Abruf aller vorhandenen Datensätze statt gegen den Such-Endpunkt, weil die Fuzzy-Suche Nahtreffer zurückgab, die nicht dasselbe Asset waren. Der Import mappt Tabellenspalten auf Kategorien, benutzerdefinierte Felder und Objekttypen.</p>
+<h2>Ergebnis</h2>
+<p>735 Datensätze parallel in zwei Systeme importiert, aufgeteilt auf 15 Kategorien mit einem benutzerdefinierten Feldsatz für firmenspezifische Attribute.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Für die Deduplizierung: exakt abrufen und vergleichen. Vertraue keinem Such-Endpunkt, der Fuzzy-Matching macht.</li>
+  <li>Ein Batching-Muster, das für 50 Elemente funktioniert, kann jenseits von 100 still brechen. Teste den Import in voller Größe, nicht mit einer Stichprobe.</li>
+  <li>Baue Importe idempotent. Du wirst sie mehr als einmal ausführen.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">n8n</span>
+  <span class="tag">Excel</span>
+  <span class="tag">REST APIs</span>
+  <span class="tag">Data migration</span>
+  <span class="tag">Idempotent design</span>
+  <span class="tag">Deduplication logic</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/de/projects/asset-intake-workflow/">← Ein Formular, zwei Asset-Systeme, null manuelle Eingabe</a>
+  <a href="/infrastructure-portfolio/de/projects/e-invoicing-workflow/">Ein Prototyp für automatisierte elektronische Rechnungsverarbeitung →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

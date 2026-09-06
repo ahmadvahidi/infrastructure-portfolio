@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ارتقای یک سرور لینوکس تولیدی به اندازه دو نسخه در یک بار</title>
+<meta name="description" content="اوبونتو ۲۲.۰۴ به ۲۴.۰۴ و جاوا ۱۷ به ۲۵ روی سروری که یک ابزار یکپارچه‌سازی را میزبانی می‌کند، بر اساس یک ران‌بوک نوشته‌شده اجرا شد نه به صورت بداهه.">
+<link rel="alternate" hreflang="de" href="/de/projects/linux-major-version-upgrade-runbook/">
+<link rel="alternate" hreflang="en" href="/en/projects/linux-major-version-upgrade-runbook/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/linux-major-version-upgrade-runbook/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ارتقای یک سرور لینوکس تولیدی به اندازه دو نسخه در یک بار">
+<meta property="og:description" content="اوبونتو ۲۲.۰۴ به ۲۴.۰۴ و جاوا ۱۷ به ۲۵ روی سروری که یک ابزار یکپارچه‌سازی را میزبانی می‌کند، بر اساس یک ران‌بوک نوشته‌شده اجرا شد نه به صورت بداهه.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">پرش به محتوا</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/fa/">زیرساخت IT و اتوماسیون</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/linux-major-version-upgrade-runbook/" hreflang="de">Deutsch</a><a href="/en/projects/linux-major-version-upgrade-runbook/" hreflang="en">English</a><a href="/fa/projects/linux-major-version-upgrade-runbook/" class="active" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/fa/">خانه</a>
+    <a href="/fa/projects/">پروژه‌ها</a>
+    <a href="/fa/about/">درباره</a>
+  </nav>
+</header>
+<main id="main">
+<h1>ارتقای یک سرور لینوکس تولیدی به اندازه دو نسخه در یک بار</h1>
+<p class="lead">اوبونتو ۲۲.۰۴ به ۲۴.۰۴ و جاوا ۱۷ به ۲۵ روی سروری که یک ابزار یکپارچه‌سازی را میزبانی می‌کند، بر اساس یک ران‌بوک نوشته‌شده اجرا شد نه به صورت بداهه.</p>
+<h2>مسئله</h2>
+<p>یک ابزار همگام‌سازی که دو سیستم ردیابی مسئله را همگام نگه می‌دارد به نسخه جدیدتری نیاز داشت. آن نسخه به زمان اجرای جاوا جدیدتری نیاز داشت که آن هم به نسخه توزیع جدیدتری نیاز داشت. سه ارتقا روی هم انباشته شده، روی سروری که تیم‌های دیگر در ساعات کاری به آن وابسته بودند.</p>
+<h2>رویکرد</h2>
+<p>قبل از شروع یک ران‌بوک نوشتم: فهرست وضعیت فعلی، اسنپ‌شات و نقطه بازگشت، بررسی وابستگی برای هر بسته نصب‌شده، سپس ارتقا در مراحل با یک گام تأیید بعد از هر مرحله. عمداً مراحل را زنجیره نکردم تا خطا در هر نقطه سیستمی باقی بگذارد که هنوز بوت می‌شود و نسخه قدیمی را سرو می‌دهد.</p>
+<h2>راه‌حل</h2>
+<p>اول ارتقای توزیع، سپس زمان اجرای جاوا، سپس برنامه. در این مسیر یک واحد systemd را اصلاح کردم که ماه‌ها هشدار مانیتورینگ نادرست تولید کرده بود، چون سرویس قبل از اینکه واقعاً آماده باشد خود را آماده اعلام می‌کرد.</p>
+<h2>نتیجه</h2>
+<p>مسیر ارتقا مرحله به مرحله بدون توقف برنامه‌ریزی‌نشده اجرا شد و یک هشدار نادرست قدیمی به عنوان اثر جانبی ناپدید شد.</p>
+<div class="lessons"><h2>چیزی که یاد گرفتم</h2><ul>
+  <li>وقتی سه ارتقا به هم وابسته‌اند، ترتیب را بنویس. زنجیره وابستگی تحت فشار زمان آشکار نیست.</li>
+  <li>یک هشدار مانیتورینگ که همه یاد گرفته‌اند نادیده بگیرند، یک باگ است، نه نویز پس‌زمینه.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Ubuntu</span>
+  <span class="tag">Java</span>
+  <span class="tag">systemd</span>
+  <span class="tag">Zabbix</span>
+  <span class="tag">Runbook writing</span>
+  <span class="tag">Change management</span>
+  <span class="tag">Linux administration</span>
+</div>
+<div class="prevnext">
+  <a href="/fa/projects/wazuh-siem-rollout/">← راه‌اندازی یک SIEM خودمیزبان در شش مرحله</a>
+  <a href="/fa/projects/self-hosted-service-stack/">ساخت یک پشته سرویس خودمیزبان از صفر →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>تماس: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

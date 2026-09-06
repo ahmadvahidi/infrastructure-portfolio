@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ein Prototyp für automatisierte elektronische Rechnungsverarbeitung</title>
+<meta name="description" content="Ein MVP zum Lesen strukturierter elektronischer Rechnungsformate, mit Datenschutz- und Lizenzbeschränkungen von Anfang an eingeplant.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/e-invoicing-workflow/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/e-invoicing-workflow/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/e-invoicing-workflow/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ein Prototyp für automatisierte elektronische Rechnungsverarbeitung">
+<meta property="og:description" content="Ein MVP zum Lesen strukturierter elektronischer Rechnungsformate, mit Datenschutz- und Lizenzbeschränkungen von Anfang an eingeplant.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/e-invoicing-workflow/" class="active" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/e-invoicing-workflow/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/e-invoicing-workflow/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/de/">Start</a>
+    <a href="/infrastructure-portfolio/de/projects/">Projekte</a>
+    <a href="/infrastructure-portfolio/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Ein Prototyp für automatisierte elektronische Rechnungsverarbeitung</h1>
+<p class="lead">Ein MVP zum Lesen strukturierter elektronischer Rechnungsformate, mit Datenschutz- und Lizenzbeschränkungen von Anfang an eingeplant.</p>
+<h2>Problem</h2>
+<p>Elektronische Rechnungsstellung in strukturierten Formaten wird in Deutschland verpflichtend. Eingehende Rechnungen in diesen Formaten mussten immer noch von Hand gelesen und eingegeben werden.</p>
+<h2>Vorgehen</h2>
+<p>Ich baute einen minimalen funktionsfähigen Workflow, der die strukturierten Formate parst, die relevanten Felder extrahiert und sie für die Buchung vorbereitet. Bevor ich eine KI-Komponente wählte, arbeitete ich zwei Beschränkungen durch: ob Rechnungsdaten unter Datenschutzregeln das Unternehmen rechtlich verlassen dürfen und ob die Lizenz des Modellanbieters kommerzielle Nutzung erlaubt.</p>
+<h2>Lösung</h2>
+<p>Ein funktionierender Prototyp mit einer dokumentierten Bewertung der Modellanbieter, einschließlich welcher Free-Tiers kommerziell nutzbar sind und welcher Durchsatz für diese Art von Workload realistisch ist.</p>
+<h2>Ergebnis</h2>
+<p>Ein Prototyp plus ein Entscheidungsdokument. Die Compliance-Analyse erwies sich als genauso wertvoll wie der Code, weil sie der Teil ist, der entscheidet, ob das Projekt überhaupt live gehen kann.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Für jede Automatisierung, die Rechnungen oder personenbezogene Daten berührt, beantworte die Datenschutzfrage, bevor du Code schreibst. Compliance nachzurüsten bedeutet Umschreiben.</li>
+  <li>Free Tier bedeutet nicht frei für kommerzielle Nutzung. Lies die Lizenz, nicht die Preisseite.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">n8n</span>
+  <span class="tag">XRechnung</span>
+  <span class="tag">ZUGFeRD</span>
+  <span class="tag">LLM APIs</span>
+  <span class="tag">E-invoicing standards</span>
+  <span class="tag">Data protection assessment</span>
+  <span class="tag">Vendor evaluation</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/de/projects/bulk-inventory-import/">← 735 Inventardatensätze importieren, ohne Duplikate zu erzeugen</a>
+  <a href="/infrastructure-portfolio/de/projects/automated-offsite-backup/">Eine volle Platte mit Automatisierung statt einer größeren Platte lösen →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

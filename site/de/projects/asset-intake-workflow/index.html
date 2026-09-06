@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ein Formular, zwei Asset-Systeme, null manuelle Eingabe</title>
+<meta name="description" content="Ein 98-Knoten-Automatisierungsworkflow, der ein neues Gerät gleichzeitig in zwei Asset-Management-Systemen registriert, die Inventarnummer selbst vergibt und von einem nicht-technischen Kollegen bedient werden kann.">
+<link rel="alternate" hreflang="de" href="/de/projects/asset-intake-workflow/">
+<link rel="alternate" hreflang="en" href="/en/projects/asset-intake-workflow/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/asset-intake-workflow/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ein Formular, zwei Asset-Systeme, null manuelle Eingabe">
+<meta property="og:description" content="Ein 98-Knoten-Automatisierungsworkflow, der ein neues Gerät gleichzeitig in zwei Asset-Management-Systemen registriert, die Inventarnummer selbst vergibt und von einem nicht-technischen Kollegen bedient werden kann.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/asset-intake-workflow/" class="active" hreflang="de">Deutsch</a><a href="/en/projects/asset-intake-workflow/" hreflang="en">English</a><a href="/fa/projects/asset-intake-workflow/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/de/">Start</a>
+    <a href="/de/projects/">Projekte</a>
+    <a href="/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Ein Formular, zwei Asset-Systeme, null manuelle Eingabe</h1>
+<p class="lead">Ein 98-Knoten-Automatisierungsworkflow, der ein neues Gerät gleichzeitig in zwei Asset-Management-Systemen registriert, die Inventarnummer selbst vergibt und von einem nicht-technischen Kollegen bedient werden kann.</p>
+<h2>Problem</h2>
+<p>Ein neues Gerät zu registrieren bedeutete, zwei Systeme zu öffnen, manuell zu prüfen, welche Inventarnummer frei war, zu entscheiden, zu welchem Objekttyp es in jedem System gehört, und dieselben Daten zweimal zu tippen. Es war langsam und erzeugte Inkonsistenzen zwischen den beiden Systemen.</p>
+<h2>Vorgehen</h2>
+<p>Der erste Versuch war ein überentwickeltes Design mit einem KI-Agenten, der fünfzehn Knoten orchestrierte, und er scheiterte wiederholt, indem er ohne Stoppbedingung in Schleifen lief. Ich verwarf es und baute es als linearen Workflow neu: ein Formular-Trigger, dann Schreiben in System A, dann Schreiben in System B. Ich baute es in sieben Phasen und prüfte jede Phase, bevor ich die nächste begann.</p>
+<h2>Lösung</h2>
+<p>Ein Formular fragt die Gerätedaten ab. Der Workflow scannt jede Quelle in beiden Systemen, einschließlich der Objekttypen, in denen Inventarnummern in einem Freitext-Notizfeld gespeichert sind, ermittelt die nächste freie Nummer, entscheidet das richtige Modul und den Objekttyp basierend darauf, ob das Gerät eine Seriennummer hat und in welche Kategorie es fällt, erstellt den Datensatz in beiden Systemen mit allen benutzerdefinierten Feldern, hängt Finanzdaten und Gruppenzuordnung an und gibt eine Bestätigung zurück.</p>
+<h2>Ergebnis</h2>
+<p>In Produktion und vom IT-Team genutzt. Echte Geräte wurden während der Abnahmetests darüber registriert, einschließlich Randfällen wie einem Zubehör ohne Seriennummer und einem Ersatzteil, das einem bestimmten Benutzer zugewiesen ist.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Eine API, die lokalisierte Werte zurückgibt, bricht deine Vergleichslogik. Vergleiche gegen das, was die API tatsächlich zurückgibt, nicht gegen den englischen Begriff in der Dokumentation.</li>
+  <li>Eine neue Workflow-Version zu erstellen ist nicht dasselbe wie sie zu veröffentlichen. Wenn sich das Live-Formular anders verhält als dein Testlauf, prüfe, was tatsächlich veröffentlicht ist.</li>
+  <li>Gib einem autonomen Agenten eine definitive Stoppbedingung, sonst läuft er ewig in Schleifen. Das ist die am häufigsten wiederholte Lektion des ganzen Projekts.</li>
+  <li>Merge-Knoten verhalten sich unvorhersehbar, wenn ein Eingangszweig nie ausgeführt wurde. Gestalte so, dass beide Zweige immer laufen.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">n8n</span>
+  <span class="tag">REST APIs</span>
+  <span class="tag">GLPI</span>
+  <span class="tag">Snipe-IT</span>
+  <span class="tag">JavaScript</span>
+  <span class="tag">Workflow automation</span>
+  <span class="tag">API integration</span>
+  <span class="tag">Iterative delivery</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/de/projects/bulk-inventory-import/">735 Inventardatensätze importieren, ohne Duplikate zu erzeugen →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

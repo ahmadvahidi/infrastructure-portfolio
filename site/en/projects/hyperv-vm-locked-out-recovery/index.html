@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recovering a virtual machine nobody could log into</title>
+<meta name="description" content="A full system drive blocked login, and after fixing that a broken credential provider blocked it again. Solved from the recovery environment and safe mode.">
+<link rel="alternate" hreflang="de" href="/de/projects/hyperv-vm-locked-out-recovery/">
+<link rel="alternate" hreflang="en" href="/en/projects/hyperv-vm-locked-out-recovery/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/hyperv-vm-locked-out-recovery/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Recovering a virtual machine nobody could log into">
+<meta property="og:description" content="A full system drive blocked login, and after fixing that a broken credential provider blocked it again. Solved from the recovery environment and safe mode.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/hyperv-vm-locked-out-recovery/" hreflang="de">Deutsch</a><a href="/en/projects/hyperv-vm-locked-out-recovery/" class="active" hreflang="en">English</a><a href="/fa/projects/hyperv-vm-locked-out-recovery/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/en/">Home</a>
+    <a href="/en/projects/">Projects</a>
+    <a href="/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Recovering a virtual machine nobody could log into</h1>
+<p class="lead">A full system drive blocked login, and after fixing that a broken credential provider blocked it again. Solved from the recovery environment and safe mode.</p>
+<h2>Problem</h2>
+<p>A domain joined Windows VM under Hyper-V refused all logins. The system drive was completely full, and there was no way in through the normal desktop to clean it up.</p>
+<h2>Approach</h2>
+<p>I expanded the virtual disk from the hypervisor side, then booted into the Windows recovery environment to grow the partition. The disk layout had a trap: the free space sat next to the system partition on one disk while a second virtual disk carried another drive letter, so selecting the wrong volume would have failed or worse. I verified the disk and partition numbers before extending anything.</p>
+<h2>Solution</h2>
+<p>Partition extended from the recovery environment, which restored roughly fifty gigabytes of headroom. Login still failed, this time because a multifactor credential provider had broken and was blocking the logon screen. I booted into safe mode with networking, enabled the Windows Installer service inside safe mode through a registry key so that uninstallation was even possible, removed the product, then cleaned the leftover credential provider registry entries, folders and services, and confirmed the machine was excluded from the deployment that would have reinstalled it.</p>
+<h2>Result</h2>
+<p>The machine came back without a rebuild and without data loss. Total downtime was a few hours instead of a reinstall.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>Always confirm disk and partition numbers in the recovery environment before extending. The numbering is not the same as in the running system.</li>
+  <li>Windows Installer does not run in safe mode by default. One registry key makes uninstall possible when nothing else works.</li>
+  <li>After removing a credential provider, clean its registry entries too, otherwise the logon screen keeps trying to load something that is gone.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Hyper-V</span>
+  <span class="tag">Windows Server</span>
+  <span class="tag">WinRE</span>
+  <span class="tag">diskpart</span>
+  <span class="tag">Registry</span>
+  <span class="tag">Safe Mode</span>
+  <span class="tag">Offline recovery</span>
+  <span class="tag">Windows internals</span>
+  <span class="tag">Root cause isolation</span>
+</div>
+<div class="prevnext">
+  <a href="/en/projects/self-hosted-password-vault/">← Running a self-hosted password vault, including the day someone gets locked out</a>
+  <a href="/en/projects/personal-vps-ai-stack/">A private AI and automation stack on a single VPS →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

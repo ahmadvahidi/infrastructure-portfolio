@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wenn ein Treiber-Update den Dienst deaktiviert, den es braucht</title>
+<meta name="description" content="Ein Anbieter-Update-Dienstprogramm startete nicht mehr, nachdem es seine eigenen Updates installiert hatte. Die Ursache war ein Dienst, der im deaktivierten Zustand zurückgelassen wurde.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/vendor-update-tool-broken/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/vendor-update-tool-broken/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/vendor-update-tool-broken/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wenn ein Treiber-Update den Dienst deaktiviert, den es braucht">
+<meta property="og:description" content="Ein Anbieter-Update-Dienstprogramm startete nicht mehr, nachdem es seine eigenen Updates installiert hatte. Die Ursache war ein Dienst, der im deaktivierten Zustand zurückgelassen wurde.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/vendor-update-tool-broken/" class="active" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/vendor-update-tool-broken/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/vendor-update-tool-broken/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/de/">Start</a>
+    <a href="/infrastructure-portfolio/de/projects/">Projekte</a>
+    <a href="/infrastructure-portfolio/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Wenn ein Treiber-Update den Dienst deaktiviert, den es braucht</h1>
+<p class="lead">Ein Anbieter-Update-Dienstprogramm startete nicht mehr, nachdem es seine eigenen Updates installiert hatte. Die Ursache war ein Dienst, der im deaktivierten Zustand zurückgelassen wurde.</p>
+<h2>Problem</h2>
+<p>Ein Benutzer konnte das Update-Tool des Herstellers nicht mehr starten, nachdem er Updates darüber angewendet hatte. Die Fehlermeldung zeigte nirgendwohin Nützliches.</p>
+<h2>Vorgehen</h2>
+<p>Das Tool hängt von einem Hintergrund-Verwaltungsdienst ab. Ich prüfte den Dienstzustand, statt die Anwendung neu zu installieren.</p>
+<h2>Lösung</h2>
+<p>Der Dienst war während des Updates auf deaktiviert gesetzt worden. Das erneute Aktivieren und Starten stellte das Tool wieder her. Weil der Benutzer nicht technisch war und die Zeit begrenzt, bereitete ich drei Optionen im Voraus vor, einen geführten Anruf, eine Remote-Sitzung oder einen Vor-Ort-Besuch, und ließ den Benutzer wählen, statt anzunehmen.</p>
+<h2>Ergebnis</h2>
+<p>Ohne Neuinstallation gelöst, und ohne einem nicht-technischen Benutzer das Gefühl zu geben, eine Hausaufgabe aufgedrückt zu bekommen.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Wenn eine Anwendung nicht startet, prüfe ihre abhängigen Dienste, bevor du neu installierst.</li>
+  <li>Biete Support-Optionen an, ohne sie zu bewerten. Den Benutzer den Kanal wählen zu lassen bringt eine schnellere Antwort als den vorzuschlagen, den du bevorzugst.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Windows Services</span>
+  <span class="tag">Vendor management tooling</span>
+  <span class="tag">Dependency analysis</span>
+  <span class="tag">Support communication</span>
+  <span class="tag">Working with non technical users</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/de/projects/outlook-wont-start/">← Eine strukturierte Methode für einen E-Mail-Client, der nicht startet</a>
+  <a href="/infrastructure-portfolio/de/projects/sso-group-based-access/">Single Sign-on mit gruppenbasiertem Zugriff auf eine Dateiplattform →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

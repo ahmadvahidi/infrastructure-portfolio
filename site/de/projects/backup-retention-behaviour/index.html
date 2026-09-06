@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warum die Backup-Anzahl das Aufbewahrungslimit überschreitet</title>
+<meta name="description" content="Eine Aufbewahrungsregel, die auf 28 Backups gesetzt war, zeigte 29. Erklärt, warum, und bestätigt, dass keine Notfallmaßnahme nötig war.">
+<link rel="alternate" hreflang="de" href="/de/projects/backup-retention-behaviour/">
+<link rel="alternate" hreflang="en" href="/en/projects/backup-retention-behaviour/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/backup-retention-behaviour/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Warum die Backup-Anzahl das Aufbewahrungslimit überschreitet">
+<meta property="og:description" content="Eine Aufbewahrungsregel, die auf 28 Backups gesetzt war, zeigte 29. Erklärt, warum, und bestätigt, dass keine Notfallmaßnahme nötig war.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/backup-retention-behaviour/" class="active" hreflang="de">Deutsch</a><a href="/en/projects/backup-retention-behaviour/" hreflang="en">English</a><a href="/fa/projects/backup-retention-behaviour/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/de/">Start</a>
+    <a href="/de/projects/">Projekte</a>
+    <a href="/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Warum die Backup-Anzahl das Aufbewahrungslimit überschreitet</h1>
+<p class="lead">Eine Aufbewahrungsregel, die auf 28 Backups gesetzt war, zeigte 29. Erklärt, warum, und bestätigt, dass keine Notfallmaßnahme nötig war.</p>
+<h2>Problem</h2>
+<p>Der Backup-Plan eines Servers war konfiguriert, 28 Wiederherstellungspunkte zu behalten, aber die Konsole zeigte 29. Mit begrenztem freiem Speicher war die Angst, dass der nächste Lauf ein neues Vollbackup erzeugen und die Platte füllen würde.</p>
+<h2>Vorgehen</h2>
+<p>Ich arbeitete durch, wie sich der Aufbewahrungsmechanismus tatsächlich verhält, statt der Zahl in der Oberfläche zu vertrauen.</p>
+<h2>Lösung</h2>
+<p>Backup-Software überschreitet das Aufbewahrungslimit absichtlich, wenn abhängige inkrementelle Punkte nicht gelöscht werden können, ohne die Kette zu brechen, und die Bereinigung läuft nach Abschluss des neuen Backups statt davor. Eine vorübergehende Überschreitung ist erwartetes Verhalten. Ein neues Vollbackup wird nur durch bestimmte Ereignisse ausgelöst, wie das Ändern von Format, Ziel oder Verschlüsselung, das Hinzufügen einer Quellplatte oder das Neuerstellen des Plans. Nichts davon traf zu, also war der nächste Lauf inkrementell.</p>
+<h2>Ergebnis</h2>
+<p>Keine Notfallintervention, und eine dokumentierte Methode zur Schätzung des täglichen Speicherverbrauchs und der verbleibenden Laufzeit durch Vergleich der Archivgrößen an aufeinanderfolgenden Tagen.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Bereinigung nach dem Backup, nicht davor, bedeutet, dass freier Speicher die Überschreitung abdecken muss. Dimensioniere Speicher für den Spitzenwert, nicht den Durchschnitt.</li>
+  <li>Lösche Archivdateien niemals von Hand. Es bricht die Kette und entwertet still jeden Wiederherstellungspunkt, der davon abhängt.</li>
+  <li>Wenn Speicher die echte Beschränkung ist, wechsle die Aufbewahrung von einer Anzahl zu einem Größenlimit.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Acronis Cyber Protect</span>
+  <span class="tag">Incremental backup chains</span>
+  <span class="tag">Backup strategy</span>
+  <span class="tag">Storage forecasting</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/de/projects/tape-library-maintenance/">Eine Tape-Library gesund halten →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

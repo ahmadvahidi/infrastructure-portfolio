@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A private AI and automation stack on a single VPS</title>
+<meta name="description" content="Self-hosted model serving, a chat interface, an automation platform and an autonomous agent on one small server.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/personal-vps-ai-stack/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/personal-vps-ai-stack/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/personal-vps-ai-stack/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A private AI and automation stack on a single VPS">
+<meta property="og:description" content="Self-hosted model serving, a chat interface, an automation platform and an autonomous agent on one small server.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/personal-vps-ai-stack/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/personal-vps-ai-stack/" class="active" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/personal-vps-ai-stack/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/en/">Home</a>
+    <a href="/infrastructure-portfolio/en/projects/">Projects</a>
+    <a href="/infrastructure-portfolio/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>A private AI and automation stack on a single VPS</h1>
+<p class="lead">Self-hosted model serving, a chat interface, an automation platform and an autonomous agent on one small server.</p>
+<h2>Problem</h2>
+<p>I wanted a lab where I could test AI assisted automation without sending company or personal data to third party services, and without a monthly bill per tool.</p>
+<h2>Approach</h2>
+<p>Everything runs as containers on one VPS, managed through Portainer, behind a reverse proxy. Local model serving for small tasks, an aggregation layer for external free tier providers where a bigger model is needed, a web chat interface on top, and an automation platform that the agent can drive.</p>
+<h2>Solution</h2>
+<p>The stack includes local model serving, a web chat frontend, an API aggregation service, an automation platform and an autonomous agent connected to a messaging app so tasks can be sent from a phone.</p>
+<h2>Result</h2>
+<p>A working private lab that is now the place where every automation idea gets prototyped before it goes anywhere near production.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>Free tier model providers differ enormously in throughput. For agent workloads, tokens per second matters more than benchmark scores.</li>
+  <li>Run experiments on a personal VPS, not on company infrastructure. It keeps the blast radius and the compliance question simple.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Docker</span>
+  <span class="tag">Portainer</span>
+  <span class="tag">Ollama</span>
+  <span class="tag">Open WebUI</span>
+  <span class="tag">n8n</span>
+  <span class="tag">Reverse proxy</span>
+  <span class="tag">Self-hosting</span>
+  <span class="tag">LLM tooling</span>
+  <span class="tag">Cost control</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/en/projects/hyperv-vm-locked-out-recovery/">← Recovering a virtual machine nobody could log into</a>
+  <span></span>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

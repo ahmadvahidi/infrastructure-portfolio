@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Einführung eines selbst gehosteten SIEM in sechs Phasen</title>
+<meta name="description" content="Wazuh als zentrales SIEM auf Docker eingeführt, in sechs Phasen geplant, damit die Einführung nicht auf halbem Weg stecken bleibt.">
+<link rel="alternate" hreflang="de" href="/de/projects/wazuh-siem-rollout/">
+<link rel="alternate" hreflang="en" href="/en/projects/wazuh-siem-rollout/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/wazuh-siem-rollout/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Einführung eines selbst gehosteten SIEM in sechs Phasen">
+<meta property="og:description" content="Wazuh als zentrales SIEM auf Docker eingeführt, in sechs Phasen geplant, damit die Einführung nicht auf halbem Weg stecken bleibt.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/wazuh-siem-rollout/" class="active" hreflang="de">Deutsch</a><a href="/en/projects/wazuh-siem-rollout/" hreflang="en">English</a><a href="/fa/projects/wazuh-siem-rollout/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/de/">Start</a>
+    <a href="/de/projects/">Projekte</a>
+    <a href="/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Einführung eines selbst gehosteten SIEM in sechs Phasen</h1>
+<p class="lead">Wazuh als zentrales SIEM auf Docker eingeführt, in sechs Phasen geplant, damit die Einführung nicht auf halbem Weg stecken bleibt.</p>
+<h2>Problem</h2>
+<p>Das Firmennetz hatte Endpoint-Schutz und Firewall-Logging, aber keinen zentralen Ort, an dem Sicherheitsereignisse von Windows-Servern, Linux-Hosts und Netzwerkgeräten korreliert werden konnten. Niemand konnte die Frage beantworten, was letzten Dienstag auf dieser Maschine passiert ist, ohne sich selbst auf der Maschine anzumelden.</p>
+<h2>Vorgehen</h2>
+<p>Statt einer Big-Bang-Installation schrieb ich einen Sechs-Phasen-Plan und ließ ihn genehmigen, bevor ich irgendetwas anfasste: Phase 0 Dimensionierung und Host-Vorbereitung, Phase 1 Einzelknoten-Deployment auf Docker über Portainer, Phase 2 Agent-Rollout auf Servern, spätere Phasen für die Integration von Backup-Software, Active Directory und Firewall. Jede Phase hatte eigene Erfolgskriterien, damit das Projekt zwischen den Phasen pausiert werden konnte, ohne ein halb konfiguriertes System zu hinterlassen.</p>
+<h2>Lösung</h2>
+<p>Wazuh-Manager, Indexer und Dashboard laufen als containerisierter Stack, verwaltet über Portainer auf einem dedizierten Linux-Host. Agents wurden zuerst auf dem Serverbestand ausgerollt, später auf den Arbeitsplätzen. Ich baute außerdem ein interaktives zweisprachiges Dashboard, damit Kollegen, die kein englisches Sicherheitsvokabular lesen, das Alarmbild trotzdem verstehen konnten.</p>
+<h2>Ergebnis</h2>
+<p>Phasen 0 bis 2 sind abgeschlossen und das SIEM ist täglich für die Alarm-Sichtung im Einsatz. Die phasenweise Struktur erwies sich als der wertvollste Teil: Sie machte das Projekt in jedem Schritt für das Management überprüfbar.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Ein Rollout-Plan mit expliziten Stopp-Punkten übersteht Unterbrechungen. Ein einzelnes langes Installationsskript nicht.</li>
+  <li>Ein SIEM, das niemand liest, ist nur Plattenverbrauch. Plane die Sichtungs-Routine gleichzeitig mit dem Deployment.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Wazuh</span>
+  <span class="tag">Docker</span>
+  <span class="tag">Portainer</span>
+  <span class="tag">Linux</span>
+  <span class="tag">Elasticsearch/OpenSearch</span>
+  <span class="tag">SIEM design</span>
+  <span class="tag">Containerized deployments</span>
+  <span class="tag">Project phasing</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/de/projects/linux-major-version-upgrade-runbook/">Einen produktiven Linux-Server um zwei Versionen auf einmal upgraden →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

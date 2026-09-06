@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ein selbst gehostetes VPN und der Client, der sich weigerte zu verbinden</title>
+<meta name="description" content="Ein modernes Protokoll-VPN auf einem Cloud-Server eingerichtet, dann eine Client-Ablehnung debuggt, die nichts mit der Konfiguration zu tun hatte.">
+<link rel="alternate" hreflang="de" href="/de/projects/self-hosted-vpn/">
+<link rel="alternate" hreflang="en" href="/en/projects/self-hosted-vpn/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/self-hosted-vpn/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ein selbst gehostetes VPN und der Client, der sich weigerte zu verbinden">
+<meta property="og:description" content="Ein modernes Protokoll-VPN auf einem Cloud-Server eingerichtet, dann eine Client-Ablehnung debuggt, die nichts mit der Konfiguration zu tun hatte.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/self-hosted-vpn/" class="active" hreflang="de">Deutsch</a><a href="/en/projects/self-hosted-vpn/" hreflang="en">English</a><a href="/fa/projects/self-hosted-vpn/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/de/">Start</a>
+    <a href="/de/projects/">Projekte</a>
+    <a href="/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Ein selbst gehostetes VPN und der Client, der sich weigerte zu verbinden</h1>
+<p class="lead">Ein modernes Protokoll-VPN auf einem Cloud-Server eingerichtet, dann eine Client-Ablehnung debuggt, die nichts mit der Konfiguration zu tun hatte.</p>
+<h2>Problem</h2>
+<p>Ich brauchte einen privaten, selbst gehosteten VPN-Endpunkt. Die Serverseite kam schnell hoch, aber der Android-Client lehnte die Verbindung mit einer nicht hilfreichen Meldung ab, während andere Clients funktionierten.</p>
+<h2>Vorgehen</h2>
+<p>Weil der Server andere Clients akzeptierte, musste das Problem clientseitig oder versionsbedingt sein. Ich verglich, was der Server anbot, mit dem, was der Client unterstützte.</p>
+<h2>Lösung</h2>
+<p>Der Server erzwang eine Mindest-Client-Version. Der verwendete Android-Client lag darunter und wurde vor jedem echten Handshake abgelehnt. Ein Update des Clients löste es. Getrennt davon arbeitet die Firewall des Cloud-Anbieters völlig unabhängig von der Firewall im Betriebssystem, was eine wiederkehrende Falle ist: Ein Port kann lokal offen sein und trotzdem unerreichbar.</p>
+<h2>Ergebnis</h2>
+<p>Ein funktionierender privater VPN-Endpunkt und zwei Debugging-Regeln, die ich jetzt automatisch anwende.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Eine Cloud-Anbieter-Firewall und eine Host-Firewall sind zwei getrennte Wände. Eine zu öffnen beweist nichts über die andere.</li>
+  <li>Wenn ein Client fehlschlägt und andere funktionieren, vergleiche Versionen, bevor du Konfigurationen vergleichst.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Xray</span>
+  <span class="tag">VLESS</span>
+  <span class="tag">Reality</span>
+  <span class="tag">3x-ui</span>
+  <span class="tag">ufw</span>
+  <span class="tag">VPN deployment</span>
+  <span class="tag">Layered firewall debugging</span>
+</div>
+<div class="prevnext">
+  <a href="/de/projects/internal-dns-records/">← Zwei neue interne Portale per DNS veröffentlichen</a>
+  <a href="/de/projects/verify-before-changing-firewall/">Die Firewall-Änderung, die sich als unnötig herausstellte →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

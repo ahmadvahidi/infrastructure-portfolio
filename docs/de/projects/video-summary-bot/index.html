@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ein Messaging-Bot, der Videos in deiner eigenen Sprache zusammenfasst</title>
+<meta name="description" content="Sende einen Video-Link in einer Chat-App, erhalte eine nützliche Zusammenfassung zurück, vollständig über die REST-API der Automatisierungsplattform gebaut.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/video-summary-bot/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/video-summary-bot/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/video-summary-bot/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ein Messaging-Bot, der Videos in deiner eigenen Sprache zusammenfasst">
+<meta property="og:description" content="Sende einen Video-Link in einer Chat-App, erhalte eine nützliche Zusammenfassung zurück, vollständig über die REST-API der Automatisierungsplattform gebaut.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/video-summary-bot/" class="active" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/video-summary-bot/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/video-summary-bot/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/de/">Start</a>
+    <a href="/infrastructure-portfolio/de/projects/">Projekte</a>
+    <a href="/infrastructure-portfolio/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Ein Messaging-Bot, der Videos in deiner eigenen Sprache zusammenfasst</h1>
+<p class="lead">Sende einen Video-Link in einer Chat-App, erhalte eine nützliche Zusammenfassung zurück, vollständig über die REST-API der Automatisierungsplattform gebaut.</p>
+<h2>Problem</h2>
+<p>Ich wollte ein persönliches Tool, das lange technische Videos in wenigen Minuten in etwas Lesbares verwandelt, in meiner eigenen Sprache.</p>
+<h2>Vorgehen</h2>
+<p>Die Kette ist bewusst einfach: Nachrichten-Trigger, Video-ID extrahieren, Link validieren, Untertitelspur herunterladen, Zeit- und Formatierungs-Tags entfernen, den sauberen Text mit einem Zusammenfassungs-Prompt an ein Sprachmodell senden, im Chat antworten. Ich ließ den Agenten es direkt gegen die REST-API der Automatisierungsplattform bauen statt über eine Zwischenprotokollschicht, weil der API-Pfad derjenige ist, der seine Fehler tatsächlich meldet.</p>
+<h2>Lösung</h2>
+<p>Ein funktionierender Bot mit Fehlerbehandlung, plus ein wiederverwendbares Muster, um einen Agenten Workflows programmatisch erstellen und aktivieren zu lassen.</p>
+<h2>Ergebnis</h2>
+<p>Persönlich genutzt, und wichtiger: Es erzeugte die Vorlage dafür, wie ich jetzt Agenten Automatisierungen bauen lasse: mit der REST-API sprechen, zuerst vorhandene Zugangsdaten prüfen, bei Fehlern selbst korrigieren, aktivieren, dann einen echten Test ausführen.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Wenn ein Agent Infrastruktur baut, gib ihm die Schnittstelle mit den klarsten Fehlermeldungen. Debuggbarkeit schlägt Eleganz.</li>
+  <li>Die Erstellung von Zugangsdaten ist der eine Schritt, der sich meist nicht automatisieren lässt. Gestalte den Workflow so, dass dieser Schritt einmal, vorab, passiert.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">n8n</span>
+  <span class="tag">REST API</span>
+  <span class="tag">yt-dlp</span>
+  <span class="tag">LLM API</span>
+  <span class="tag">Telegram</span>
+  <span class="tag">API driven automation</span>
+  <span class="tag">Agent orchestration</span>
+  <span class="tag">Prompt design</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/de/projects/automated-offsite-backup/">← Eine volle Platte mit Automatisierung statt einer größeren Platte lösen</a>
+  <span></span>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

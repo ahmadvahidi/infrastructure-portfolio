@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eine virtuelle Maschine wiederherstellen, in die sich niemand einloggen konnte</title>
+<meta name="description" content="Eine volle Systemplatte blockierte den Login, und nach der Behebung blockierte ein defekter Credential-Provider ihn erneut. Gelöst aus der Wiederherstellungsumgebung und dem abgesicherten Modus.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/hyperv-vm-locked-out-recovery/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/hyperv-vm-locked-out-recovery/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/hyperv-vm-locked-out-recovery/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Eine virtuelle Maschine wiederherstellen, in die sich niemand einloggen konnte">
+<meta property="og:description" content="Eine volle Systemplatte blockierte den Login, und nach der Behebung blockierte ein defekter Credential-Provider ihn erneut. Gelöst aus der Wiederherstellungsumgebung und dem abgesicherten Modus.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/hyperv-vm-locked-out-recovery/" class="active" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/hyperv-vm-locked-out-recovery/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/hyperv-vm-locked-out-recovery/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/de/">Start</a>
+    <a href="/infrastructure-portfolio/de/projects/">Projekte</a>
+    <a href="/infrastructure-portfolio/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Eine virtuelle Maschine wiederherstellen, in die sich niemand einloggen konnte</h1>
+<p class="lead">Eine volle Systemplatte blockierte den Login, und nach der Behebung blockierte ein defekter Credential-Provider ihn erneut. Gelöst aus der Wiederherstellungsumgebung und dem abgesicherten Modus.</p>
+<h2>Problem</h2>
+<p>Eine domänenangebundene Windows-VM unter Hyper-V verweigerte alle Logins. Die Systemplatte war komplett voll, und es gab keinen Weg über den normalen Desktop, sie zu bereinigen.</p>
+<h2>Vorgehen</h2>
+<p>Ich erweiterte die virtuelle Platte von der Hypervisor-Seite und bootete dann in die Windows-Wiederherstellungsumgebung, um die Partition zu vergrößern. Das Plattenlayout hatte eine Falle: Der freie Speicher lag neben der Systempartition auf einer Platte, während eine zweite virtuelle Platte einen anderen Laufwerksbuchstaben trug, sodass die Auswahl des falschen Volumes fehlgeschlagen wäre oder schlimmer. Ich verifizierte die Platten- und Partitionsnummern, bevor ich irgendetwas erweiterte.</p>
+<h2>Lösung</h2>
+<p>Partition aus der Wiederherstellungsumgebung erweitert, was etwa fünfzig Gigabyte Spielraum wiederherstellte. Der Login schlug immer noch fehl, diesmal weil ein Multifaktor-Credential-Provider defekt war und den Anmeldebildschirm blockierte. Ich bootete in den abgesicherten Modus mit Netzwerk, aktivierte den Windows-Installer-Dienst im abgesicherten Modus über einen Registry-Schlüssel, damit die Deinstallation überhaupt möglich war, entfernte das Produkt, bereinigte dann die übrig gebliebenen Credential-Provider-Registry-Einträge, Ordner und Dienste und bestätigte, dass die Maschine von dem Deployment ausgeschlossen war, das es neu installiert hätte.</p>
+<h2>Ergebnis</h2>
+<p>Die Maschine kam ohne Neuaufbau und ohne Datenverlust zurück. Die Gesamtausfallzeit betrug wenige Stunden statt einer Neuinstallation.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Bestätige immer die Platten- und Partitionsnummern in der Wiederherstellungsumgebung, bevor du erweiterst. Die Nummerierung ist nicht dieselbe wie im laufenden System.</li>
+  <li>Der Windows Installer läuft im abgesicherten Modus standardmäßig nicht. Ein Registry-Schlüssel macht die Deinstallation möglich, wenn nichts anderes funktioniert.</li>
+  <li>Nach dem Entfernen eines Credential-Providers bereinige auch seine Registry-Einträge, sonst versucht der Anmeldebildschirm weiterhin, etwas zu laden, das weg ist.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Hyper-V</span>
+  <span class="tag">Windows Server</span>
+  <span class="tag">WinRE</span>
+  <span class="tag">diskpart</span>
+  <span class="tag">Registry</span>
+  <span class="tag">Safe Mode</span>
+  <span class="tag">Offline recovery</span>
+  <span class="tag">Windows internals</span>
+  <span class="tag">Root cause isolation</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/de/projects/self-hosted-password-vault/">← Einen selbst gehosteten Passwort-Tresor betreiben, inklusive des Tages, an dem jemand ausgesperrt wird</a>
+  <a href="/infrastructure-portfolio/de/projects/personal-vps-ai-stack/">Ein privater KI- und Automatisierungs-Stack auf einem einzigen VPS →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

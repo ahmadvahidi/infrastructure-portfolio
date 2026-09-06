@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>انتشار دو پورتال داخلی جدید از طریق DNS</title>
+<meta name="description" content="دو نام میزبان جدید که به یک وب‌سرور موجود اشاره می‌کنند، به عنوان نام مستعار ایجاد شدند، سرتاسری تأیید شدند و با یک مسیر بازگشت مستند شدند.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/internal-dns-records/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/internal-dns-records/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/internal-dns-records/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="انتشار دو پورتال داخلی جدید از طریق DNS">
+<meta property="og:description" content="دو نام میزبان جدید که به یک وب‌سرور موجود اشاره می‌کنند، به عنوان نام مستعار ایجاد شدند، سرتاسری تأیید شدند و با یک مسیر بازگشت مستند شدند.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">پرش به محتوا</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/fa/">زیرساخت IT و اتوماسیون</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/internal-dns-records/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/internal-dns-records/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/internal-dns-records/" class="active" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/fa/">خانه</a>
+    <a href="/infrastructure-portfolio/fa/projects/">پروژه‌ها</a>
+    <a href="/infrastructure-portfolio/fa/about/">درباره</a>
+  </nav>
+</header>
+<main id="main">
+<h1>انتشار دو پورتال داخلی جدید از طریق DNS</h1>
+<p class="lead">دو نام میزبان جدید که به یک وب‌سرور موجود اشاره می‌کنند، به عنوان نام مستعار ایجاد شدند، سرتاسری تأیید شدند و با یک مسیر بازگشت مستند شدند.</p>
+<h2>مسئله</h2>
+<p>دو پورتال داخلی جدید به نام میزبان خودشان نیاز داشتند. اتصال‌های وب‌سرور از قبل وجود داشتند، پس فقط تفکیک نام گم شده بود.</p>
+<h2>رویکرد</h2>
+<p>اول هدف را تأیید کن: تأیید کن که وب‌سرور در هر دو جهت به آدرس مورد انتظار تفکیک می‌شود و بررسی کن کدام پورت‌ها واقعاً پاسخ می‌دهند. سپس بین یک رکورد آدرس مستقیم و یک رکورد نام مستعار تصمیم بگیر. نام مستعار را انتخاب کردم تا اگر وب‌سرور جابه‌جا شود یک رکورد تغییر کند نه چند رکورد.</p>
+<h2>راه‌حل</h2>
+<p>دو رکورد نام مستعار از طریق پاورشل ایجاد شد، بعد از اینکه کشف کردم ماژول DNS روی ماشین اول در دسترس نیست و به یکی که بود تغییر دادم. در کنسول مدیریت، در گره زیردامنه و با یک درخواست HTTP واقعی که وضعیت موفقیت برگرداند تأیید شد.</p>
+<h2>نتیجه</h2>
+<p>هر دو پورتال با نام قابل دسترس، رکوردهای موجود دست‌نخورده، و یک ران‌بوک نوشته‌شده با منطق تصمیم، دستورات، مراحل رابط و بازگشت.</p>
+<div class="lessons"><h2>چیزی که یاد گرفتم</h2><ul>
+  <li>رکورد نام مستعار بر رکورد آدرس وقتی چند نام به یک میزبان اشاره می‌کنند. یک مهاجرت آینده را به یک تغییر یک‌خطی تبدیل می‌کند.</li>
+  <li>قبل از ایجاد رکورد هدف را تأیید کن. نامی که به چیزی اشاره می‌کند که پاسخ نمی‌دهد بدتر از نبود نام است.</li>
+  <li>دستور بازگشت را در ران‌بوک بنویس در حالی که هنوز یادت است چه چیزی را تغییر دادی.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Windows DNS</span>
+  <span class="tag">PowerShell</span>
+  <span class="tag">IIS</span>
+  <span class="tag">DNS administration</span>
+  <span class="tag">Verification discipline</span>
+  <span class="tag">Runbook writing</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/infrastructure-portfolio/fa/projects/self-hosted-vpn/">یک VPN خودمیزبان و کلاینتی که از اتصال امتناع می‌کرد →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>تماس: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

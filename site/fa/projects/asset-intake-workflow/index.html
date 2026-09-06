@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>یک فرم، دو سیستم دارایی، صفر ورود دستی</title>
+<meta name="description" content="یک ورک‌فلو اتوماسیون ۹۸ گره‌ای که یک دستگاه جدید را همزمان در دو سیستم مدیریت دارایی ثبت می‌کند، شماره موجودی را خودش اختصاص می‌دهد و توسط یک همکار غیرفنی قابل استفاده است.">
+<link rel="alternate" hreflang="de" href="/de/projects/asset-intake-workflow/">
+<link rel="alternate" hreflang="en" href="/en/projects/asset-intake-workflow/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/asset-intake-workflow/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="یک فرم، دو سیستم دارایی، صفر ورود دستی">
+<meta property="og:description" content="یک ورک‌فلو اتوماسیون ۹۸ گره‌ای که یک دستگاه جدید را همزمان در دو سیستم مدیریت دارایی ثبت می‌کند، شماره موجودی را خودش اختصاص می‌دهد و توسط یک همکار غیرفنی قابل استفاده است.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">پرش به محتوا</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/fa/">زیرساخت IT و اتوماسیون</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/asset-intake-workflow/" hreflang="de">Deutsch</a><a href="/en/projects/asset-intake-workflow/" hreflang="en">English</a><a href="/fa/projects/asset-intake-workflow/" class="active" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/fa/">خانه</a>
+    <a href="/fa/projects/">پروژه‌ها</a>
+    <a href="/fa/about/">درباره</a>
+  </nav>
+</header>
+<main id="main">
+<h1>یک فرم، دو سیستم دارایی، صفر ورود دستی</h1>
+<p class="lead">یک ورک‌فلو اتوماسیون ۹۸ گره‌ای که یک دستگاه جدید را همزمان در دو سیستم مدیریت دارایی ثبت می‌کند، شماره موجودی را خودش اختصاص می‌دهد و توسط یک همکار غیرفنی قابل استفاده است.</p>
+<h2>مسئله</h2>
+<p>ثبت یک دستگاه جدید یعنی باز کردن دو سیستم، بررسی دستی اینکه کدام شماره موجودی آزاد است، تصمیم‌گیری درباره اینکه در هر سیستم به کدام نوع شی تعلق دارد و تایپ دوباره همان داده‌ها. کند بود و بین دو سیستم ناسازگاری ایجاد می‌کرد.</p>
+<h2>رویکرد</h2>
+<p>اولین تلاش یک طراحی بیش از حد پیچیده با یک عامل هوش مصنوعی بود که پانزده گره را هماهنگ می‌کرد و بارها با حلقه زدن بدون شرط توقف شکست خورد. آن را دور انداختم و به عنوان یک ورک‌فلو خطی بازسازی کردم: یک تریگر فرم، سپس نوشتن در سیستم A، سپس نوشتن در سیستم B. آن را در هفت مرحله ساختم و هر مرحله را قبل از شروع مرحله بعد بازبینی کردم.</p>
+<h2>راه‌حل</h2>
+<p>یک فرم داده‌های دستگاه را می‌پرسد. ورک‌فلو هر منبع را در هر دو سیستم اسکن می‌کند، از جمله انواع شی که شماره‌های موجودی در یک فیلد یادداشت متن آزاد ذخیره شده‌اند، شماره آزاد بعدی را تعیین می‌کند، ماژول و نوع شی درست را بر اساس اینکه دستگاه شماره سریال دارد و در کدام دسته قرار می‌گیرد تصمیم می‌گیرد، رکورد را در هر دو سیستم با همه فیلدهای سفارشی ایجاد می‌کند، داده‌های مالی و تخصیص گروه را ضمیمه می‌کند و یک تأیید برمی‌گرداند.</p>
+<h2>نتیجه</h2>
+<p>در تولید و توسط تیم IT استفاده می‌شود. دستگاه‌های واقعی در طول تست‌های پذیرش از طریق آن ثبت شدند، از جمله موارد لبه‌ای مثل یک لوازم جانبی بدون شماره سریال و یک قطعه یدکی که به یک کاربر خاص اختصاص داده شده است.</p>
+<div class="lessons"><h2>چیزی که یاد گرفتم</h2><ul>
+  <li>یک API که مقادیر بومی‌سازی‌شده برمی‌گرداند منطق مقایسه تو را می‌شکند. با آنچه API واقعاً برمی‌گرداند مقایسه کن، نه با اصطلاح انگلیسی در مستندات.</li>
+  <li>ایجاد یک نسخه ورک‌فلو جدید با انتشار آن یکی نیست. اگر فرم زنده متفاوت از اجرای تست تو رفتار می‌کند، بررسی کن چه چیزی واقعاً منتشر شده است.</li>
+  <li>به یک عامل خودمختار یک شرط توقف قطعی بده وگرنه برای همیشه حلقه می‌زند. این پرتکرارترین درس کل پروژه است.</li>
+  <li>گره‌های ادغام وقتی یک شاخه ورودی هرگز اجرا نشده باشد غیرقابل پیش‌بینی رفتار می‌کنند. طوری طراحی کن که هر دو شاخه همیشه اجرا شوند.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">n8n</span>
+  <span class="tag">REST APIs</span>
+  <span class="tag">GLPI</span>
+  <span class="tag">Snipe-IT</span>
+  <span class="tag">JavaScript</span>
+  <span class="tag">Workflow automation</span>
+  <span class="tag">API integration</span>
+  <span class="tag">Iterative delivery</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/fa/projects/bulk-inventory-import/">وارد کردن ۷۳۵ رکورد موجودی بدون ایجاد تکراری →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>تماس: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

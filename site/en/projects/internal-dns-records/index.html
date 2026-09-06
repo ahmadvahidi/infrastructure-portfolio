@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publishing two new internal portals via DNS</title>
+<meta name="description" content="Two new hostnames pointing at an existing web server, created as aliases, verified end to end, and documented with a rollback path.">
+<link rel="alternate" hreflang="de" href="/de/projects/internal-dns-records/">
+<link rel="alternate" hreflang="en" href="/en/projects/internal-dns-records/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/internal-dns-records/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Publishing two new internal portals via DNS">
+<meta property="og:description" content="Two new hostnames pointing at an existing web server, created as aliases, verified end to end, and documented with a rollback path.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/internal-dns-records/" hreflang="de">Deutsch</a><a href="/en/projects/internal-dns-records/" class="active" hreflang="en">English</a><a href="/fa/projects/internal-dns-records/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/en/">Home</a>
+    <a href="/en/projects/">Projects</a>
+    <a href="/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Publishing two new internal portals via DNS</h1>
+<p class="lead">Two new hostnames pointing at an existing web server, created as aliases, verified end to end, and documented with a rollback path.</p>
+<h2>Problem</h2>
+<p>Two new internal portals needed their own hostnames. The web server bindings already existed, so only name resolution was missing.</p>
+<h2>Approach</h2>
+<p>First verify the target: confirm the web server resolves to the expected address in both directions, and check which ports actually respond. Then decide between a direct address record and an alias record. I chose aliases so that if the web server ever moves, one record changes instead of several.</p>
+<h2>Solution</h2>
+<p>Two alias records created via PowerShell, after discovering the DNS module was not available on the first machine and switching to one where it was. Verified in the management console, in the subdomain node, and with a real HTTP request returning a success status.</p>
+<h2>Result</h2>
+<p>Both portals reachable by name, existing records untouched, and a written runbook covering the decision rationale, the commands, the interface steps and the rollback.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>Alias records over address records when several names point at one host. It turns a future migration into a one line change.</li>
+  <li>Verify the target before creating the record. A name pointing at something that does not answer is worse than no name.</li>
+  <li>Write the rollback command in the runbook while you still remember what you changed.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Windows DNS</span>
+  <span class="tag">PowerShell</span>
+  <span class="tag">IIS</span>
+  <span class="tag">DNS administration</span>
+  <span class="tag">Verification discipline</span>
+  <span class="tag">Runbook writing</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/en/projects/self-hosted-vpn/">A self-hosted VPN and the client that refused to connect →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

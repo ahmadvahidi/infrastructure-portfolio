@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>یک VPN خودمیزبان و کلاینتی که از اتصال امتناع می‌کرد</title>
+<meta name="description" content="یک VPN با پروتکل مدرن روی یک سرور ابری راه‌اندازی شد، سپس یک رد کلاینت اشکال‌زدایی شد که هیچ ربطی به پیکربندی نداشت.">
+<link rel="alternate" hreflang="de" href="/de/projects/self-hosted-vpn/">
+<link rel="alternate" hreflang="en" href="/en/projects/self-hosted-vpn/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/self-hosted-vpn/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="یک VPN خودمیزبان و کلاینتی که از اتصال امتناع می‌کرد">
+<meta property="og:description" content="یک VPN با پروتکل مدرن روی یک سرور ابری راه‌اندازی شد، سپس یک رد کلاینت اشکال‌زدایی شد که هیچ ربطی به پیکربندی نداشت.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">پرش به محتوا</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/fa/">زیرساخت IT و اتوماسیون</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/self-hosted-vpn/" hreflang="de">Deutsch</a><a href="/en/projects/self-hosted-vpn/" hreflang="en">English</a><a href="/fa/projects/self-hosted-vpn/" class="active" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/fa/">خانه</a>
+    <a href="/fa/projects/">پروژه‌ها</a>
+    <a href="/fa/about/">درباره</a>
+  </nav>
+</header>
+<main id="main">
+<h1>یک VPN خودمیزبان و کلاینتی که از اتصال امتناع می‌کرد</h1>
+<p class="lead">یک VPN با پروتکل مدرن روی یک سرور ابری راه‌اندازی شد، سپس یک رد کلاینت اشکال‌زدایی شد که هیچ ربطی به پیکربندی نداشت.</p>
+<h2>مسئله</h2>
+<p>به یک نقطه پایانی VPN خصوصی و خودمیزبان نیاز داشتم. سمت سرور سریع بالا آمد، اما کلاینت اندروید اتصال را با یک پیام بی‌فایده رد کرد در حالی که کلاینت‌های دیگر کار می‌کردند.</p>
+<h2>رویکرد</h2>
+<p>چون سرور کلاینت‌های دیگر را می‌پذیرفت، مشکل باید سمت کلاینت یا مربوط به نسخه باشد. آنچه سرور ارائه می‌داد را با آنچه کلاینت پشتیبانی می‌کرد مقایسه کردم.</p>
+<h2>راه‌حل</h2>
+<p>سرور یک حداقل نسخه کلاینت را اعمال می‌کرد. کلاینت اندروید استفاده‌شده پایین‌تر از آن بود و قبل از هر دست‌دادن واقعی رد شد. به‌روزرسانی کلاینت آن را حل کرد. جدا از آن، فایروال ارائه‌دهنده ابر کاملاً مستقل از فایروال داخل سیستم عامل کار می‌کند، که یک تله تکرارشونده است: یک پورت می‌تواند محلی باز باشد و همچنان غیرقابل دسترس باشد.</p>
+<h2>نتیجه</h2>
+<p>یک نقطه پایانی VPN خصوصی کارا و دو قانون اشکال‌زدایی که اکنون به طور خودکار اعمال می‌کنم.</p>
+<div class="lessons"><h2>چیزی که یاد گرفتم</h2><ul>
+  <li>فایروال ارائه‌دهنده ابر و فایروال میزبان دو دیوار جدا هستند. باز کردن یکی چیزی درباره دیگری ثابت نمی‌کند.</li>
+  <li>وقتی یک کلاینت شکست می‌خورد و بقیه کار می‌کنند، قبل از مقایسه پیکربندی‌ها نسخه‌ها را مقایسه کن.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Xray</span>
+  <span class="tag">VLESS</span>
+  <span class="tag">Reality</span>
+  <span class="tag">3x-ui</span>
+  <span class="tag">ufw</span>
+  <span class="tag">VPN deployment</span>
+  <span class="tag">Layered firewall debugging</span>
+</div>
+<div class="prevnext">
+  <a href="/fa/projects/internal-dns-records/">← انتشار دو پورتال داخلی جدید از طریق DNS</a>
+  <a href="/fa/projects/verify-before-changing-firewall/">تغییر فایروال که معلوم شد غیرضروری است →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>تماس: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

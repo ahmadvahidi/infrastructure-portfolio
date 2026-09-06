@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A structured method for an email client that will not start</title>
+<meta name="description" content="Seven ordered steps that find the cause in most cases, arranged so the cheapest test comes first.">
+<link rel="alternate" hreflang="de" href="/de/projects/outlook-wont-start/">
+<link rel="alternate" hreflang="en" href="/en/projects/outlook-wont-start/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/outlook-wont-start/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A structured method for an email client that will not start">
+<meta property="og:description" content="Seven ordered steps that find the cause in most cases, arranged so the cheapest test comes first.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/outlook-wont-start/" hreflang="de">Deutsch</a><a href="/en/projects/outlook-wont-start/" class="active" hreflang="en">English</a><a href="/fa/projects/outlook-wont-start/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/en/">Home</a>
+    <a href="/en/projects/">Projects</a>
+    <a href="/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>A structured method for an email client that will not start</h1>
+<p class="lead">Seven ordered steps that find the cause in most cases, arranged so the cheapest test comes first.</p>
+<h2>Problem</h2>
+<p>A colleague reported that the classic email client would not launch at all, even after a restart. Reinstalling is the common reaction and is almost always the wrong first move.</p>
+<h2>Approach</h2>
+<p>I built a sequence ordered by cost and by likelihood, so the fastest and least invasive tests run first and every step either fixes it or eliminates a cause.</p>
+<h2>Solution</h2>
+<p>Check for a hung process still holding the application; start in safe mode; disable add-ins one at a time; reset the navigation pane and views via command line switches; create a fresh profile; run a quick repair and then an online repair; finally check whether a recent update coincides with the failure. In practice the safe mode and add-in steps identify the cause most of the time, with document or meeting add-ins being the usual culprits.</p>
+<h2>Result</h2>
+<p>A reusable checklist rather than a one time fix, plus a short message template so the user can run the first test themselves before anyone books a remote session.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>Order troubleshooting steps by cost, not by how likely each one feels. The cheap tests eliminate whole branches.</li>
+  <li>Safe mode is the fastest way to separate the application from its extensions. Start there.</li>
+  <li>Let the user run the first step. It saves an appointment in half the cases.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Microsoft Outlook</span>
+  <span class="tag">Microsoft Office</span>
+  <span class="tag">Event Viewer</span>
+  <span class="tag">Structured troubleshooting</span>
+  <span class="tag">First level support</span>
+  <span class="tag">Documentation</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/en/projects/vendor-update-tool-broken/">When a driver update disables the service it needs →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

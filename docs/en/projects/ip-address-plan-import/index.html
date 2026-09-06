@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turning an IP spreadsheet into a real address management database</title>
+<meta name="description" content="14 networks, 11 VLANs and 248 host records imported, including the cleanup of 98 hostnames that no system would accept.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/ip-address-plan-import/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/ip-address-plan-import/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/ip-address-plan-import/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Turning an IP spreadsheet into a real address management database">
+<meta property="og:description" content="14 networks, 11 VLANs and 248 host records imported, including the cleanup of 98 hostnames that no system would accept.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/ip-address-plan-import/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/ip-address-plan-import/" class="active" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/ip-address-plan-import/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/en/">Home</a>
+    <a href="/infrastructure-portfolio/en/projects/">Projects</a>
+    <a href="/infrastructure-portfolio/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Turning an IP spreadsheet into a real address management database</h1>
+<p class="lead">14 networks, 11 VLANs and 248 host records imported, including the cleanup of 98 hostnames that no system would accept.</p>
+<h2>Problem</h2>
+<p>The IP address plan was a spreadsheet with twelve sheets, inconsistent naming and hidden structure. One sheet turned out to contain three separate network blocks rather than one, which is exactly the kind of thing a spreadsheet lets you get away with.</p>
+<h2>Approach</h2>
+<p>I analyzed the source structure first and only then wrote the import. Data quality problems were documented rather than silently corrected, because silently fixing someone else's data is how you lose the audit trail.</p>
+<h2>Solution</h2>
+<p>The import produced 11 VLANs, 13 IP networks, 248 host name objects and 248 address objects. 98 hostnames had to be sanitized because the target system validates them as DNS names and rejects spaces, underscores and dots. Genuine fully qualified names were split correctly into host and domain parts. Four data quality issues were flagged with a review prefix in the comment field instead of being guessed at.</p>
+<h2>Result</h2>
+<p>A queryable address database instead of a spreadsheet, with the known bad records visibly marked for review.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>Analyze the source before writing the importer. Spreadsheets hide structure that no schema would allow.</li>
+  <li>Flag bad data, do not fix it silently. The person who created it is the only one who knows what it was supposed to say.</li>
+  <li>Systems that validate names as DNS names will reject a large part of any hand maintained list. Plan for the sanitization step.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">GLPI</span>
+  <span class="tag">IPAM</span>
+  <span class="tag">n8n</span>
+  <span class="tag">Excel</span>
+  <span class="tag">Data cleaning</span>
+  <span class="tag">IPAM</span>
+  <span class="tag">Import design</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/en/projects/dual-system-asset-migration/">← Migrating a company inventory into two systems in parallel</a>
+  <a href="/infrastructure-portfolio/en/projects/asset-depreciation-setup/">Making the asset database answer a budget question →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

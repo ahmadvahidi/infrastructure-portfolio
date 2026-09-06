@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solving a full disk with automation instead of a bigger disk</title>
+<meta name="description" content="A server ran out of space. The fix combined an automated offsite copy, a data retention policy change and a disk expansion, in that order.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/automated-offsite-backup/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/automated-offsite-backup/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/automated-offsite-backup/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Solving a full disk with automation instead of a bigger disk">
+<meta property="og:description" content="A server ran out of space. The fix combined an automated offsite copy, a data retention policy change and a disk expansion, in that order.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/automated-offsite-backup/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/automated-offsite-backup/" class="active" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/automated-offsite-backup/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/en/">Home</a>
+    <a href="/infrastructure-portfolio/en/projects/">Projects</a>
+    <a href="/infrastructure-portfolio/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Solving a full disk with automation instead of a bigger disk</h1>
+<p class="lead">A server ran out of space. The fix combined an automated offsite copy, a data retention policy change and a disk expansion, in that order.</p>
+<h2>Problem</h2>
+<p>A log heavy server filled its disk and stopped accepting data. Simply adding space would have delayed the same failure by a few weeks.</p>
+<h2>Approach</h2>
+<p>I treated the full disk as three separate problems: the data that already existed and had to be preserved, the policy that let data accumulate without limit, and the capacity that was genuinely too small.</p>
+<h2>Solution</h2>
+<p>An automated workflow copies data on a schedule to a dedicated backup server over SSH, the index lifecycle policy was adjusted so old data is aged out automatically, and only then was the disk expanded to a sensible size.</p>
+<h2>Result</h2>
+<p>The server recovered, historical data was preserved, and the growth is now bounded by policy instead of by the size of the disk.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>A full disk is usually a retention policy problem wearing a capacity costume.</li>
+  <li>Some SSH implementations require a key generated in the classic PEM format. If key authentication fails for no visible reason, check the key format before debugging permissions.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">n8n</span>
+  <span class="tag">rsync</span>
+  <span class="tag">SSH</span>
+  <span class="tag">Index lifecycle management</span>
+  <span class="tag">Capacity planning</span>
+  <span class="tag">Automated backup</span>
+  <span class="tag">Incident remediation</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/en/projects/e-invoicing-workflow/">← A prototype for automated electronic invoice processing</a>
+  <a href="/infrastructure-portfolio/en/projects/video-summary-bot/">A messaging bot that summarizes videos in your own language →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

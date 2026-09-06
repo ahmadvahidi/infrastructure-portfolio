@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A messaging bot that summarizes videos in your own language</title>
+<meta name="description" content="Send a video link in a chat app, get a useful summary back, built entirely through the automation platform's REST API.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/video-summary-bot/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/video-summary-bot/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/video-summary-bot/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A messaging bot that summarizes videos in your own language">
+<meta property="og:description" content="Send a video link in a chat app, get a useful summary back, built entirely through the automation platform's REST API.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/video-summary-bot/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/video-summary-bot/" class="active" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/video-summary-bot/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/en/">Home</a>
+    <a href="/infrastructure-portfolio/en/projects/">Projects</a>
+    <a href="/infrastructure-portfolio/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>A messaging bot that summarizes videos in your own language</h1>
+<p class="lead">Send a video link in a chat app, get a useful summary back, built entirely through the automation platform's REST API.</p>
+<h2>Problem</h2>
+<p>I wanted a personal tool that turns long technical videos into something readable in a few minutes, in my own language.</p>
+<h2>Approach</h2>
+<p>The chain is deliberately simple: message trigger, extract the video id, validate the link, download the subtitle track, strip the timing and formatting tags, send the clean text to a language model with a summarization prompt, reply in the chat. I had the agent build it directly against the automation platform's REST API rather than through an intermediate protocol layer, because the API path is the one that actually reports its errors.</p>
+<h2>Solution</h2>
+<p>A working bot with error handling, plus a reusable pattern for having an agent create and activate workflows programmatically.</p>
+<h2>Result</h2>
+<p>Used personally, and more importantly it produced the template for how I now have agents build automations: talk to the REST API, check existing credentials first, self correct on error, activate, then run a real test.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>When an agent builds infrastructure, give it the interface with the clearest error messages. Debuggability beats elegance.</li>
+  <li>Credential creation is the one step that usually cannot be automated. Design the workflow so that step happens once, up front.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">n8n</span>
+  <span class="tag">REST API</span>
+  <span class="tag">yt-dlp</span>
+  <span class="tag">LLM API</span>
+  <span class="tag">Telegram</span>
+  <span class="tag">API driven automation</span>
+  <span class="tag">Agent orchestration</span>
+  <span class="tag">Prompt design</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/en/projects/automated-offsite-backup/">← Solving a full disk with automation instead of a bigger disk</a>
+  <span></span>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

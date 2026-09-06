@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why the backup count exceeds the retention limit</title>
+<meta name="description" content="A retention rule set to 28 backups showed 29. Explaining why, and confirming that no emergency action was needed.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/backup-retention-behaviour/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/backup-retention-behaviour/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/backup-retention-behaviour/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why the backup count exceeds the retention limit">
+<meta property="og:description" content="A retention rule set to 28 backups showed 29. Explaining why, and confirming that no emergency action was needed.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/backup-retention-behaviour/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/backup-retention-behaviour/" class="active" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/backup-retention-behaviour/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/en/">Home</a>
+    <a href="/infrastructure-portfolio/en/projects/">Projects</a>
+    <a href="/infrastructure-portfolio/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Why the backup count exceeds the retention limit</h1>
+<p class="lead">A retention rule set to 28 backups showed 29. Explaining why, and confirming that no emergency action was needed.</p>
+<h2>Problem</h2>
+<p>A server's backup plan was configured to keep 28 recovery points, but the console showed 29. With limited free storage, the fear was that the next run would create a new full backup and fill the disk.</p>
+<h2>Approach</h2>
+<p>I worked through how the retention mechanism actually behaves rather than trusting the number in the interface.</p>
+<h2>Solution</h2>
+<p>Backup software intentionally exceeds the retention limit when dependent incremental points cannot be deleted without breaking the chain, and cleanup runs after the new backup completes rather than before. A temporary overage is expected behavior. A new full backup is only triggered by specific events such as changing the format, destination or encryption, adding a source disk, or recreating the plan. None applied, so the next run was incremental.</p>
+<h2>Result</h2>
+<p>No emergency intervention, and a documented method for estimating daily storage consumption and remaining runway by comparing archive sizes on consecutive days.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>Cleanup after the backup, not before, means free space must cover the overage. Size storage for the peak, not the average.</li>
+  <li>Never delete archive files by hand. It breaks the chain and silently invalidates every recovery point that depends on it.</li>
+  <li>If storage is the real constraint, switch retention from a count to a size limit.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Acronis Cyber Protect</span>
+  <span class="tag">Incremental backup chains</span>
+  <span class="tag">Backup strategy</span>
+  <span class="tag">Storage forecasting</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/infrastructure-portfolio/en/projects/tape-library-maintenance/">Keeping a tape library healthy →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

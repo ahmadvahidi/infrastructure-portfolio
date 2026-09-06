@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>چرا تعداد پشتیبان از حد نگهداری فراتر می‌رود</title>
+<meta name="description" content="یک قانون نگهداری تنظیم‌شده روی ۲۸ پشتیبان، ۲۹ نشان می‌داد. توضیح داد چرا، و تأیید کرد که هیچ اقدام اضطراری لازم نبود.">
+<link rel="alternate" hreflang="de" href="/de/projects/backup-retention-behaviour/">
+<link rel="alternate" hreflang="en" href="/en/projects/backup-retention-behaviour/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/backup-retention-behaviour/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="چرا تعداد پشتیبان از حد نگهداری فراتر می‌رود">
+<meta property="og:description" content="یک قانون نگهداری تنظیم‌شده روی ۲۸ پشتیبان، ۲۹ نشان می‌داد. توضیح داد چرا، و تأیید کرد که هیچ اقدام اضطراری لازم نبود.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">پرش به محتوا</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/fa/">زیرساخت IT و اتوماسیون</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/backup-retention-behaviour/" hreflang="de">Deutsch</a><a href="/en/projects/backup-retention-behaviour/" hreflang="en">English</a><a href="/fa/projects/backup-retention-behaviour/" class="active" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/fa/">خانه</a>
+    <a href="/fa/projects/">پروژه‌ها</a>
+    <a href="/fa/about/">درباره</a>
+  </nav>
+</header>
+<main id="main">
+<h1>چرا تعداد پشتیبان از حد نگهداری فراتر می‌رود</h1>
+<p class="lead">یک قانون نگهداری تنظیم‌شده روی ۲۸ پشتیبان، ۲۹ نشان می‌داد. توضیح داد چرا، و تأیید کرد که هیچ اقدام اضطراری لازم نبود.</p>
+<h2>مسئله</h2>
+<p>طرح پشتیبان یک سرور برای نگه داشتن ۲۸ نقطه بازیابی پیکربندی شده بود، اما کنسول ۲۹ نشان می‌داد. با فضای آزاد محدود، ترس این بود که اجرای بعدی یک پشتیبان کامل جدید ایجاد کند و دیسک را پر کند.</p>
+<h2>رویکرد</h2>
+<p>بررسی کردم که مکانیزم نگهداری واقعاً چگونه رفتار می‌کند، به جای اعتماد به عدد در رابط کاربری.</p>
+<h2>راه‌حل</h2>
+<p>نرم‌افزار پشتیبان عمداً از حد نگهداری فراتر می‌رود وقتی نقاط افزایشی وابسته بدون شکستن زنجیره قابل حذف نیستند، و پاک‌سازی بعد از اتمام پشتیبان جدید اجرا می‌شود نه قبل از آن. یک فراتر رفتن موقت رفتار مورد انتظار است. یک پشتیبان کامل جدید فقط توسط رویدادهای خاصی فعال می‌شود، مثل تغییر قالب، مقصد یا رمزنگاری، افزودن یک دیسک منبع، یا بازسازی طرح. هیچ‌کدام صدق نمی‌کرد، پس اجرای بعدی افزایشی بود.</p>
+<h2>نتیجه</h2>
+<p>هیچ مداخله اضطراری، و یک روش مستند برای تخمین مصرف روزانه ذخیره‌سازی و زمان باقی‌مانده با مقایسه اندازه‌های آرشیو در روزهای متوالی.</p>
+<div class="lessons"><h2>چیزی که یاد گرفتم</h2><ul>
+  <li>پاک‌سازی بعد از پشتیبان، نه قبل از آن، یعنی فضای آزاد باید فراتر رفتن را پوشش دهد. ذخیره‌سازی را برای اوج اندازه بگیر، نه میانگین.</li>
+  <li>هرگز فایل‌های آرشیو را دستی حذف نکن. زنجیره را می‌شکند و بی‌صدا هر نقطه بازیابی وابسته به آن را بی‌اعتبار می‌کند.</li>
+  <li>اگر ذخیره‌سازی محدودیت واقعی است، نگهداری را از یک تعداد به یک محدودیت اندازه تغییر بده.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Acronis Cyber Protect</span>
+  <span class="tag">Incremental backup chains</span>
+  <span class="tag">Backup strategy</span>
+  <span class="tag">Storage forecasting</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/fa/projects/tape-library-maintenance/">سالم نگه داشتن یک کتابخانه نوار →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>تماس: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

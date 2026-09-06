@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>وارد کردن ۷۳۵ رکورد موجودی بدون ایجاد تکراری</title>
+<meta name="description" content="یک واردسازی خودکار که یک صفحه گسترده را می‌خواند و در یک سیستم دارایی می‌نویسد، با حذف تکراری که واقعاً کار می‌کند.">
+<link rel="alternate" hreflang="de" href="/de/projects/bulk-inventory-import/">
+<link rel="alternate" hreflang="en" href="/en/projects/bulk-inventory-import/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/bulk-inventory-import/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="وارد کردن ۷۳۵ رکورد موجودی بدون ایجاد تکراری">
+<meta property="og:description" content="یک واردسازی خودکار که یک صفحه گسترده را می‌خواند و در یک سیستم دارایی می‌نویسد، با حذف تکراری که واقعاً کار می‌کند.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">پرش به محتوا</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/fa/">زیرساخت IT و اتوماسیون</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/bulk-inventory-import/" hreflang="de">Deutsch</a><a href="/en/projects/bulk-inventory-import/" hreflang="en">English</a><a href="/fa/projects/bulk-inventory-import/" class="active" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/fa/">خانه</a>
+    <a href="/fa/projects/">پروژه‌ها</a>
+    <a href="/fa/about/">درباره</a>
+  </nav>
+</header>
+<main id="main">
+<h1>وارد کردن ۷۳۵ رکورد موجودی بدون ایجاد تکراری</h1>
+<p class="lead">یک واردسازی خودکار که یک صفحه گسترده را می‌خواند و در یک سیستم دارایی می‌نویسد، با حذف تکراری که واقعاً کار می‌کند.</p>
+<h2>مسئله</h2>
+<p>کل موجودی به عنوان یک صفحه گسترده با ۷۳۵ ردیف وجود داشت و باید به یک سیستم واقعی می‌رفت. ورود دستی مطرح نبود و یک واردسازی ساده در هر اجرای مجدد تکراری ایجاد می‌کرد.</p>
+<h2>رویکرد</h2>
+<p>واردسازی را به عنوان ورک‌فلو اتوماسیون ساختم نه اسکریپت یکباره، تا بتوان آن را با خیال راحت دوباره اجرا کرد و برای سیستم هدف دوم تطبیق داد. حذف تکراری بخش سخت بود.</p>
+<h2>راه‌حل</h2>
+<p>حذف تکراری در برابر یک واکشی صفحه‌بندی‌شده از همه رکوردهای موجود اجرا می‌شود نه نقطه پایانی جستجو، چون جستجوی فازی نتایج نزدیکی برمی‌گرداند که همان دارایی نبودند. واردسازی ستون‌های صفحه گسترده را به دسته‌ها، فیلدهای سفارشی و انواع شی نگاشت می‌کند.</p>
+<h2>نتیجه</h2>
+<p>۷۳۵ رکورد به صورت موازی در دو سیستم وارد شد، تقسیم‌شده در ۱۵ دسته با یک مجموعه فیلد سفارشی برای ویژگی‌های خاص شرکت.</p>
+<div class="lessons"><h2>چیزی که یاد گرفتم</h2><ul>
+  <li>برای حذف تکراری: دقیق واکشی و مقایسه کن. به هیچ نقطه پایانی جستجویی که تطبیق فازی می‌کند اعتماد نکن.</li>
+  <li>یک الگوی دسته‌بندی که برای ۵۰ آیتم کار می‌کند می‌تواند بعد از ۱۰۰ بی‌صدا بشکند. واردسازی را در اندازه کامل تست کن، نه با نمونه.</li>
+  <li>واردسازی‌ها را idempotent بساز. آن‌ها را بیش از یک بار اجرا خواهی کرد.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">n8n</span>
+  <span class="tag">Excel</span>
+  <span class="tag">REST APIs</span>
+  <span class="tag">Data migration</span>
+  <span class="tag">Idempotent design</span>
+  <span class="tag">Deduplication logic</span>
+</div>
+<div class="prevnext">
+  <a href="/fa/projects/asset-intake-workflow/">← یک فرم، دو سیستم دارایی، صفر ورود دستی</a>
+  <a href="/fa/projects/e-invoicing-workflow/">یک نمونه اولیه برای پردازش خودکار فاکتور الکترونیکی →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>تماس: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

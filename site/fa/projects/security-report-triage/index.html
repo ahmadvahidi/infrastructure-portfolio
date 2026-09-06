@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بررسی یک گزارش امنیتی بدون ایجاد وحشت</title>
+<meta name="description" content="پنج هشدار روی کنترل‌کننده‌های دامنه و یک رانر ساخت لینوکس، دسته‌بندی‌شده به یافته‌های واقعی، پیکربندی‌های نادرست و هشدارهای کاذب.">
+<link rel="alternate" hreflang="de" href="/de/projects/security-report-triage/">
+<link rel="alternate" hreflang="en" href="/en/projects/security-report-triage/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/security-report-triage/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="بررسی یک گزارش امنیتی بدون ایجاد وحشت">
+<meta property="og:description" content="پنج هشدار روی کنترل‌کننده‌های دامنه و یک رانر ساخت لینوکس، دسته‌بندی‌شده به یافته‌های واقعی، پیکربندی‌های نادرست و هشدارهای کاذب.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">پرش به محتوا</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/fa/">زیرساخت IT و اتوماسیون</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/security-report-triage/" hreflang="de">Deutsch</a><a href="/en/projects/security-report-triage/" hreflang="en">English</a><a href="/fa/projects/security-report-triage/" class="active" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/fa/">خانه</a>
+    <a href="/fa/projects/">پروژه‌ها</a>
+    <a href="/fa/about/">درباره</a>
+  </nav>
+</header>
+<main id="main">
+<h1>بررسی یک گزارش امنیتی بدون ایجاد وحشت</h1>
+<p class="lead">پنج هشدار روی کنترل‌کننده‌های دامنه و یک رانر ساخت لینوکس، دسته‌بندی‌شده به یافته‌های واقعی، پیکربندی‌های نادرست و هشدارهای کاذب.</p>
+<h2>مسئله</h2>
+<p>یک تحلیل امنیتی تولیدشده روی میز من قرار گرفت و هشدارهای عبور هش روی هر دو کنترل‌کننده دامنه، یک خطای شمارنده عملکرد، یک خطای ابزار مجازی‌سازی، امتیازهای سخت‌سازی پایین و یک هشدار دیسک پر را فهرست می‌کرد. اگر تحت‌اللفظی خوانده شود، شبیه یک نفوذ فعال به نظر می‌رسید.</p>
+<h2>رویکرد</h2>
+<p>یافته‌ها را یکی‌یکی بررسی کردم به جای واکنش به تیتر. برای هر هشدار پرسش یکسان بود: اگر رفتار عادی باشد چه شکلی است و اگر واقعی باشد چه شکلی است.</p>
+<h2>راه‌حل</h2>
+<p>هشدارهای عبور هش با الگوی تکرار عادی دایرکتوری بین دو کنترل‌کننده دامنه مطابقت داشت و هشدار کاذب یک قانون تشخیص بود که نمی‌داند کدام حساب‌ها حساب‌های تکرار هستند. هشدار دیسک روی رانر ساخت موقتی بود، اما بررسی آن یک یافته واقعی را آشکار کرد: بیش از صد به‌روزرسانی در انتظار شامل وصله‌های امنیتی. خطای مجازی‌سازی از یک مجموعه ابزار ناقص حذف‌شده از یک مهاجرت پلتفرم قبلی بود، روی ماشینی که اصلاً دیگر روی آن پلتفرم اجرا نمی‌شود. امتیازهای سخت‌سازی واقعی بودند و به یک آیتم بک‌لاگ جداگانه تبدیل شدند.</p>
+<h2>نتیجه</h2>
+<p>دو هشدار کاذب با توضیح بسته شد، دو یافته واقعی برنامه‌ریزی شد و هیچ راه‌اندازی مجدد اضطراری کنترل‌کننده دامنه در صبح دوشنبه انجام نشد. اصلاح به پنجره نگهداری عادی اواخر هفته منتقل شد.</p>
+<div class="lessons"><h2>چیزی که یاد گرفتم</h2><ul>
+  <li>یک قانون تشخیص که محیط تو را نمی‌شناسد، ترافیک تکرار تو را حمله می‌نامد. آن را تنظیم یا مستند کن.</li>
+  <li>امتناع از راه‌اندازی مجدد کنترل‌کننده دامنه در ابتدای هفته یک تصمیم فنی است، نه تعلل.</li>
+  <li>باقی‌مانده‌های یک مهاجرت قدیمی سال‌ها هشدار تولید می‌کنند. حذف بخشی از مهاجرت است، نه یک چیز اختیاری.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Active Directory</span>
+  <span class="tag">Wazuh</span>
+  <span class="tag">PowerShell</span>
+  <span class="tag">CIS Benchmarks</span>
+  <span class="tag">Alert triage</span>
+  <span class="tag">False positive analysis</span>
+  <span class="tag">Risk based scheduling</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <span></span>
+</div>
+</main>
+<footer class="site-footer">
+  <p>تماس: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

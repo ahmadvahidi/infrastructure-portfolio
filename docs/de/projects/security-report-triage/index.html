@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Einen Sicherheitsbericht sichten, ohne Panik zu erzeugen</title>
+<meta name="description" content="Fünf Alarme auf Domänencontrollern und einem Linux-Build-Runner, sortiert in echte Befunde, Fehlkonfigurationen und Fehlalarme.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/security-report-triage/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/security-report-triage/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/security-report-triage/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Einen Sicherheitsbericht sichten, ohne Panik zu erzeugen">
+<meta property="og:description" content="Fünf Alarme auf Domänencontrollern und einem Linux-Build-Runner, sortiert in echte Befunde, Fehlkonfigurationen und Fehlalarme.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/security-report-triage/" class="active" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/security-report-triage/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/security-report-triage/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/de/">Start</a>
+    <a href="/infrastructure-portfolio/de/projects/">Projekte</a>
+    <a href="/infrastructure-portfolio/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Einen Sicherheitsbericht sichten, ohne Panik zu erzeugen</h1>
+<p class="lead">Fünf Alarme auf Domänencontrollern und einem Linux-Build-Runner, sortiert in echte Befunde, Fehlkonfigurationen und Fehlalarme.</p>
+<h2>Problem</h2>
+<p>Eine generierte Sicherheitsanalyse landete auf meinem Schreibtisch und listete Pass-the-Hash-Alarme auf beiden Domänencontrollern, einen Performance-Counter-Fehler, einen Virtualisierungstool-Fehler, niedrige Härtungswerte und eine Volle-Platte-Warnung. Wörtlich gelesen sah es wie ein aktiver Einbruch aus.</p>
+<h2>Vorgehen</h2>
+<p>Ich arbeitete die Befunde einzeln ab, statt auf die Schlagzeile zu reagieren. Für jeden Alarm war die Frage dieselbe: Wie sähe das aus, wenn es normales Verhalten wäre, und wie sähe es aus, wenn es echt wäre.</p>
+<h2>Lösung</h2>
+<p>Die Pass-the-Hash-Alarme passten zum Muster gewöhnlicher Verzeichnisreplikation zwischen zwei Domänencontrollern und waren Fehlalarme einer Erkennungsregel, die nicht weiß, welche Konten Replikationskonten sind. Die Plattenwarnung auf dem Build-Runner erwies sich als vorübergehend, aber die Untersuchung förderte einen echten Befund zutage: über hundert ausstehende Updates einschließlich Sicherheitspatches. Der Virtualisierungsfehler stammte von einem unvollständig entfernten Toolset aus einer früheren Plattformmigration, auf einer Maschine, die gar nicht mehr auf dieser Plattform läuft. Die Härtungswerte waren echt und wurden ein separates Backlog-Element.</p>
+<h2>Ergebnis</h2>
+<p>Zwei Fehlalarme mit Erklärung geschlossen, zwei echte Befunde eingeplant, und kein Notfall-Neustart eines Domänencontrollers an einem Montagmorgen. Die Behebung wurde in das reguläre Wartungsfenster später in der Woche verschoben.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Eine Erkennungsregel, die deine Umgebung nicht kennt, nennt deinen Replikationsverkehr einen Angriff. Stimme sie ab oder dokumentiere sie.</li>
+  <li>Sich zu weigern, einen Domänencontroller am Wochenanfang neu zu starten, ist eine technische Entscheidung, keine Prokrastination.</li>
+  <li>Überbleibsel einer alten Migration erzeugen jahrelang Alarme. Entfernung ist Teil der Migration, kein Nice-to-have.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Active Directory</span>
+  <span class="tag">Wazuh</span>
+  <span class="tag">PowerShell</span>
+  <span class="tag">CIS Benchmarks</span>
+  <span class="tag">Alert triage</span>
+  <span class="tag">False positive analysis</span>
+  <span class="tag">Risk based scheduling</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <span></span>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حل یک دیسک پر با اتوماسیون به جای دیسک بزرگ‌تر</title>
+<meta name="description" content="یک سرور فضایش تمام شد. راه‌حل یک کپی خارج از سایت خودکار، یک تغییر سیاست نگهداری داده و یک افزایش دیسک را ترکیب کرد، به این ترتیب.">
+<link rel="alternate" hreflang="de" href="/de/projects/automated-offsite-backup/">
+<link rel="alternate" hreflang="en" href="/en/projects/automated-offsite-backup/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/automated-offsite-backup/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="حل یک دیسک پر با اتوماسیون به جای دیسک بزرگ‌تر">
+<meta property="og:description" content="یک سرور فضایش تمام شد. راه‌حل یک کپی خارج از سایت خودکار، یک تغییر سیاست نگهداری داده و یک افزایش دیسک را ترکیب کرد، به این ترتیب.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">پرش به محتوا</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/fa/">زیرساخت IT و اتوماسیون</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/automated-offsite-backup/" hreflang="de">Deutsch</a><a href="/en/projects/automated-offsite-backup/" hreflang="en">English</a><a href="/fa/projects/automated-offsite-backup/" class="active" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/fa/">خانه</a>
+    <a href="/fa/projects/">پروژه‌ها</a>
+    <a href="/fa/about/">درباره</a>
+  </nav>
+</header>
+<main id="main">
+<h1>حل یک دیسک پر با اتوماسیون به جای دیسک بزرگ‌تر</h1>
+<p class="lead">یک سرور فضایش تمام شد. راه‌حل یک کپی خارج از سایت خودکار، یک تغییر سیاست نگهداری داده و یک افزایش دیسک را ترکیب کرد، به این ترتیب.</p>
+<h2>مسئله</h2>
+<p>یک سرور پر از لاگ دیسکش را پر کرد و پذیرش داده را متوقف کرد. صرفاً افزودن فضا همان خرابی را چند هفته به تأخیر می‌انداخت.</p>
+<h2>رویکرد</h2>
+<p>دیسک پر را به عنوان سه مسئله جداگانه در نظر گرفتم: داده‌هایی که از قبل وجود داشتند و باید حفظ می‌شدند، سیاستی که اجازه می‌داد داده بدون محدودیت جمع شود، و ظرفیتی که واقعاً خیلی کوچک بود.</p>
+<h2>راه‌حل</h2>
+<p>یک ورک‌فلو خودکار داده‌ها را طبق برنامه به یک سرور پشتیبان اختصاصی از طریق SSH کپی می‌کند، سیاست چرخه عمر ایندکس تنظیم شد تا داده‌های قدیمی به طور خودکار حذف شوند، و فقط پس از آن دیسک به اندازه معقولی بزرگ شد.</p>
+<h2>نتیجه</h2>
+<p>سرور بازیابی شد، داده‌های تاریخی حفظ شدند و رشد اکنون به جای اندازه دیسک توسط سیاست محدود می‌شود.</p>
+<div class="lessons"><h2>چیزی که یاد گرفتم</h2><ul>
+  <li>یک دیسک پر معمولاً یک مشکل سیاست نگهداری است در لباس ظرفیت.</li>
+  <li>برخی پیاده‌سازی‌های SSH به کلیدی در قالب کلاسیک PEM نیاز دارند. اگر احراز هویت کلید بدون دلیل مشخص شکست خورد، قبل از اشکال‌زدایی مجوزها قالب کلید را بررسی کن.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">n8n</span>
+  <span class="tag">rsync</span>
+  <span class="tag">SSH</span>
+  <span class="tag">Index lifecycle management</span>
+  <span class="tag">Capacity planning</span>
+  <span class="tag">Automated backup</span>
+  <span class="tag">Incident remediation</span>
+</div>
+<div class="prevnext">
+  <a href="/fa/projects/e-invoicing-workflow/">← یک نمونه اولیه برای پردازش خودکار فاکتور الکترونیکی</a>
+  <a href="/fa/projects/video-summary-bot/">یک ربات پیام‌رسان که ویدیوها را به زبان خودت خلاصه می‌کند →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>تماس: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

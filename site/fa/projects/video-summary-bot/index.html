@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>یک ربات پیام‌رسان که ویدیوها را به زبان خودت خلاصه می‌کند</title>
+<meta name="description" content="یک لینک ویدیو در یک برنامه چت بفرست، یک خلاصه مفید بگیر، کاملاً از طریق REST API پلتفرم اتوماسیون ساخته شده است.">
+<link rel="alternate" hreflang="de" href="/de/projects/video-summary-bot/">
+<link rel="alternate" hreflang="en" href="/en/projects/video-summary-bot/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/video-summary-bot/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="یک ربات پیام‌رسان که ویدیوها را به زبان خودت خلاصه می‌کند">
+<meta property="og:description" content="یک لینک ویدیو در یک برنامه چت بفرست، یک خلاصه مفید بگیر، کاملاً از طریق REST API پلتفرم اتوماسیون ساخته شده است.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">پرش به محتوا</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/fa/">زیرساخت IT و اتوماسیون</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/video-summary-bot/" hreflang="de">Deutsch</a><a href="/en/projects/video-summary-bot/" hreflang="en">English</a><a href="/fa/projects/video-summary-bot/" class="active" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/fa/">خانه</a>
+    <a href="/fa/projects/">پروژه‌ها</a>
+    <a href="/fa/about/">درباره</a>
+  </nav>
+</header>
+<main id="main">
+<h1>یک ربات پیام‌رسان که ویدیوها را به زبان خودت خلاصه می‌کند</h1>
+<p class="lead">یک لینک ویدیو در یک برنامه چت بفرست، یک خلاصه مفید بگیر، کاملاً از طریق REST API پلتفرم اتوماسیون ساخته شده است.</p>
+<h2>مسئله</h2>
+<p>یک ابزار شخصی می‌خواستم که ویدیوهای فنی طولانی را در چند دقیقه به چیزی خوانا تبدیل کند، به زبان خودم.</p>
+<h2>رویکرد</h2>
+<p>زنجیره عمداً ساده است: تریگر پیام، استخراج شناسه ویدیو، اعتبارسنجی لینک، دانلود زیرنویس، حذف تگ‌های زمان و قالب‌بندی، ارسال متن تمیز با یک پرامپت خلاصه‌سازی به مدل زبانی، پاسخ در چت. اجازه دادم عامل آن را مستقیماً در برابر REST API پلتفرم اتوماسیون بسازد نه از طریق یک لایه پروتکل میانی، چون مسیر API همانی است که خطاهایش را واقعاً گزارش می‌کند.</p>
+<h2>راه‌حل</h2>
+<p>یک ربات کارا با مدیریت خطا، به علاوه یک الگوی قابل استفاده مجدد برای اینکه یک عامل ورک‌فلوها را برنامه‌ای ایجاد و فعال کند.</p>
+<h2>نتیجه</h2>
+<p>شخصاً استفاده می‌شود، و مهم‌تر: الگویی تولید کرد برای اینکه اکنون چگونه به عامل‌ها اجازه می‌دهم اتوماسیون بسازند: با REST API صحبت کن، اول اعتبارنامه‌های موجود را بررسی کن، در خطا خوداصلاح کن، فعال کن، سپس یک تست واقعی اجرا کن.</p>
+<div class="lessons"><h2>چیزی که یاد گرفتم</h2><ul>
+  <li>وقتی یک عامل زیرساخت می‌سازد، رابطی با واضح‌ترین پیام‌های خطا به او بده. قابلیت اشکال‌زدایی بر ظرافت پیروز است.</li>
+  <li>ایجاد اعتبارنامه همان یک قدمی است که معمولاً قابل خودکارسازی نیست. ورک‌فلو را طوری طراحی کن که این قدم یک بار، از قبل، اتفاق بیفتد.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">n8n</span>
+  <span class="tag">REST API</span>
+  <span class="tag">yt-dlp</span>
+  <span class="tag">LLM API</span>
+  <span class="tag">Telegram</span>
+  <span class="tag">API driven automation</span>
+  <span class="tag">Agent orchestration</span>
+  <span class="tag">Prompt design</span>
+</div>
+<div class="prevnext">
+  <a href="/fa/projects/automated-offsite-backup/">← حل یک دیسک پر با اتوماسیون به جای دیسک بزرگ‌تر</a>
+  <span></span>
+</div>
+</main>
+<footer class="site-footer">
+  <p>تماس: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

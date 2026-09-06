@@ -1,0 +1,1123 @@
+{
+  "ui": {
+    "site_name": {
+      "de": "IT-Infrastruktur & Automatisierung",
+      "en": "IT Infrastructure & Automation",
+      "fa": "زیرساخت IT و اتوماسیون"
+    },
+    "skip": {
+      "de": "Zum Inhalt springen",
+      "en": "Skip to content",
+      "fa": "پرش به محتوا"
+    },
+    "nav_home": {
+      "de": "Start",
+      "en": "Home",
+      "fa": "خانه"
+    },
+    "nav_projects": {
+      "de": "Projekte",
+      "en": "Projects",
+      "fa": "پروژه‌ها"
+    },
+    "nav_about": {
+      "de": "Über mich",
+      "en": "About",
+      "fa": "درباره"
+    },
+    "home_title": {
+      "de": "IT-Infrastruktur & Automatisierung",
+      "en": "IT Infrastructure & Automation",
+      "fa": "زیرساخت IT و اتوماسیون"
+    },
+    "home_desc": {
+      "de": "Reale Probleme aus der täglichen Infrastrukturarbeit, dokumentiert als wiederverwendbare Lösungen.",
+      "en": "Real problems from daily infrastructure work, written up as reusable solutions.",
+      "fa": "مسائل واقعی از کار روزانه زیرساخت، مستندشده به عنوان راه‌حل‌های قابل استفاده مجدد."
+    },
+    "home_lead": {
+      "de": "Reale Probleme aus der täglichen Infrastrukturarbeit, dokumentiert als wiederverwendbare Lösungen.",
+      "en": "Real problems from daily infrastructure work, written up as reusable solutions.",
+      "fa": "مسائل واقعی از کار روزانه زیرساخت، مستندشده به عنوان راه‌حل‌های قابل استفاده مجدد."
+    },
+    "categories_label": {
+      "de": "Kategorien",
+      "en": "Categories",
+      "fa": "دسته‌بندی‌ها"
+    },
+    "all_projects": {
+      "de": "Alle Projekte",
+      "en": "All projects",
+      "fa": "همه پروژه‌ها"
+    },
+    "projects_desc": {
+      "de": "Alle Projekte, filterbar nach Kategorie.",
+      "en": "All projects, filterable by category.",
+      "fa": "همه پروژه‌ها، قابل فیلتر بر اساس دسته."
+    },
+    "projects_lead": {
+      "de": "Alle Projekte, filterbar nach Kategorie.",
+      "en": "All projects, filterable by category.",
+      "fa": "همه پروژه‌ها، قابل فیلتر بر اساس دسته."
+    },
+    "filter_all": {
+      "de": "Alle",
+      "en": "All",
+      "fa": "همه"
+    },
+    "about_desc": {
+      "de": "Kurzes Profil.",
+      "en": "Short profile.",
+      "fa": "پروفایل کوتاه."
+    },
+    "about_lead": {
+      "de": "IT-Administrator mit Fokus auf Windows- und Linux-Infrastruktur, IT-Automatisierung, Monitoring und Asset-Management.",
+      "en": "IT administrator focused on Windows and Linux infrastructure, IT automation, monitoring and asset management.",
+      "fa": "مدیر IT با تمرکز بر زیرساخت ویندوز و لینوکس، اتوماسیون IT، مانیتورینگ و مدیریت دارایی."
+    },
+    "about_focus": {
+      "de": "Schwerpunkt",
+      "en": "Focus",
+      "fa": "تمرکز"
+    },
+    "about_stack": {
+      "de": "Technologien",
+      "en": "Core stack",
+      "fa": "فناوری‌های اصلی"
+    },
+    "sec_problem": {
+      "de": "Problem",
+      "en": "Problem",
+      "fa": "مسئله"
+    },
+    "sec_approach": {
+      "de": "Vorgehen",
+      "en": "Approach",
+      "fa": "رویکرد"
+    },
+    "sec_solution": {
+      "de": "Lösung",
+      "en": "Solution",
+      "fa": "راه‌حل"
+    },
+    "sec_result": {
+      "de": "Ergebnis",
+      "en": "Result",
+      "fa": "نتیجه"
+    },
+    "sec_lessons": {
+      "de": "Was ich gelernt habe",
+      "en": "What I learned",
+      "fa": "چیزی که یاد گرفتم"
+    },
+    "footer_contact": {
+      "de": "Kontakt: CONTACT_EMAIL",
+      "en": "Contact: CONTACT_EMAIL",
+      "fa": "تماس: CONTACT_EMAIL"
+    }
+  },
+  "categories": {
+    "infrastructure": {
+      "de": "Infrastruktur und Server",
+      "en": "Infrastructure and servers",
+      "fa": "زیرساخت و سرورها"
+    },
+    "security": {
+      "de": "Sicherheit",
+      "en": "Security",
+      "fa": "امنیت"
+    },
+    "monitoring": {
+      "de": "Monitoring",
+      "en": "Monitoring",
+      "fa": "مانیتورینگ"
+    },
+    "automation": {
+      "de": "Automatisierung und KI",
+      "en": "Automation and AI",
+      "fa": "اتوماسیون و هوش مصنوعی"
+    },
+    "asset-management": {
+      "de": "IT-Asset-Management",
+      "en": "IT asset management",
+      "fa": "مدیریت دارایی IT"
+    },
+    "network": {
+      "de": "Netzwerk, Firewall und VPN",
+      "en": "Network, firewall and VPN",
+      "fa": "شبکه، فایروال و VPN"
+    },
+    "backup": {
+      "de": "Backup und Speicher",
+      "en": "Backup and storage",
+      "fa": "پشتیبان‌گیری و ذخیره‌سازی"
+    },
+    "support": {
+      "de": "Benutzersupport",
+      "en": "User support",
+      "fa": "پشتیبانی کاربر"
+    }
+  },
+  "projects": {
+    "wazuh-siem-rollout": {
+      "title": {
+        "de": "Einführung eines selbst gehosteten SIEM in sechs Phasen",
+        "fa": "راه‌اندازی یک SIEM خودمیزبان در شش مرحله"
+      },
+      "summary": {
+        "de": "Wazuh als zentrales SIEM auf Docker eingeführt, in sechs Phasen geplant, damit die Einführung nicht auf halbem Weg stecken bleibt.",
+        "fa": "وازوه به عنوان SIEM مرکزی روی داکر معرفی شد، در شش مرحله برنامه‌ریزی شد تا راه‌اندازی در میانه راه متوقف نشود."
+      },
+      "problem": {
+        "de": "Das Firmennetz hatte Endpoint-Schutz und Firewall-Logging, aber keinen zentralen Ort, an dem Sicherheitsereignisse von Windows-Servern, Linux-Hosts und Netzwerkgeräten korreliert werden konnten. Niemand konnte die Frage beantworten, was letzten Dienstag auf dieser Maschine passiert ist, ohne sich selbst auf der Maschine anzumelden.",
+        "fa": "شبکه شرکت محافظت نقطه پایانی و ثبت رویداد فایروال داشت، اما هیچ نقطه مرکزی برای همبسته‌سازی رویدادهای امنیتی از سرورهای ویندوز، میزبان‌های لینوکس و دستگاه‌های شبکه وجود نداشت. هیچ‌کس نمی‌توانست به این پرسش پاسخ دهد که سه‌شنبه گذشته روی این ماشین چه اتفاقی افتاده است، بدون اینکه خودش وارد ماشین شود."
+      },
+      "approach": {
+        "de": "Statt einer Big-Bang-Installation schrieb ich einen Sechs-Phasen-Plan und ließ ihn genehmigen, bevor ich irgendetwas anfasste: Phase 0 Dimensionierung und Host-Vorbereitung, Phase 1 Einzelknoten-Deployment auf Docker über Portainer, Phase 2 Agent-Rollout auf Servern, spätere Phasen für die Integration von Backup-Software, Active Directory und Firewall. Jede Phase hatte eigene Erfolgskriterien, damit das Projekt zwischen den Phasen pausiert werden konnte, ohne ein halb konfiguriertes System zu hinterlassen.",
+        "fa": "به جای نصب یکباره، یک برنامه شش‌مرحله‌ای نوشتم و قبل از دست زدن به هر چیزی آن را تأیید گرفتم: مرحله صفر اندازه‌گیری و آماده‌سازی میزبان، مرحله یک استقرار تک‌گره روی داکر از طریق پورتینر، مرحله دو استقرار عامل روی سرورها، و مراحل بعدی برای یکپارچه‌سازی نرم‌افزار پشتیبان، اکتیو دایرکتوری و فایروال. هر مرحله معیار موفقیت خودش را داشت تا پروژه بتواند بین مراحل متوقف شود بدون اینکه یک سیستم نیمه‌پیکربندی‌شده باقی بماند."
+      },
+      "solution": {
+        "de": "Wazuh-Manager, Indexer und Dashboard laufen als containerisierter Stack, verwaltet über Portainer auf einem dedizierten Linux-Host. Agents wurden zuerst auf dem Serverbestand ausgerollt, später auf den Arbeitsplätzen. Ich baute außerdem ein interaktives zweisprachiges Dashboard, damit Kollegen, die kein englisches Sicherheitsvokabular lesen, das Alarmbild trotzdem verstehen konnten.",
+        "fa": "مدیر وازوه، ایندکسر و داشبورد به عنوان یک پشته کانتینری اجرا می‌شوند که از طریق پورتینر روی یک میزبان لینوکس اختصاصی مدیریت می‌شود. عامل‌ها ابتدا روی مجموعه سرورها و بعداً روی ایستگاه‌های کاری مستقر شدند. همچنین یک داشبورد تعاملی دوزبانه ساختم تا همکارانی که اصطلاحات امنیتی انگلیسی نمی‌خوانند بتوانند تصویر هشدارها را درک کنند."
+      },
+      "result": {
+        "de": "Phasen 0 bis 2 sind abgeschlossen und das SIEM ist täglich für die Alarm-Sichtung im Einsatz. Die phasenweise Struktur erwies sich als der wertvollste Teil: Sie machte das Projekt in jedem Schritt für das Management überprüfbar.",
+        "fa": "مراحل صفر تا دو کامل شده و SIEM روزانه برای بررسی هشدارها استفاده می‌شود. ساختار مرحله‌ای ارزشمندترین بخش بود: پروژه را در هر گام برای مدیریت قابل بازبینی کرد."
+      },
+      "lessons": {
+        "de": [
+          "Ein Rollout-Plan mit expliziten Stopp-Punkten übersteht Unterbrechungen. Ein einzelnes langes Installationsskript nicht.",
+          "Ein SIEM, das niemand liest, ist nur Plattenverbrauch. Plane die Sichtungs-Routine gleichzeitig mit dem Deployment."
+        ],
+        "fa": [
+          "یک برنامه استقرار با نقاط توقف مشخص در برابر وقفه‌ها مقاوم است. یک اسکریپت نصب طولانی تکی این‌طور نیست.",
+          "یک SIEM که کسی آن را نمی‌خواند فقط مصرف دیسک است. روال بررسی هشدار را همزمان با استقرار برنامه‌ریزی کن."
+        ]
+      }
+    },
+    "linux-major-version-upgrade-runbook": {
+      "title": {
+        "de": "Einen produktiven Linux-Server um zwei Versionen auf einmal upgraden",
+        "fa": "ارتقای یک سرور لینوکس تولیدی به اندازه دو نسخه در یک بار"
+      },
+      "summary": {
+        "de": "Ubuntu 22.04 auf 24.04 und Java 17 auf 25 auf einem Server, der ein Integrationstool hostet, ausgeführt nach einem geschriebenen Runbook statt improvisiert.",
+        "fa": "اوبونتو ۲۲.۰۴ به ۲۴.۰۴ و جاوا ۱۷ به ۲۵ روی سروری که یک ابزار یکپارچه‌سازی را میزبانی می‌کند، بر اساس یک ران‌بوک نوشته‌شده اجرا شد نه به صورت بداهه."
+      },
+      "problem": {
+        "de": "Ein Synchronisationstool, das zwei Issue-Tracking-Systeme synchron hält, brauchte eine neuere Version. Diese Version brauchte eine neuere Java-Laufzeit, die wiederum eine neuere Distributionsversion brauchte. Drei Upgrades übereinander gestapelt, auf einem Server, von dem andere Teams während der Arbeitszeit abhingen.",
+        "fa": "یک ابزار همگام‌سازی که دو سیستم ردیابی مسئله را همگام نگه می‌دارد به نسخه جدیدتری نیاز داشت. آن نسخه به زمان اجرای جاوا جدیدتری نیاز داشت که آن هم به نسخه توزیع جدیدتری نیاز داشت. سه ارتقا روی هم انباشته شده، روی سروری که تیم‌های دیگر در ساعات کاری به آن وابسته بودند."
+      },
+      "approach": {
+        "de": "Ich schrieb vor dem Start ein Runbook: Bestandsaufnahme des aktuellen Zustands, Snapshot und Rollback-Punkt, Abhängigkeitsprüfung für jedes installierte Paket, dann das Upgrade in Phasen mit einem Verifikationsschritt nach jeder Phase. Ich habe die Schritte bewusst nicht verkettet, damit ein Fehler an jedem Punkt ein System hinterlässt, das noch bootet und noch die alte Version bedient.",
+        "fa": "قبل از شروع یک ران‌بوک نوشتم: فهرست وضعیت فعلی، اسنپ‌شات و نقطه بازگشت، بررسی وابستگی برای هر بسته نصب‌شده، سپس ارتقا در مراحل با یک گام تأیید بعد از هر مرحله. عمداً مراحل را زنجیره نکردم تا خطا در هر نقطه سیستمی باقی بگذارد که هنوز بوت می‌شود و نسخه قدیمی را سرو می‌دهد."
+      },
+      "solution": {
+        "de": "Zuerst das Distributions-Upgrade, dann die Java-Laufzeit, dann die Anwendung. Nebenbei behob ich eine systemd-Unit, die monatelang einen falschen Monitoring-Alarm erzeugt hatte, weil der Dienst sich als bereit meldete, bevor er es tatsächlich war.",
+        "fa": "اول ارتقای توزیع، سپس زمان اجرای جاوا، سپس برنامه. در این مسیر یک واحد systemd را اصلاح کردم که ماه‌ها هشدار مانیتورینگ نادرست تولید کرده بود، چون سرویس قبل از اینکه واقعاً آماده باشد خود را آماده اعلام می‌کرد."
+      },
+      "result": {
+        "de": "Der Upgrade-Pfad wurde Phase für Phase ohne ungeplante Ausfallzeit ausgeführt, und ein langjähriger Fehlalarm verschwand als Nebeneffekt.",
+        "fa": "مسیر ارتقا مرحله به مرحله بدون توقف برنامه‌ریزی‌نشده اجرا شد و یک هشدار نادرست قدیمی به عنوان اثر جانبی ناپدید شد."
+      },
+      "lessons": {
+        "de": [
+          "Wenn drei Upgrades voneinander abhängen, schreibe die Reihenfolge auf. Die Abhängigkeitskette ist unter Zeitdruck nicht offensichtlich.",
+          "Ein Monitoring-Alarm, den alle gelernt haben zu ignorieren, ist ein Bug, kein Hintergrundrauschen."
+        ],
+        "fa": [
+          "وقتی سه ارتقا به هم وابسته‌اند، ترتیب را بنویس. زنجیره وابستگی تحت فشار زمان آشکار نیست.",
+          "یک هشدار مانیتورینگ که همه یاد گرفته‌اند نادیده بگیرند، یک باگ است، نه نویز پس‌زمینه."
+        ]
+      }
+    },
+    "self-hosted-service-stack": {
+      "title": {
+        "de": "Einen selbst gehosteten Service-Stack von Grund auf aufbauen",
+        "fa": "ساخت یک پشته سرویس خودمیزبان از صفر"
+      },
+      "summary": {
+        "de": "Zehn Open-Source-Dienste hinter einem Reverse Proxy bereitgestellt und dokumentiert, als Ersatz für fehlende oder kostenpflichtige Tools.",
+        "fa": "ده سرویس متن‌باز پشت یک پروکسی معکوس مستقر و مستند شد، به عنوان جایگزین ابزارهای گمشده یا پولی."
+      },
+      "problem": {
+        "de": "Mehrere Grundfunktionen hatten keinen Verantwortlichen: keine Asset-Datenbank, kein internes Wiki, kein Identitätsanbieter, keine Automatisierungsplattform, kein Monitoring. Jede Lücke wurde durch Tabellenkalkulationen oder gar nichts gefüllt.",
+        "fa": "چندین عملکرد پایه هیچ مسئولی نداشتند: نه پایگاه داده دارایی، نه ویکی داخلی، نه ارائه‌دهنده هویت، نه پلتفرم اتوماسیون، نه مانیتورینگ. هر شکاف با صفحات گسترده یا هیچ‌چیز پر می‌شد."
+      },
+      "approach": {
+        "de": "Ich wählte Open-Source-Tools, die auf vorhandener Hardware laufen konnten, stellte jedes als Container bereit und legte alle hinter einen einzigen Reverse Proxy mit ordentlichen Zertifikaten. Jeder Dienst bekam eine geschriebene Dokumentationsseite: wofür er ist, wie er bereitgestellt wird, wie man ihn sichert und wiederherstellt.",
+        "fa": "ابزارهای متن‌بازی را انتخاب کردم که روی سخت‌افزار موجود اجرا شوند، هر کدام را به عنوان کانتینر مستقر کردم و همه را پشت یک پروکسی معکوس واحد با گواهی‌های مناسب قرار دادم. هر سرویس یک صفحه مستندات نوشته‌شده گرفت: برای چیست، چگونه مستقر می‌شود، چگونه پشتیبان‌گیری و بازیابی می‌شود."
+      },
+      "solution": {
+        "de": "Der Stack deckt Asset-Management, Monitoring, SIEM, Identität und Single Sign-on, Dateifreigabe, Automatisierung, Dokumentation und ERP ab, verwaltet über Portainer mit einem Reverse Proxy davor.",
+        "fa": "پشته مدیریت دارایی، مانیتورینگ، SIEM، هویت و ورود یکپارچه، اشتراک فایل، اتوماسیون، مستندات و ERP را پوشش می‌دهد که از طریق پورتینر با یک پروکسی معکوس در جلو مدیریت می‌شود."
+      },
+      "result": {
+        "de": "Funktionen, die vorher in Tabellenkalkulationen lebten, leben jetzt in Systemen mit Zugriffskontrolle und Historie. Weil jeder Dienst zum Zeitpunkt der Bereitstellung dokumentiert wurde, ist keiner eine Blackbox, die nur eine Person bedienen kann.",
+        "fa": "عملکردهایی که قبلاً در صفحات گسترده زندگی می‌کردند اکنون در سیستم‌هایی با کنترل دسترسی و تاریخچه زندگی می‌کنند. چون هر سرویس در زمان استقرار مستند شد، هیچ‌کدام جعبه سیاهی نیست که فقط یک نفر بتواند آن را اداره کند."
+      },
+      "lessons": {
+        "de": [
+          "Dokumentation, die zum Zeitpunkt der Bereitstellung geschrieben wird, dauert zwanzig Minuten. Sechs Monate später geschrieben dauert sie einen Tag und ist falsch.",
+          "Ein Reverse Proxy und ein Identitätsanbieter vor allem ist mehr wert als jeder einzelne Dienst im Stack."
+        ],
+        "fa": [
+          "مستنداتی که در زمان استقرار نوشته شود بیست دقیقه طول می‌کشد. شش ماه بعد نوشته شود یک روز طول می‌کشد و اشتباه است.",
+          "یک پروکسی معکوس و یک ارائه‌دهنده هویت جلوی همه چیز، از هر سرویس تکی در پشته ارزشمندتر است."
+        ]
+      }
+    },
+    "self-hosted-password-vault": {
+      "title": {
+        "de": "Einen selbst gehosteten Passwort-Tresor betreiben, inklusive des Tages, an dem jemand ausgesperrt wird",
+        "fa": "اجرای یک گاوصندوق رمز عبور خودمیزبان، از جمله روزی که کسی قفل می‌شود"
+      },
+      "summary": {
+        "de": "Einen Vaultwarden-Server mit Mail-Zustellung über Microsoft 365 bereitgestellt und auf die harte Tour gelernt, warum die Konto-Wiederherstellungsrichtlinie aktiviert sein muss, bevor jemand sie braucht.",
+        "fa": "یک سرور والت‌واردن با ارسال ایمیل از طریق مایکروسافت ۳۶۵ مستقر شد و به سختی یاد گرفتم چرا سیاست بازیابی حساب باید قبل از نیاز کسی فعال باشد."
+      },
+      "problem": {
+        "de": "Geteilte Zugangsdaten wurden in Chat-Nachrichten und Textdateien herumgereicht. Ein zentraler Tresor war nötig, selbst gehostet statt Cloud, mit Einladungen und Passwort-Resets über das Firmen-Mail-System.",
+        "fa": "اعتبارنامه‌های مشترک در پیام‌های چت و فایل‌های متنی دست به دست می‌شد. یک گاوصندوق مرکزی لازم بود، خودمیزبان به جای ابری، با دعوت‌نامه‌ها و بازنشانی رمز عبور از طریق سیستم ایمیل شرکت."
+      },
+      "approach": {
+        "de": "Die Bereitstellung war unkompliziert. Der interessante Teil kam später: Ein Kollege konnte seinen Tresor nicht mehr entsperren, obwohl er sicher war, dass das Master-Passwort stimmte. Ich musste herausfinden, was in dieser Architektur tatsächlich wiederherstellbar ist.",
+        "fa": "استقرار ساده بود. بخش جالب بعداً آمد: یک همکار دیگر نمی‌توانست گاوصندوقش را باز کند، هرچند مطمئن بود رمز اصلی درست است. باید می‌فهمیدم در این معماری واقعاً چه چیزی قابل بازیابی است."
+      },
+      "solution": {
+        "de": "Der Tresor ist clientseitig mit dem Master-Passwort verschlüsselt, der Server hält also nie etwas, das ihn entschlüsseln könnte. Administrator-Wiederherstellung existiert nur, wenn die Wiederherstellungsrichtlinie vorher aktiviert wurde und der Benutzer sich zu diesem Zeitpunkt registriert hat. Das war nicht der Fall. Die ehrliche Antwort war, dass der persönliche Tresor nicht wiederherstellbar war, während geteilte Sammlungseinträge überlebten, weil sie mit dem Organisationsschlüssel verschlüsselt sind. Ich löschte und lud das Konto neu ein und aktivierte die Wiederherstellungsrichtlinie für alle anderen.",
+        "fa": "گاوصندوق سمت کلاینت با رمز اصلی رمزنگاری می‌شود، پس سرور هرگز چیزی که بتواند آن را رمزگشایی کند نگه نمی‌دارد. بازیابی توسط مدیر فقط وقتی وجود دارد که سیاست بازیابی از قبل فعال شده و کاربر در آن زمان ثبت‌نام کرده باشد. این‌طور نبود. پاسخ صادقانه این بود که گاوصندوق شخصی قابل بازیابی نیست، در حالی که ورودی‌های مجموعه مشترک باقی ماندند چون با کلید سازمان رمزنگاری شده‌اند. حساب را حذف و دوباره دعوت کردم و سیاست بازیابی را برای بقیه فعال کردم."
+      },
+      "result": {
+        "de": "Ein Benutzer verlor persönliche Einträge. Niemand sonst wird das, weil die Richtlinie jetzt aktiv ist und bei der Registrierung durchgesetzt wird.",
+        "fa": "یک کاربر ورودی‌های شخصی را از دست داد. هیچ‌کس دیگری از دست نخواهد داد، چون سیاست اکنون فعال است و در زمان ثبت‌نام اعمال می‌شود."
+      },
+      "lessons": {
+        "de": [
+          "Verstehe das Verschlüsselungsmodell eines Tools, bevor du es bereitstellst, nicht erst wenn ein Benutzer ausgesperrt ist.",
+          "Wiederherstellungsrichtlinien sind rückwirkend wertlos. Aktiviere sie am ersten Tag.",
+          "Einem Benutzer klar zu sagen, dass Daten weg sind, ist besser als drei Tage falsche Hoffnung."
+        ],
+        "fa": [
+          "مدل رمزنگاری یک ابزار را قبل از استقرار بفهم، نه وقتی کاربر قفل شده است.",
+          "سیاست‌های بازیابی به صورت گذشته‌نگر بی‌ارزش‌اند. از روز اول فعالشان کن.",
+          "گفتن صریح به کاربر که داده‌ها از بین رفته‌اند بهتر از سه روز امید واهی است."
+        ]
+      }
+    },
+    "hyperv-vm-locked-out-recovery": {
+      "title": {
+        "de": "Eine virtuelle Maschine wiederherstellen, in die sich niemand einloggen konnte",
+        "fa": "بازیابی یک ماشین مجازی که هیچ‌کس نمی‌توانست وارد آن شود"
+      },
+      "summary": {
+        "de": "Eine volle Systemplatte blockierte den Login, und nach der Behebung blockierte ein defekter Credential-Provider ihn erneut. Gelöst aus der Wiederherstellungsumgebung und dem abgesicherten Modus.",
+        "fa": "یک دیسک سیستم پر ورود را مسدود کرد و بعد از رفع آن، یک ارائه‌دهنده اعتبار خراب دوباره آن را مسدود کرد. از محیط بازیابی و حالت امن حل شد."
+      },
+      "problem": {
+        "de": "Eine domänenangebundene Windows-VM unter Hyper-V verweigerte alle Logins. Die Systemplatte war komplett voll, und es gab keinen Weg über den normalen Desktop, sie zu bereinigen.",
+        "fa": "یک ماشین مجازی ویندوز متصل به دامنه تحت هایپر-وی همه ورودها را رد کرد. دیسک سیستم کاملاً پر بود و هیچ راهی از طریق دسکتاپ عادی برای پاک‌سازی آن وجود نداشت."
+      },
+      "approach": {
+        "de": "Ich erweiterte die virtuelle Platte von der Hypervisor-Seite und bootete dann in die Windows-Wiederherstellungsumgebung, um die Partition zu vergrößern. Das Plattenlayout hatte eine Falle: Der freie Speicher lag neben der Systempartition auf einer Platte, während eine zweite virtuelle Platte einen anderen Laufwerksbuchstaben trug, sodass die Auswahl des falschen Volumes fehlgeschlagen wäre oder schlimmer. Ich verifizierte die Platten- und Partitionsnummern, bevor ich irgendetwas erweiterte.",
+        "fa": "دیسک مجازی را از سمت هایپروایزر بزرگ کردم و سپس در محیط بازیابی ویندوز بوت کردم تا پارتیشن را بزرگ کنم. چیدمان دیسک یک تله داشت: فضای آزاد کنار پارتیشن سیستم روی یک دیسک بود در حالی که یک دیسک مجازی دوم حرف درایو دیگری داشت، پس انتخاب حجم اشتباه شکست می‌خورد یا بدتر. قبل از بزرگ کردن هر چیزی شماره دیسک و پارتیشن را تأیید کردم."
+      },
+      "solution": {
+        "de": "Partition aus der Wiederherstellungsumgebung erweitert, was etwa fünfzig Gigabyte Spielraum wiederherstellte. Der Login schlug immer noch fehl, diesmal weil ein Multifaktor-Credential-Provider defekt war und den Anmeldebildschirm blockierte. Ich bootete in den abgesicherten Modus mit Netzwerk, aktivierte den Windows-Installer-Dienst im abgesicherten Modus über einen Registry-Schlüssel, damit die Deinstallation überhaupt möglich war, entfernte das Produkt, bereinigte dann die übrig gebliebenen Credential-Provider-Registry-Einträge, Ordner und Dienste und bestätigte, dass die Maschine von dem Deployment ausgeschlossen war, das es neu installiert hätte.",
+        "fa": "پارتیشن از محیط بازیابی بزرگ شد و حدود پنجاه گیگابایت فضای آزاد بازگرداند. ورود همچنان شکست می‌خورد، این بار چون یک ارائه‌دهنده اعتبار چندعاملی خراب بود و صفحه ورود را مسدود می‌کرد. در حالت امن با شبکه بوت کردم، سرویس نصب‌کننده ویندوز را در حالت امن از طریق یک کلید رجیستری فعال کردم تا حذف نصب اصلاً ممکن شود، محصول را حذف کردم، سپس ورودی‌های رجیستری، پوشه‌ها و سرویس‌های باقی‌مانده ارائه‌دهنده اعتبار را پاک کردم و تأیید کردم که ماشین از استقراری که آن را دوباره نصب می‌کرد مستثنا شده است."
+      },
+      "result": {
+        "de": "Die Maschine kam ohne Neuaufbau und ohne Datenverlust zurück. Die Gesamtausfallzeit betrug wenige Stunden statt einer Neuinstallation.",
+        "fa": "ماشین بدون بازسازی و بدون از دست رفتن داده بازگشت. کل زمان توقف چند ساعت بود به جای نصب مجدد."
+      },
+      "lessons": {
+        "de": [
+          "Bestätige immer die Platten- und Partitionsnummern in der Wiederherstellungsumgebung, bevor du erweiterst. Die Nummerierung ist nicht dieselbe wie im laufenden System.",
+          "Der Windows Installer läuft im abgesicherten Modus standardmäßig nicht. Ein Registry-Schlüssel macht die Deinstallation möglich, wenn nichts anderes funktioniert.",
+          "Nach dem Entfernen eines Credential-Providers bereinige auch seine Registry-Einträge, sonst versucht der Anmeldebildschirm weiterhin, etwas zu laden, das weg ist."
+        ],
+        "fa": [
+          "همیشه شماره دیسک و پارتیشن را در محیط بازیابی قبل از بزرگ کردن تأیید کن. شماره‌گذاری با سیستم در حال اجرا یکسان نیست.",
+          "نصب‌کننده ویندوز در حالت امن به صورت پیش‌فرض اجرا نمی‌شود. یک کلید رجیستری حذف نصب را ممکن می‌کند وقتی هیچ چیز دیگری کار نمی‌کند.",
+          "بعد از حذف یک ارائه‌دهنده اعتبار، ورودی‌های رجیستری آن را هم پاک کن، وگرنه صفحه ورود همچنان سعی می‌کند چیزی را بارگذاری کند که رفته است."
+        ]
+      }
+    },
+    "personal-vps-ai-stack": {
+      "title": {
+        "de": "Ein privater KI- und Automatisierungs-Stack auf einem einzigen VPS",
+        "fa": "یک پشته هوش مصنوعی و اتوماسیون خصوصی روی یک VPS واحد"
+      },
+      "summary": {
+        "de": "Selbst gehostetes Modell-Serving, eine Chat-Oberfläche, eine Automatisierungsplattform und ein autonomer Agent auf einem kleinen Server.",
+        "fa": "سرویس‌دهی مدل خودمیزبان، یک رابط چت، یک پلتفرم اتوماسیون و یک عامل خودمختار روی یک سرور کوچک."
+      },
+      "problem": {
+        "de": "Ich wollte ein Labor, in dem ich KI-gestützte Automatisierung testen konnte, ohne Firmen- oder persönliche Daten an Drittanbieter zu senden und ohne eine monatliche Rechnung pro Tool.",
+        "fa": "یک آزمایشگاه می‌خواستم که در آن بتوانم اتوماسیون مبتنی بر هوش مصنوعی را بدون ارسال داده شرکت یا شخصی به سرویس‌های شخص ثالث و بدون قبض ماهانه برای هر ابزار آزمایش کنم."
+      },
+      "approach": {
+        "de": "Alles läuft als Container auf einem VPS, verwaltet über Portainer, hinter einem Reverse Proxy. Lokales Modell-Serving für kleine Aufgaben, eine Aggregationsschicht für externe Free-Tier-Anbieter, wo ein größeres Modell nötig ist, eine Web-Chat-Oberfläche darüber und eine Automatisierungsplattform, die der Agent steuern kann.",
+        "fa": "همه چیز به عنوان کانتینر روی یک VPS اجرا می‌شود، از طریق پورتینر مدیریت می‌شود، پشت یک پروکسی معکوس. سرویس‌دهی مدل محلی برای کارهای کوچک، یک لایه تجمیع برای ارائه‌دهندگان رایگان خارجی جایی که مدل بزرگ‌تر لازم است، یک رابط چت وب روی آن و یک پلتفرم اتوماسیون که عامل می‌تواند آن را هدایت کند."
+      },
+      "solution": {
+        "de": "Der Stack umfasst lokales Modell-Serving, ein Web-Chat-Frontend, einen API-Aggregationsdienst, eine Automatisierungsplattform und einen autonomen Agenten, der mit einer Messaging-App verbunden ist, damit Aufgaben vom Telefon gesendet werden können.",
+        "fa": "پشته شامل سرویس‌دهی مدل محلی، یک فرانت‌اند چت وب، یک سرویس تجمیع API، یک پلتفرم اتوماسیون و یک عامل خودمختار متصل به یک برنامه پیام‌رسان است تا کارها از تلفن ارسال شوند."
+      },
+      "result": {
+        "de": "Ein funktionierendes privates Labor, das jetzt der Ort ist, an dem jede Automatisierungsidee prototypisiert wird, bevor sie in die Nähe von Produktion kommt.",
+        "fa": "یک آزمایشگاه خصوصی کارا که اکنون جایی است که هر ایده اتوماسیون قبل از نزدیک شدن به تولید نمونه‌سازی می‌شود."
+      },
+      "lessons": {
+        "de": [
+          "Free-Tier-Modellanbieter unterscheiden sich enorm im Durchsatz. Für Agenten-Workloads zählt Tokens pro Sekunde mehr als Benchmark-Werte.",
+          "Führe Experimente auf einem persönlichen VPS aus, nicht auf Firmeninfrastruktur. Das hält den Explosionsradius und die Compliance-Frage einfach."
+        ],
+        "fa": [
+          "ارائه‌دهندگان مدل رایگان از نظر توان عملیاتی بسیار متفاوت‌اند. برای بار کاری عامل، توکن در ثانیه مهم‌تر از امتیاز بنچمارک است.",
+          "آزمایش‌ها را روی VPS شخصی اجرا کن، نه روی زیرساخت شرکت. این شعاع انفجار و پرسش انطباق را ساده نگه می‌دارد."
+        ]
+      }
+    },
+    "security-report-triage": {
+      "title": {
+        "de": "Einen Sicherheitsbericht sichten, ohne Panik zu erzeugen",
+        "fa": "بررسی یک گزارش امنیتی بدون ایجاد وحشت"
+      },
+      "summary": {
+        "de": "Fünf Alarme auf Domänencontrollern und einem Linux-Build-Runner, sortiert in echte Befunde, Fehlkonfigurationen und Fehlalarme.",
+        "fa": "پنج هشدار روی کنترل‌کننده‌های دامنه و یک رانر ساخت لینوکس، دسته‌بندی‌شده به یافته‌های واقعی، پیکربندی‌های نادرست و هشدارهای کاذب."
+      },
+      "problem": {
+        "de": "Eine generierte Sicherheitsanalyse landete auf meinem Schreibtisch und listete Pass-the-Hash-Alarme auf beiden Domänencontrollern, einen Performance-Counter-Fehler, einen Virtualisierungstool-Fehler, niedrige Härtungswerte und eine Volle-Platte-Warnung. Wörtlich gelesen sah es wie ein aktiver Einbruch aus.",
+        "fa": "یک تحلیل امنیتی تولیدشده روی میز من قرار گرفت و هشدارهای عبور هش روی هر دو کنترل‌کننده دامنه، یک خطای شمارنده عملکرد، یک خطای ابزار مجازی‌سازی، امتیازهای سخت‌سازی پایین و یک هشدار دیسک پر را فهرست می‌کرد. اگر تحت‌اللفظی خوانده شود، شبیه یک نفوذ فعال به نظر می‌رسید."
+      },
+      "approach": {
+        "de": "Ich arbeitete die Befunde einzeln ab, statt auf die Schlagzeile zu reagieren. Für jeden Alarm war die Frage dieselbe: Wie sähe das aus, wenn es normales Verhalten wäre, und wie sähe es aus, wenn es echt wäre.",
+        "fa": "یافته‌ها را یکی‌یکی بررسی کردم به جای واکنش به تیتر. برای هر هشدار پرسش یکسان بود: اگر رفتار عادی باشد چه شکلی است و اگر واقعی باشد چه شکلی است."
+      },
+      "solution": {
+        "de": "Die Pass-the-Hash-Alarme passten zum Muster gewöhnlicher Verzeichnisreplikation zwischen zwei Domänencontrollern und waren Fehlalarme einer Erkennungsregel, die nicht weiß, welche Konten Replikationskonten sind. Die Plattenwarnung auf dem Build-Runner erwies sich als vorübergehend, aber die Untersuchung förderte einen echten Befund zutage: über hundert ausstehende Updates einschließlich Sicherheitspatches. Der Virtualisierungsfehler stammte von einem unvollständig entfernten Toolset aus einer früheren Plattformmigration, auf einer Maschine, die gar nicht mehr auf dieser Plattform läuft. Die Härtungswerte waren echt und wurden ein separates Backlog-Element.",
+        "fa": "هشدارهای عبور هش با الگوی تکرار عادی دایرکتوری بین دو کنترل‌کننده دامنه مطابقت داشت و هشدار کاذب یک قانون تشخیص بود که نمی‌داند کدام حساب‌ها حساب‌های تکرار هستند. هشدار دیسک روی رانر ساخت موقتی بود، اما بررسی آن یک یافته واقعی را آشکار کرد: بیش از صد به‌روزرسانی در انتظار شامل وصله‌های امنیتی. خطای مجازی‌سازی از یک مجموعه ابزار ناقص حذف‌شده از یک مهاجرت پلتفرم قبلی بود، روی ماشینی که اصلاً دیگر روی آن پلتفرم اجرا نمی‌شود. امتیازهای سخت‌سازی واقعی بودند و به یک آیتم بک‌لاگ جداگانه تبدیل شدند."
+      },
+      "result": {
+        "de": "Zwei Fehlalarme mit Erklärung geschlossen, zwei echte Befunde eingeplant, und kein Notfall-Neustart eines Domänencontrollers an einem Montagmorgen. Die Behebung wurde in das reguläre Wartungsfenster später in der Woche verschoben.",
+        "fa": "دو هشدار کاذب با توضیح بسته شد، دو یافته واقعی برنامه‌ریزی شد و هیچ راه‌اندازی مجدد اضطراری کنترل‌کننده دامنه در صبح دوشنبه انجام نشد. اصلاح به پنجره نگهداری عادی اواخر هفته منتقل شد."
+      },
+      "lessons": {
+        "de": [
+          "Eine Erkennungsregel, die deine Umgebung nicht kennt, nennt deinen Replikationsverkehr einen Angriff. Stimme sie ab oder dokumentiere sie.",
+          "Sich zu weigern, einen Domänencontroller am Wochenanfang neu zu starten, ist eine technische Entscheidung, keine Prokrastination.",
+          "Überbleibsel einer alten Migration erzeugen jahrelang Alarme. Entfernung ist Teil der Migration, kein Nice-to-have."
+        ],
+        "fa": [
+          "یک قانون تشخیص که محیط تو را نمی‌شناسد، ترافیک تکرار تو را حمله می‌نامد. آن را تنظیم یا مستند کن.",
+          "امتناع از راه‌اندازی مجدد کنترل‌کننده دامنه در ابتدای هفته یک تصمیم فنی است، نه تعلل.",
+          "باقی‌مانده‌های یک مهاجرت قدیمی سال‌ها هشدار تولید می‌کنند. حذف بخشی از مهاجرت است، نه یک چیز اختیاری."
+        ]
+      }
+    },
+    "pdu-nodata-alert": {
+      "title": {
+        "de": "Ein Stromalarm, der kein Stromproblem war",
+        "fa": "یک هشدار برق که مشکل برق نبود"
+      },
+      "summary": {
+        "de": "Eine Rack-Stromverteilungseinheit meldete sich nicht mehr beim Monitoring. Der Trigger sagte keine Daten, und alle lasen das als kein Strom.",
+        "fa": "یک واحد توزیع برق رک دیگر به مانیتورینگ گزارش نمی‌داد. تریگر گفت داده‌ای نیست و همه آن را به عنوان نبود برق خواندند."
+      },
+      "problem": {
+        "de": "Ein Alarm hoher Schwere feuerte auf einer Rack-PDU. Die natürliche Lesart eines still werdenden Stromgeräts ist, dass der Strom weg ist, was bedeuten würde, dass alles auf dieser Leiste unten war.",
+        "fa": "یک هشدار با شدت بالا روی یک PDU رک فعال شد. خوانش طبیعی یک دستگاه برق که ساکت می‌شود این است که برق رفته است، یعنی همه چیز روی آن نوار پایین بوده است."
+      },
+      "approach": {
+        "de": "Ich prüfte, was der Trigger tatsächlich misst. Ein No-Data-Trigger feuert, wenn Werte aufhören anzukommen, was ein Melde-Problem ist und nichts direkt über den elektrischen Zustand sagt. Ich schaute mir auch die Rohwerte an und fand unmögliche Messwerte auf den Phasen-Items, was auf eine Template-Fehlanpassung statt auf einen Hardwarefehler hindeutete.",
+        "fa": "بررسی کردم تریگر واقعاً چه چیزی را اندازه می‌گیرد. یک تریگر بدون داده وقتی فعال می‌شود که مقادیر دیگر نمی‌رسند، که یک مشکل گزارش‌دهی است و مستقیماً چیزی درباره وضعیت الکتریکی نمی‌گوید. مقادیر خام را هم نگاه کردم و خوانش‌های غیرممکن روی آیتم‌های فاز پیدا کردم که به ناهماهنگی قالب اشاره داشت نه خطای سخت‌افزاری."
+      },
+      "solution": {
+        "de": "Die wahrscheinlichen Ursachen wurden auf einen hängenden SNMP-Agenten, Bulk-Request-Verarbeitung, Poller-Rückstau oder nicht mehr unterstützte Items eingegrenzt, kombiniert mit einem Monitoring-Template, das nicht zum tatsächlichen PDU-Modell passte. Ich dokumentierte sowohl die Diagnose als auch eine verständliche Erklärung, was eine Rack-PDU ist und tut, damit die nächste Person im Bereitschaftsdienst nicht bei null anfängt.",
+        "fa": "علل محتمل به یک عامل SNMP گیرکرده، پردازش درخواست انبوه، عقب‌ماندگی پولر یا آیتم‌های غیرپشتیبانی‌شده محدود شد، همراه با یک قالب مانیتورینگ که با مدل واقعی PDU مطابقت نداشت. هم تشخیص و هم یک توضیح ساده از اینکه PDU رک چیست و چه می‌کند را مستند کردم تا نفر بعدی در شیفت آماده‌باش از صفر شروع نکند."
+      },
+      "result": {
+        "de": "Der Alarm wurde korrekt als Monitoring-Fehler klassifiziert, nicht als Ausfall, und die Template-Fehlanpassung wurde ein behebbares Ticket statt eines Rätsels.",
+        "fa": "هشدار به درستی به عنوان خطای مانیتورینگ طبقه‌بندی شد، نه قطعی، و ناهماهنگی قالب به یک تیکت قابل رفع تبدیل شد نه یک معما."
+      },
+      "lessons": {
+        "de": [
+          "Kenne den Unterschied zwischen einem Schwellenwert-Trigger und einem No-Data-Trigger, bevor du auf einen reagierst.",
+          "Unmögliche Rohwerte, wie ein negativer Messwert bei einer physikalischen Messung, bedeuten fast immer ein falsches Template oder falsche OIDs."
+        ],
+        "fa": [
+          "تفاوت بین تریگر آستانه و تریگر بدون داده را قبل از واکنش به یکی بدان.",
+          "مقادیر خام غیرممکن، مثل یک خوانش منفی در یک اندازه‌گیری فیزیکی، تقریباً همیشه به معنای قالب اشتباه یا OIDهای اشتباه است."
+        ]
+      }
+    },
+    "datacenter-rack-plan": {
+      "title": {
+        "de": "Ein Rack kartieren und einen Single Point of Failure finden",
+        "fa": "نقشه‌برداری از یک رک و یافتن یک نقطه شکست واحد"
+      },
+      "summary": {
+        "de": "Einen interaktiven Rack-Plan vor einem Rechenzentrumsbesuch gebaut, und der Plan selbst deckte eine Stromredundanz-Lücke auf.",
+        "fa": "یک نقشه رک تعاملی قبل از بازدید از دیتاسنتر ساخته شد و خود نقشه یک شکاف افزونگی برق را آشکار کرد."
+      },
+      "problem": {
+        "de": "Es gab kein genaues Bild davon, was wo im Rack saß, womit es verbunden war und welche Stromzuführung es nutzte. Jeder Standortbesuch begann mit dem Lesen von Etiketten.",
+        "fa": "هیچ تصویر دقیقی از اینکه چه چیزی کجا در رک قرار دارد، به چه چیزی متصل است و از کدام تغذیه برق استفاده می‌کند وجود نداشت. هر بازدید از سایت با خواندن برچسب‌ها شروع می‌شد."
+      },
+      "approach": {
+        "de": "Ich baute einen interaktiven Plan als eigenständige HTML-Seite: Einheitenpositionen, Geräte und, entscheidend, die Stromzuführung pro Gerät. Das Modellieren der Zuführungen machte die Lücke sofort sichtbar.",
+        "fa": "یک نقشه تعاملی به عنوان صفحه HTML مستقل ساختم: موقعیت واحدها، دستگاه‌ها و مهم‌تر از همه، تغذیه برق هر دستگاه. مدل‌سازی تغذیه‌ها شکاف را فوراً نمایان کرد."
+      },
+      "solution": {
+        "de": "Ein Verwaltungsgerät, von dem alles andere abhängt, war an eine einzelne Zuführung angeschlossen, während der Rest des Racks doppelt gespeist war. Ein statischer Transferschalter wurde spezifiziert und gekauft, um die Lücke zu schließen.",
+        "fa": "یک دستگاه مدیریتی که همه چیز دیگر به آن وابسته است به یک تغذیه تکی متصل بود در حالی که بقیه رک دو تغذیه داشت. یک سوئیچ انتقال استاتیک مشخص و خریداری شد تا شکاف بسته شود."
+      },
+      "result": {
+        "de": "Das Rack hat jetzt einen dokumentierten Plan, der zu einem Standortbesuch mitgenommen werden kann, und eine bekannte Redundanzlücke mit einer gekauften Lösung statt einer unbekannten.",
+        "fa": "رک اکنون یک نقشه مستند دارد که می‌توان به بازدید سایت برد، و یک شکاف افزونگی شناخته‌شده با یک راه‌حل خریداری‌شده به جای یک شکاف ناشناخته."
+      },
+      "lessons": {
+        "de": [
+          "Infrastruktur zu zeichnen ist eine Diagnosetechnik, keine Dokumentationsbeschäftigung. Lücken werden sichtbar, wenn man sie auf einer Seite platzieren muss.",
+          "Redundanz, die nicht pro Gerät verifiziert ist, ist Redundanz nur auf dem Papier."
+        ],
+        "fa": [
+          "کشیدن زیرساخت یک تکنیک تشخیصی است، نه کار مستندسازی بیهوده. شکاف‌ها وقتی نمایان می‌شوند که مجبور شوی آن‌ها را روی صفحه بگذاری.",
+          "افزونگی که برای هر دستگاه تأیید نشده باشد فقط روی کاغذ افزونگی است."
+        ]
+      }
+    },
+    "asset-intake-workflow": {
+      "title": {
+        "de": "Ein Formular, zwei Asset-Systeme, null manuelle Eingabe",
+        "fa": "یک فرم، دو سیستم دارایی، صفر ورود دستی"
+      },
+      "summary": {
+        "de": "Ein 98-Knoten-Automatisierungsworkflow, der ein neues Gerät gleichzeitig in zwei Asset-Management-Systemen registriert, die Inventarnummer selbst vergibt und von einem nicht-technischen Kollegen bedient werden kann.",
+        "fa": "یک ورک‌فلو اتوماسیون ۹۸ گره‌ای که یک دستگاه جدید را همزمان در دو سیستم مدیریت دارایی ثبت می‌کند، شماره موجودی را خودش اختصاص می‌دهد و توسط یک همکار غیرفنی قابل استفاده است."
+      },
+      "problem": {
+        "de": "Ein neues Gerät zu registrieren bedeutete, zwei Systeme zu öffnen, manuell zu prüfen, welche Inventarnummer frei war, zu entscheiden, zu welchem Objekttyp es in jedem System gehört, und dieselben Daten zweimal zu tippen. Es war langsam und erzeugte Inkonsistenzen zwischen den beiden Systemen.",
+        "fa": "ثبت یک دستگاه جدید یعنی باز کردن دو سیستم، بررسی دستی اینکه کدام شماره موجودی آزاد است، تصمیم‌گیری درباره اینکه در هر سیستم به کدام نوع شی تعلق دارد و تایپ دوباره همان داده‌ها. کند بود و بین دو سیستم ناسازگاری ایجاد می‌کرد."
+      },
+      "approach": {
+        "de": "Der erste Versuch war ein überentwickeltes Design mit einem KI-Agenten, der fünfzehn Knoten orchestrierte, und er scheiterte wiederholt, indem er ohne Stoppbedingung in Schleifen lief. Ich verwarf es und baute es als linearen Workflow neu: ein Formular-Trigger, dann Schreiben in System A, dann Schreiben in System B. Ich baute es in sieben Phasen und prüfte jede Phase, bevor ich die nächste begann.",
+        "fa": "اولین تلاش یک طراحی بیش از حد پیچیده با یک عامل هوش مصنوعی بود که پانزده گره را هماهنگ می‌کرد و بارها با حلقه زدن بدون شرط توقف شکست خورد. آن را دور انداختم و به عنوان یک ورک‌فلو خطی بازسازی کردم: یک تریگر فرم، سپس نوشتن در سیستم A، سپس نوشتن در سیستم B. آن را در هفت مرحله ساختم و هر مرحله را قبل از شروع مرحله بعد بازبینی کردم."
+      },
+      "solution": {
+        "de": "Ein Formular fragt die Gerätedaten ab. Der Workflow scannt jede Quelle in beiden Systemen, einschließlich der Objekttypen, in denen Inventarnummern in einem Freitext-Notizfeld gespeichert sind, ermittelt die nächste freie Nummer, entscheidet das richtige Modul und den Objekttyp basierend darauf, ob das Gerät eine Seriennummer hat und in welche Kategorie es fällt, erstellt den Datensatz in beiden Systemen mit allen benutzerdefinierten Feldern, hängt Finanzdaten und Gruppenzuordnung an und gibt eine Bestätigung zurück.",
+        "fa": "یک فرم داده‌های دستگاه را می‌پرسد. ورک‌فلو هر منبع را در هر دو سیستم اسکن می‌کند، از جمله انواع شی که شماره‌های موجودی در یک فیلد یادداشت متن آزاد ذخیره شده‌اند، شماره آزاد بعدی را تعیین می‌کند، ماژول و نوع شی درست را بر اساس اینکه دستگاه شماره سریال دارد و در کدام دسته قرار می‌گیرد تصمیم می‌گیرد، رکورد را در هر دو سیستم با همه فیلدهای سفارشی ایجاد می‌کند، داده‌های مالی و تخصیص گروه را ضمیمه می‌کند و یک تأیید برمی‌گرداند."
+      },
+      "result": {
+        "de": "In Produktion und vom IT-Team genutzt. Echte Geräte wurden während der Abnahmetests darüber registriert, einschließlich Randfällen wie einem Zubehör ohne Seriennummer und einem Ersatzteil, das einem bestimmten Benutzer zugewiesen ist.",
+        "fa": "در تولید و توسط تیم IT استفاده می‌شود. دستگاه‌های واقعی در طول تست‌های پذیرش از طریق آن ثبت شدند، از جمله موارد لبه‌ای مثل یک لوازم جانبی بدون شماره سریال و یک قطعه یدکی که به یک کاربر خاص اختصاص داده شده است."
+      },
+      "lessons": {
+        "de": [
+          "Eine API, die lokalisierte Werte zurückgibt, bricht deine Vergleichslogik. Vergleiche gegen das, was die API tatsächlich zurückgibt, nicht gegen den englischen Begriff in der Dokumentation.",
+          "Eine neue Workflow-Version zu erstellen ist nicht dasselbe wie sie zu veröffentlichen. Wenn sich das Live-Formular anders verhält als dein Testlauf, prüfe, was tatsächlich veröffentlicht ist.",
+          "Gib einem autonomen Agenten eine definitive Stoppbedingung, sonst läuft er ewig in Schleifen. Das ist die am häufigsten wiederholte Lektion des ganzen Projekts.",
+          "Merge-Knoten verhalten sich unvorhersehbar, wenn ein Eingangszweig nie ausgeführt wurde. Gestalte so, dass beide Zweige immer laufen."
+        ],
+        "fa": [
+          "یک API که مقادیر بومی‌سازی‌شده برمی‌گرداند منطق مقایسه تو را می‌شکند. با آنچه API واقعاً برمی‌گرداند مقایسه کن، نه با اصطلاح انگلیسی در مستندات.",
+          "ایجاد یک نسخه ورک‌فلو جدید با انتشار آن یکی نیست. اگر فرم زنده متفاوت از اجرای تست تو رفتار می‌کند، بررسی کن چه چیزی واقعاً منتشر شده است.",
+          "به یک عامل خودمختار یک شرط توقف قطعی بده وگرنه برای همیشه حلقه می‌زند. این پرتکرارترین درس کل پروژه است.",
+          "گره‌های ادغام وقتی یک شاخه ورودی هرگز اجرا نشده باشد غیرقابل پیش‌بینی رفتار می‌کنند. طوری طراحی کن که هر دو شاخه همیشه اجرا شوند."
+        ]
+      }
+    },
+    "bulk-inventory-import": {
+      "title": {
+        "de": "735 Inventardatensätze importieren, ohne Duplikate zu erzeugen",
+        "fa": "وارد کردن ۷۳۵ رکورد موجودی بدون ایجاد تکراری"
+      },
+      "summary": {
+        "de": "Ein automatisierter Import, der eine Tabelle liest und in ein Asset-System schreibt, mit Deduplizierung, die tatsächlich funktioniert.",
+        "fa": "یک واردسازی خودکار که یک صفحه گسترده را می‌خواند و در یک سیستم دارایی می‌نویسد، با حذف تکراری که واقعاً کار می‌کند."
+      },
+      "problem": {
+        "de": "Das gesamte Inventar existierte als Tabelle mit 735 Zeilen und musste in ein echtes System. Manuelle Eingabe kam nicht in Frage, und ein naiver Import hätte bei jedem erneuten Lauf Duplikate erzeugt.",
+        "fa": "کل موجودی به عنوان یک صفحه گسترده با ۷۳۵ ردیف وجود داشت و باید به یک سیستم واقعی می‌رفت. ورود دستی مطرح نبود و یک واردسازی ساده در هر اجرای مجدد تکراری ایجاد می‌کرد."
+      },
+      "approach": {
+        "de": "Ich baute den Import als Automatisierungsworkflow statt als Einmalskript, damit er sicher erneut ausgeführt und für das zweite Zielsystem angepasst werden konnte. Die Deduplizierung war der schwierige Teil.",
+        "fa": "واردسازی را به عنوان ورک‌فلو اتوماسیون ساختم نه اسکریپت یکباره، تا بتوان آن را با خیال راحت دوباره اجرا کرد و برای سیستم هدف دوم تطبیق داد. حذف تکراری بخش سخت بود."
+      },
+      "solution": {
+        "de": "Die Deduplizierung läuft gegen einen paginierten Abruf aller vorhandenen Datensätze statt gegen den Such-Endpunkt, weil die Fuzzy-Suche Nahtreffer zurückgab, die nicht dasselbe Asset waren. Der Import mappt Tabellenspalten auf Kategorien, benutzerdefinierte Felder und Objekttypen.",
+        "fa": "حذف تکراری در برابر یک واکشی صفحه‌بندی‌شده از همه رکوردهای موجود اجرا می‌شود نه نقطه پایانی جستجو، چون جستجوی فازی نتایج نزدیکی برمی‌گرداند که همان دارایی نبودند. واردسازی ستون‌های صفحه گسترده را به دسته‌ها، فیلدهای سفارشی و انواع شی نگاشت می‌کند."
+      },
+      "result": {
+        "de": "735 Datensätze parallel in zwei Systeme importiert, aufgeteilt auf 15 Kategorien mit einem benutzerdefinierten Feldsatz für firmenspezifische Attribute.",
+        "fa": "۷۳۵ رکورد به صورت موازی در دو سیستم وارد شد، تقسیم‌شده در ۱۵ دسته با یک مجموعه فیلد سفارشی برای ویژگی‌های خاص شرکت."
+      },
+      "lessons": {
+        "de": [
+          "Für die Deduplizierung: exakt abrufen und vergleichen. Vertraue keinem Such-Endpunkt, der Fuzzy-Matching macht.",
+          "Ein Batching-Muster, das für 50 Elemente funktioniert, kann jenseits von 100 still brechen. Teste den Import in voller Größe, nicht mit einer Stichprobe.",
+          "Baue Importe idempotent. Du wirst sie mehr als einmal ausführen."
+        ],
+        "fa": [
+          "برای حذف تکراری: دقیق واکشی و مقایسه کن. به هیچ نقطه پایانی جستجویی که تطبیق فازی می‌کند اعتماد نکن.",
+          "یک الگوی دسته‌بندی که برای ۵۰ آیتم کار می‌کند می‌تواند بعد از ۱۰۰ بی‌صدا بشکند. واردسازی را در اندازه کامل تست کن، نه با نمونه.",
+          "واردسازی‌ها را idempotent بساز. آن‌ها را بیش از یک بار اجرا خواهی کرد."
+        ]
+      }
+    },
+    "e-invoicing-workflow": {
+      "title": {
+        "de": "Ein Prototyp für automatisierte elektronische Rechnungsverarbeitung",
+        "fa": "یک نمونه اولیه برای پردازش خودکار فاکتور الکترونیکی"
+      },
+      "summary": {
+        "de": "Ein MVP zum Lesen strukturierter elektronischer Rechnungsformate, mit Datenschutz- und Lizenzbeschränkungen von Anfang an eingeplant.",
+        "fa": "یک MVP برای خواندن قالب‌های ساختاریافته فاکتور الکترونیکی، با محدودیت‌های حفاظت داده و مجوز از ابتدا طراحی‌شده."
+      },
+      "problem": {
+        "de": "Elektronische Rechnungsstellung in strukturierten Formaten wird in Deutschland verpflichtend. Eingehende Rechnungen in diesen Formaten mussten immer noch von Hand gelesen und eingegeben werden.",
+        "fa": "فاکتور الکترونیکی در قالب‌های ساختاریافته در آلمان اجباری می‌شود. فاکتورهای ورودی در این قالب‌ها هنوز باید دستی خوانده و وارد می‌شدند."
+      },
+      "approach": {
+        "de": "Ich baute einen minimalen funktionsfähigen Workflow, der die strukturierten Formate parst, die relevanten Felder extrahiert und sie für die Buchung vorbereitet. Bevor ich eine KI-Komponente wählte, arbeitete ich zwei Beschränkungen durch: ob Rechnungsdaten unter Datenschutzregeln das Unternehmen rechtlich verlassen dürfen und ob die Lizenz des Modellanbieters kommerzielle Nutzung erlaubt.",
+        "fa": "یک ورک‌فلو حداقلی کارا ساختم که قالب‌های ساختاریافته را تجزیه می‌کند، فیلدهای مهم را استخراج می‌کند و آن‌ها را برای ثبت آماده می‌کند. قبل از انتخاب هر مؤلفه هوش مصنوعی، دو محدودیت را بررسی کردم: آیا داده‌های فاکتور طبق قوانین حفاظت داده می‌توانند به طور قانونی از شرکت خارج شوند و آیا مجوز ارائه‌دهنده مدل استفاده تجاری را مجاز می‌داند."
+      },
+      "solution": {
+        "de": "Ein funktionierender Prototyp mit einer dokumentierten Bewertung der Modellanbieter, einschließlich welcher Free-Tiers kommerziell nutzbar sind und welcher Durchsatz für diese Art von Workload realistisch ist.",
+        "fa": "یک نمونه اولیه کارا با یک ارزیابی مستند از ارائه‌دهندگان مدل، از جمله اینکه کدام سطح‌های رایگان قابل استفاده تجاری هستند و چه توان عملیاتی برای این نوع بار کاری واقع‌بینانه است."
+      },
+      "result": {
+        "de": "Ein Prototyp plus ein Entscheidungsdokument. Die Compliance-Analyse erwies sich als genauso wertvoll wie der Code, weil sie der Teil ist, der entscheidet, ob das Projekt überhaupt live gehen kann.",
+        "fa": "یک نمونه اولیه به علاوه یک سند تصمیم. تحلیل انطباق به اندازه کد ارزشمند بود، چون بخشی است که تصمیم می‌گیرد آیا پروژه اصلاً می‌تواند عملیاتی شود."
+      },
+      "lessons": {
+        "de": [
+          "Für jede Automatisierung, die Rechnungen oder personenbezogene Daten berührt, beantworte die Datenschutzfrage, bevor du Code schreibst. Compliance nachzurüsten bedeutet Umschreiben.",
+          "Free Tier bedeutet nicht frei für kommerzielle Nutzung. Lies die Lizenz, nicht die Preisseite."
+        ],
+        "fa": [
+          "برای هر اتوماسیونی که فاکتور یا داده شخصی را لمس می‌کند، پرسش حفاظت داده را قبل از نوشتن کد پاسخ بده. افزودن انطباق بعداً یعنی بازنویسی.",
+          "سطح رایگان به معنای رایگان برای استفاده تجاری نیست. مجوز را بخوان، نه صفحه قیمت را."
+        ]
+      }
+    },
+    "automated-offsite-backup": {
+      "title": {
+        "de": "Eine volle Platte mit Automatisierung statt einer größeren Platte lösen",
+        "fa": "حل یک دیسک پر با اتوماسیون به جای دیسک بزرگ‌تر"
+      },
+      "summary": {
+        "de": "Ein Server lief aus dem Speicher. Die Lösung kombinierte eine automatisierte Offsite-Kopie, eine Änderung der Datenaufbewahrungsrichtlinie und eine Plattenexpansion, in dieser Reihenfolge.",
+        "fa": "یک سرور فضایش تمام شد. راه‌حل یک کپی خارج از سایت خودکار، یک تغییر سیاست نگهداری داده و یک افزایش دیسک را ترکیب کرد، به این ترتیب."
+      },
+      "problem": {
+        "de": "Ein loglastiger Server füllte seine Platte und hörte auf, Daten anzunehmen. Einfach Speicher hinzuzufügen hätte denselben Ausfall um ein paar Wochen verzögert.",
+        "fa": "یک سرور پر از لاگ دیسکش را پر کرد و پذیرش داده را متوقف کرد. صرفاً افزودن فضا همان خرابی را چند هفته به تأخیر می‌انداخت."
+      },
+      "approach": {
+        "de": "Ich behandelte die volle Platte als drei getrennte Probleme: die Daten, die bereits existierten und erhalten werden mussten, die Richtlinie, die Daten unbegrenzt ansammeln ließ, und die Kapazität, die wirklich zu klein war.",
+        "fa": "دیسک پر را به عنوان سه مسئله جداگانه در نظر گرفتم: داده‌هایی که از قبل وجود داشتند و باید حفظ می‌شدند، سیاستی که اجازه می‌داد داده بدون محدودیت جمع شود، و ظرفیتی که واقعاً خیلی کوچک بود."
+      },
+      "solution": {
+        "de": "Ein automatisierter Workflow kopiert Daten nach Zeitplan auf einen dedizierten Backup-Server über SSH, die Index-Lifecycle-Richtlinie wurde angepasst, damit alte Daten automatisch ausgemustert werden, und erst dann wurde die Platte auf eine sinnvolle Größe erweitert.",
+        "fa": "یک ورک‌فلو خودکار داده‌ها را طبق برنامه به یک سرور پشتیبان اختصاصی از طریق SSH کپی می‌کند، سیاست چرخه عمر ایندکس تنظیم شد تا داده‌های قدیمی به طور خودکار حذف شوند، و فقط پس از آن دیسک به اندازه معقولی بزرگ شد."
+      },
+      "result": {
+        "de": "Der Server erholte sich, historische Daten wurden erhalten, und das Wachstum ist jetzt durch Richtlinie begrenzt statt durch die Größe der Platte.",
+        "fa": "سرور بازیابی شد، داده‌های تاریخی حفظ شدند و رشد اکنون به جای اندازه دیسک توسط سیاست محدود می‌شود."
+      },
+      "lessons": {
+        "de": [
+          "Eine volle Platte ist meist ein Aufbewahrungsrichtlinien-Problem im Kapazitätskostüm.",
+          "Einige SSH-Implementierungen verlangen einen Schlüssel im klassischen PEM-Format. Wenn die Schlüssel-Authentifizierung ohne sichtbaren Grund fehlschlägt, prüfe das Schlüsselformat, bevor du Berechtigungen debuggst."
+        ],
+        "fa": [
+          "یک دیسک پر معمولاً یک مشکل سیاست نگهداری است در لباس ظرفیت.",
+          "برخی پیاده‌سازی‌های SSH به کلیدی در قالب کلاسیک PEM نیاز دارند. اگر احراز هویت کلید بدون دلیل مشخص شکست خورد، قبل از اشکال‌زدایی مجوزها قالب کلید را بررسی کن."
+        ]
+      }
+    },
+    "video-summary-bot": {
+      "title": {
+        "de": "Ein Messaging-Bot, der Videos in deiner eigenen Sprache zusammenfasst",
+        "fa": "یک ربات پیام‌رسان که ویدیوها را به زبان خودت خلاصه می‌کند"
+      },
+      "summary": {
+        "de": "Sende einen Video-Link in einer Chat-App, erhalte eine nützliche Zusammenfassung zurück, vollständig über die REST-API der Automatisierungsplattform gebaut.",
+        "fa": "یک لینک ویدیو در یک برنامه چت بفرست، یک خلاصه مفید بگیر، کاملاً از طریق REST API پلتفرم اتوماسیون ساخته شده است."
+      },
+      "problem": {
+        "de": "Ich wollte ein persönliches Tool, das lange technische Videos in wenigen Minuten in etwas Lesbares verwandelt, in meiner eigenen Sprache.",
+        "fa": "یک ابزار شخصی می‌خواستم که ویدیوهای فنی طولانی را در چند دقیقه به چیزی خوانا تبدیل کند، به زبان خودم."
+      },
+      "approach": {
+        "de": "Die Kette ist bewusst einfach: Nachrichten-Trigger, Video-ID extrahieren, Link validieren, Untertitelspur herunterladen, Zeit- und Formatierungs-Tags entfernen, den sauberen Text mit einem Zusammenfassungs-Prompt an ein Sprachmodell senden, im Chat antworten. Ich ließ den Agenten es direkt gegen die REST-API der Automatisierungsplattform bauen statt über eine Zwischenprotokollschicht, weil der API-Pfad derjenige ist, der seine Fehler tatsächlich meldet.",
+        "fa": "زنجیره عمداً ساده است: تریگر پیام، استخراج شناسه ویدیو، اعتبارسنجی لینک، دانلود زیرنویس، حذف تگ‌های زمان و قالب‌بندی، ارسال متن تمیز با یک پرامپت خلاصه‌سازی به مدل زبانی، پاسخ در چت. اجازه دادم عامل آن را مستقیماً در برابر REST API پلتفرم اتوماسیون بسازد نه از طریق یک لایه پروتکل میانی، چون مسیر API همانی است که خطاهایش را واقعاً گزارش می‌کند."
+      },
+      "solution": {
+        "de": "Ein funktionierender Bot mit Fehlerbehandlung, plus ein wiederverwendbares Muster, um einen Agenten Workflows programmatisch erstellen und aktivieren zu lassen.",
+        "fa": "یک ربات کارا با مدیریت خطا، به علاوه یک الگوی قابل استفاده مجدد برای اینکه یک عامل ورک‌فلوها را برنامه‌ای ایجاد و فعال کند."
+      },
+      "result": {
+        "de": "Persönlich genutzt, und wichtiger: Es erzeugte die Vorlage dafür, wie ich jetzt Agenten Automatisierungen bauen lasse: mit der REST-API sprechen, zuerst vorhandene Zugangsdaten prüfen, bei Fehlern selbst korrigieren, aktivieren, dann einen echten Test ausführen.",
+        "fa": "شخصاً استفاده می‌شود، و مهم‌تر: الگویی تولید کرد برای اینکه اکنون چگونه به عامل‌ها اجازه می‌دهم اتوماسیون بسازند: با REST API صحبت کن، اول اعتبارنامه‌های موجود را بررسی کن، در خطا خوداصلاح کن، فعال کن، سپس یک تست واقعی اجرا کن."
+      },
+      "lessons": {
+        "de": [
+          "Wenn ein Agent Infrastruktur baut, gib ihm die Schnittstelle mit den klarsten Fehlermeldungen. Debuggbarkeit schlägt Eleganz.",
+          "Die Erstellung von Zugangsdaten ist der eine Schritt, der sich meist nicht automatisieren lässt. Gestalte den Workflow so, dass dieser Schritt einmal, vorab, passiert."
+        ],
+        "fa": [
+          "وقتی یک عامل زیرساخت می‌سازد، رابطی با واضح‌ترین پیام‌های خطا به او بده. قابلیت اشکال‌زدایی بر ظرافت پیروز است.",
+          "ایجاد اعتبارنامه همان یک قدمی است که معمولاً قابل خودکارسازی نیست. ورک‌فلو را طوری طراحی کن که این قدم یک بار، از قبل، اتفاق بیفتد."
+        ]
+      }
+    },
+    "dual-system-asset-migration": {
+      "title": {
+        "de": "Ein Firmeninventar parallel in zwei Systeme migrieren",
+        "fa": "مهاجرت موجودی شرکت به دو سیستم به صورت موازی"
+      },
+      "summary": {
+        "de": "606 Assets und 129 Lizenzen aus einer Tabelle in zwei Asset-Management-Systeme verschoben, dann nach einer Evaluierungsphase in eines konsolidiert.",
+        "fa": "۶۰۶ دارایی و ۱۲۹ مجوز از یک صفحه گسترده به دو سیستم مدیریت دارایی منتقل شد، سپس بعد از یک دوره ارزیابی در یکی ادغام شد."
+      },
+      "problem": {
+        "de": "Das komplette IT-Inventar, etwa zwei Millionen Euro wert, lebte in einer Tabelle. Keine Historie, keine Zuordnung zu Benutzern, keine Abschreibung, keine Lizenzübersicht und keine Möglichkeit zu beantworten, wer welches Gerät hat.",
+        "fa": "کل موجودی IT، به ارزش حدود دو میلیون یورو، در یک صفحه گسترده زندگی می‌کرد. نه تاریخچه، نه تخصیص به کاربران، نه استهلاک، نه نمای کلی مجوز و نه راهی برای پاسخ به اینکه چه کسی کدام دستگاه را دارد."
+      },
+      "approach": {
+        "de": "Statt auf ein Produkt zu setzen, migrierte ich parallel in zwei Kandidatensysteme und betrieb beide für eine Evaluierungsphase. Gleiche Quelldaten, gleiche Kategorien, damit der Vergleich fair war.",
+        "fa": "به جای شرط‌بندی روی یک محصول، به صورت موازی به دو سیستم کاندید مهاجرت کردم و هر دو را برای یک دوره ارزیابی اجرا کردم. داده‌های منبع یکسان، دسته‌های یکسان، تا مقایسه منصفانه باشد."
+      },
+      "solution": {
+        "de": "System A erhielt die Daten aufgeteilt in Assets, Zubehör, Komponenten und Lizenzen über 15 Kategorien mit einem benutzerdefinierten Feldsatz für firmenspezifische Attribute. System B erhielt neun Objekttypen einschließlich eines benutzerdefinierten Asset-Typs für Möbel, mit Finanzdaten an jedem Objekt. Nach der Evaluierung wurde ein System gewählt und das andere schreibgeschützt als Referenz behalten.",
+        "fa": "سیستم A داده‌ها را تقسیم‌شده به دارایی‌ها، لوازم جانبی، قطعات و مجوزها در ۱۵ دسته با یک مجموعه فیلد سفارشی برای ویژگی‌های خاص شرکت دریافت کرد. سیستم B نه نوع شی از جمله یک نوع دارایی سفارشی برای مبلمان دریافت کرد، با داده‌های مالی روی هر شی. بعد از ارزیابی، یک سیستم انتخاب شد و دیگری فقط‌خواندنی به عنوان مرجع نگه داشته شد."
+      },
+      "result": {
+        "de": "Ein vollständiges, abfragbares Inventar mit dokumentiertem Wert, plus eine Entscheidung auf Basis von Evidenz statt einer Anbieter-Demo.",
+        "fa": "یک موجودی کامل و قابل پرس‌وجو با ارزش مستند، به علاوه یک تصمیم بر اساس شواهد نه یک دموی فروشنده."
+      },
+      "lessons": {
+        "de": [
+          "Zwei Systeme mit echten Daten zu evaluieren kostet mehr Zeit als Vergleichsartikel zu lesen und ist die einzige Methode, die eine vertretbare Entscheidung produziert.",
+          "Feldnamen in einer API stimmen selten mit den Beschriftungen in der Oberfläche überein. Prüfe die API-Referenz, bevor du Spalten mappst.",
+          "Ein Tippfehler in einem systemgenerierten internen Namen kann dauerhaft sein. Prüfe das Namensfeld, bevor du etwas speicherst, das zu einem Bezeichner wird."
+        ],
+        "fa": [
+          "ارزیابی دو سیستم با داده واقعی بیشتر از خواندن مقالات مقایسه‌ای زمان می‌برد و تنها روشی است که یک تصمیم قابل دفاع تولید می‌کند.",
+          "نام فیلدها در یک API به ندرت با برچسب‌های رابط کاربری مطابقت دارد. قبل از نگاشت ستون‌ها مرجع API را بررسی کن.",
+          "یک اشتباه تایپی در یک نام داخلی تولیدشده توسط سیستم می‌تواند دائمی باشد. قبل از ذخیره هر چیزی که به یک شناسه تبدیل می‌شود، فیلد نام را بررسی کن."
+        ]
+      }
+    },
+    "ip-address-plan-import": {
+      "title": {
+        "de": "Eine IP-Tabelle in eine echte Adressverwaltungs-Datenbank verwandeln",
+        "fa": "تبدیل یک صفحه گسترده IP به یک پایگاه داده مدیریت آدرس واقعی"
+      },
+      "summary": {
+        "de": "14 Netze, 11 VLANs und 248 Host-Datensätze importiert, einschließlich der Bereinigung von 98 Hostnamen, die kein System akzeptieren würde.",
+        "fa": "۱۴ شبکه، ۱۱ VLAN و ۲۴۸ رکورد میزبان وارد شد، از جمله پاک‌سازی ۹۸ نام میزبان که هیچ سیستمی نمی‌پذیرفت."
+      },
+      "problem": {
+        "de": "Der IP-Adressplan war eine Tabelle mit zwölf Blättern, inkonsistenter Benennung und versteckter Struktur. Ein Blatt enthielt drei getrennte Netzblöcke statt einem, was genau die Art von Sache ist, mit der eine Tabelle dich davonkommen lässt.",
+        "fa": "طرح آدرس IP یک صفحه گسترده با دوازده برگه، نام‌گذاری ناسازگار و ساختار پنهان بود. یک برگه به جای یک بلوک شبکه، سه بلوک شبکه جداگانه داشت، که دقیقاً همان چیزی است که یک صفحه گسترده اجازه می‌دهد از آن فرار کنی."
+      },
+      "approach": {
+        "de": "Ich analysierte zuerst die Quellstruktur und schrieb erst dann den Import. Datenqualitätsprobleme wurden dokumentiert statt stillschweigend korrigiert, weil das stille Korrigieren fremder Daten der Weg ist, den Audit-Trail zu verlieren.",
+        "fa": "اول ساختار منبع را تحلیل کردم و فقط بعد واردسازی را نوشتم. مشکلات کیفیت داده مستند شد نه بی‌صدا اصلاح، چون اصلاح بی‌صدای داده دیگران راه از دست دادن رد حسابرسی است."
+      },
+      "solution": {
+        "de": "Der Import erzeugte 11 VLANs, 13 IP-Netze, 248 Hostnamen-Objekte und 248 Adressobjekte. 98 Hostnamen mussten bereinigt werden, weil das Zielsystem sie als DNS-Namen validiert und Leerzeichen, Unterstriche und Punkte ablehnt. Echte vollqualifizierte Namen wurden korrekt in Host- und Domänenteil getrennt. Vier Datenqualitätsprobleme wurden mit einem Prüf-Präfix im Kommentarfeld markiert statt geraten.",
+        "fa": "واردسازی ۱۱ VLAN، ۱۳ شبکه IP، ۲۴۸ شی نام میزبان و ۲۴۸ شی آدرس تولید کرد. ۹۸ نام میزبان باید پاک‌سازی می‌شد چون سیستم هدف آن‌ها را به عنوان نام DNS اعتبارسنجی می‌کند و فاصله، زیرخط و نقطه را رد می‌کند. نام‌های کاملاً واجد شرایط واقعی به درستی به بخش میزبان و دامنه جدا شدند. چهار مشکل کیفیت داده با یک پیشوند بازبینی در فیلد نظر علامت‌گذاری شد نه حدس زده شد."
+      },
+      "result": {
+        "de": "Eine abfragbare Adressdatenbank statt einer Tabelle, mit den bekannten fehlerhaften Datensätzen sichtbar zur Prüfung markiert.",
+        "fa": "یک پایگاه داده آدرس قابل پرس‌وجو به جای یک صفحه گسترده، با رکوردهای نادرست شناخته‌شده به صورت قابل مشاهده برای بازبینی علامت‌گذاری شده."
+      },
+      "lessons": {
+        "de": [
+          "Analysiere die Quelle, bevor du den Importer schreibst. Tabellen verstecken Struktur, die kein Schema erlauben würde.",
+          "Markiere schlechte Daten, korrigiere sie nicht still. Die Person, die sie erstellt hat, ist die einzige, die weiß, was sie bedeuten sollten.",
+          "Systeme, die Namen als DNS-Namen validieren, lehnen einen großen Teil jeder handgepflegten Liste ab. Plane den Bereinigungsschritt ein."
+        ],
+        "fa": [
+          "قبل از نوشتن واردکننده، منبع را تحلیل کن. صفحات گسترده ساختاری را پنهان می‌کنند که هیچ طرحی اجازه نمی‌دهد.",
+          "داده بد را علامت بزن، بی‌صدا اصلاح نکن. کسی که آن را ساخته تنها کسی است که می‌داند قرار بود چه بگوید.",
+          "سیستم‌هایی که نام‌ها را به عنوان نام DNS اعتبارسنجی می‌کنند بخش بزرگی از هر فهرست دستی را رد می‌کنند. برای مرحله پاک‌سازی برنامه‌ریزی کن."
+        ]
+      }
+    },
+    "asset-depreciation-setup": {
+      "title": {
+        "de": "Die Asset-Datenbank eine Budgetfrage beantworten lassen",
+        "fa": "واداشتن پایگاه داده دارایی به پاسخ دادن به یک پرسش بودجه"
+      },
+      "summary": {
+        "de": "Abschreibung mit einer Nutzungsdauer pro Asset-Kategorie konfiguriert, damit das Ersatzbudget prognostiziert statt geraten werden kann.",
+        "fa": "استهلاک با عمر مفید برای هر دسته دارایی پیکربندی شد تا بودجه جایگزینی پیش‌بینی شود نه حدس زده شود."
+      },
+      "problem": {
+        "de": "Ein Inventar sagt dir, was du besitzt. Es sagt dir nicht, was du nächstes Jahr ersetzen musst, was die Frage ist, die die Finanzabteilung tatsächlich stellt.",
+        "fa": "یک موجودی به تو می‌گوید چه چیزی داری. به تو نمی‌گوید سال آینده چه چیزی را باید جایگزین کنی، که پرسشی است که بخش مالی واقعاً می‌پرسد."
+      },
+      "approach": {
+        "de": "Ich definierte eine Nutzungsdauer pro Asset-Kategorie und konfigurierte die Abschreibung auf den Finanzdatensätzen, damit aktueller Buchwert und End-of-Life-Datum automatisch berechnet werden.",
+        "fa": "یک عمر مفید برای هر دسته دارایی تعریف کردم و استهلاک را روی رکوردهای مالی پیکربندی کردم تا ارزش دفتری فعلی و تاریخ پایان عمر به طور خودکار محاسبه شود."
+      },
+      "solution": {
+        "de": "Abschreibungseinstellungen pro Kategorie, angewendet auf eine Asset-Basis mit einem dokumentierten Wert im niedrigen Millionenbereich.",
+        "fa": "تنظیمات استهلاک برای هر دسته، اعمال‌شده روی یک پایه دارایی با ارزش مستند در محدوده پایین میلیون‌ها."
+      },
+      "result": {
+        "de": "Die Ersatzbudgetplanung ist jetzt ein Bericht statt eines Meetings.",
+        "fa": "برنامه‌ریزی بودجه جایگزینی اکنون یک گزارش است نه یک جلسه."
+      },
+      "lessons": {
+        "de": [
+          "Eine Asset-Datenbank wird wertvoll in dem Moment, in dem sie eine finanzielle Frage beantworten kann, nicht in dem Moment, in dem sie vollständig ist.",
+          "Nutzungsdauer pro Kategorie ist eine Geschäftsentscheidung. Lass sie vereinbaren, erfinde sie nicht im Konfigurationsbildschirm."
+        ],
+        "fa": [
+          "یک پایگاه داده دارایی در لحظه‌ای ارزشمند می‌شود که بتواند به یک پرسش مالی پاسخ دهد، نه در لحظه‌ای که کامل است.",
+          "عمر مفید برای هر دسته یک تصمیم تجاری است. آن را توافق کن، در صفحه پیکربندی اختراع نکن."
+        ]
+      }
+    },
+    "internal-dns-records": {
+      "title": {
+        "de": "Zwei neue interne Portale per DNS veröffentlichen",
+        "fa": "انتشار دو پورتال داخلی جدید از طریق DNS"
+      },
+      "summary": {
+        "de": "Zwei neue Hostnamen, die auf einen bestehenden Webserver zeigen, als Aliase erstellt, Ende-zu-Ende verifiziert und mit einem Rollback-Pfad dokumentiert.",
+        "fa": "دو نام میزبان جدید که به یک وب‌سرور موجود اشاره می‌کنند، به عنوان نام مستعار ایجاد شدند، سرتاسری تأیید شدند و با یک مسیر بازگشت مستند شدند."
+      },
+      "problem": {
+        "de": "Zwei neue interne Portale brauchten ihre eigenen Hostnamen. Die Webserver-Bindings existierten bereits, also fehlte nur die Namensauflösung.",
+        "fa": "دو پورتال داخلی جدید به نام میزبان خودشان نیاز داشتند. اتصال‌های وب‌سرور از قبل وجود داشتند، پس فقط تفکیک نام گم شده بود."
+      },
+      "approach": {
+        "de": "Zuerst das Ziel verifizieren: bestätigen, dass der Webserver in beide Richtungen auf die erwartete Adresse auflöst, und prüfen, welche Ports tatsächlich antworten. Dann zwischen einem direkten Adressdatensatz und einem Alias-Datensatz entscheiden. Ich wählte Aliase, damit bei einem Umzug des Webservers ein Datensatz sich ändert statt mehrerer.",
+        "fa": "اول هدف را تأیید کن: تأیید کن که وب‌سرور در هر دو جهت به آدرس مورد انتظار تفکیک می‌شود و بررسی کن کدام پورت‌ها واقعاً پاسخ می‌دهند. سپس بین یک رکورد آدرس مستقیم و یک رکورد نام مستعار تصمیم بگیر. نام مستعار را انتخاب کردم تا اگر وب‌سرور جابه‌جا شود یک رکورد تغییر کند نه چند رکورد."
+      },
+      "solution": {
+        "de": "Zwei Alias-Datensätze per PowerShell erstellt, nachdem ich entdeckte, dass das DNS-Modul auf der ersten Maschine nicht verfügbar war, und auf eine wechselte, wo es war. Verifiziert in der Verwaltungskonsole, im Subdomain-Knoten und mit einer echten HTTP-Anfrage, die einen Erfolgsstatus zurückgab.",
+        "fa": "دو رکورد نام مستعار از طریق پاورشل ایجاد شد، بعد از اینکه کشف کردم ماژول DNS روی ماشین اول در دسترس نیست و به یکی که بود تغییر دادم. در کنسول مدیریت، در گره زیردامنه و با یک درخواست HTTP واقعی که وضعیت موفقیت برگرداند تأیید شد."
+      },
+      "result": {
+        "de": "Beide Portale per Name erreichbar, bestehende Datensätze unberührt, und ein geschriebenes Runbook mit Entscheidungsbegründung, Befehlen, Schnittstellenschritten und dem Rollback.",
+        "fa": "هر دو پورتال با نام قابل دسترس، رکوردهای موجود دست‌نخورده، و یک ران‌بوک نوشته‌شده با منطق تصمیم، دستورات، مراحل رابط و بازگشت."
+      },
+      "lessons": {
+        "de": [
+          "Alias-Datensätze über Adressdatensätze, wenn mehrere Namen auf einen Host zeigen. Es macht eine zukünftige Migration zu einer einzeiligen Änderung.",
+          "Verifiziere das Ziel, bevor du den Datensatz erstellst. Ein Name, der auf etwas zeigt, das nicht antwortet, ist schlimmer als kein Name.",
+          "Schreibe den Rollback-Befehl ins Runbook, solange du dich noch erinnerst, was du geändert hast."
+        ],
+        "fa": [
+          "رکورد نام مستعار بر رکورد آدرس وقتی چند نام به یک میزبان اشاره می‌کنند. یک مهاجرت آینده را به یک تغییر یک‌خطی تبدیل می‌کند.",
+          "قبل از ایجاد رکورد هدف را تأیید کن. نامی که به چیزی اشاره می‌کند که پاسخ نمی‌دهد بدتر از نبود نام است.",
+          "دستور بازگشت را در ران‌بوک بنویس در حالی که هنوز یادت است چه چیزی را تغییر دادی."
+        ]
+      }
+    },
+    "self-hosted-vpn": {
+      "title": {
+        "de": "Ein selbst gehostetes VPN und der Client, der sich weigerte zu verbinden",
+        "fa": "یک VPN خودمیزبان و کلاینتی که از اتصال امتناع می‌کرد"
+      },
+      "summary": {
+        "de": "Ein modernes Protokoll-VPN auf einem Cloud-Server eingerichtet, dann eine Client-Ablehnung debuggt, die nichts mit der Konfiguration zu tun hatte.",
+        "fa": "یک VPN با پروتکل مدرن روی یک سرور ابری راه‌اندازی شد، سپس یک رد کلاینت اشکال‌زدایی شد که هیچ ربطی به پیکربندی نداشت."
+      },
+      "problem": {
+        "de": "Ich brauchte einen privaten, selbst gehosteten VPN-Endpunkt. Die Serverseite kam schnell hoch, aber der Android-Client lehnte die Verbindung mit einer nicht hilfreichen Meldung ab, während andere Clients funktionierten.",
+        "fa": "به یک نقطه پایانی VPN خصوصی و خودمیزبان نیاز داشتم. سمت سرور سریع بالا آمد، اما کلاینت اندروید اتصال را با یک پیام بی‌فایده رد کرد در حالی که کلاینت‌های دیگر کار می‌کردند."
+      },
+      "approach": {
+        "de": "Weil der Server andere Clients akzeptierte, musste das Problem clientseitig oder versionsbedingt sein. Ich verglich, was der Server anbot, mit dem, was der Client unterstützte.",
+        "fa": "چون سرور کلاینت‌های دیگر را می‌پذیرفت، مشکل باید سمت کلاینت یا مربوط به نسخه باشد. آنچه سرور ارائه می‌داد را با آنچه کلاینت پشتیبانی می‌کرد مقایسه کردم."
+      },
+      "solution": {
+        "de": "Der Server erzwang eine Mindest-Client-Version. Der verwendete Android-Client lag darunter und wurde vor jedem echten Handshake abgelehnt. Ein Update des Clients löste es. Getrennt davon arbeitet die Firewall des Cloud-Anbieters völlig unabhängig von der Firewall im Betriebssystem, was eine wiederkehrende Falle ist: Ein Port kann lokal offen sein und trotzdem unerreichbar.",
+        "fa": "سرور یک حداقل نسخه کلاینت را اعمال می‌کرد. کلاینت اندروید استفاده‌شده پایین‌تر از آن بود و قبل از هر دست‌دادن واقعی رد شد. به‌روزرسانی کلاینت آن را حل کرد. جدا از آن، فایروال ارائه‌دهنده ابر کاملاً مستقل از فایروال داخل سیستم عامل کار می‌کند، که یک تله تکرارشونده است: یک پورت می‌تواند محلی باز باشد و همچنان غیرقابل دسترس باشد."
+      },
+      "result": {
+        "de": "Ein funktionierender privater VPN-Endpunkt und zwei Debugging-Regeln, die ich jetzt automatisch anwende.",
+        "fa": "یک نقطه پایانی VPN خصوصی کارا و دو قانون اشکال‌زدایی که اکنون به طور خودکار اعمال می‌کنم."
+      },
+      "lessons": {
+        "de": [
+          "Eine Cloud-Anbieter-Firewall und eine Host-Firewall sind zwei getrennte Wände. Eine zu öffnen beweist nichts über die andere.",
+          "Wenn ein Client fehlschlägt und andere funktionieren, vergleiche Versionen, bevor du Konfigurationen vergleichst."
+        ],
+        "fa": [
+          "فایروال ارائه‌دهنده ابر و فایروال میزبان دو دیوار جدا هستند. باز کردن یکی چیزی درباره دیگری ثابت نمی‌کند.",
+          "وقتی یک کلاینت شکست می‌خورد و بقیه کار می‌کنند، قبل از مقایسه پیکربندی‌ها نسخه‌ها را مقایسه کن."
+        ]
+      }
+    },
+    "verify-before-changing-firewall": {
+      "title": {
+        "de": "Die Firewall-Änderung, die sich als unnötig herausstellte",
+        "fa": "تغییر فایروال که معلوم شد غیرضروری است"
+      },
+      "summary": {
+        "de": "Ein Anbieter kündigte einen neuen IP-Bereich mit einer Frist an. Tests zeigten, dass der Verkehr bereits funktionierte, also wurde nichts geändert.",
+        "fa": "یک فروشنده یک محدوده IP جدید با یک مهلت اعلام کرد. تست‌ها نشان دادند ترافیک از قبل کار می‌کند، پس هیچ چیز تغییر نکرد."
+      },
+      "problem": {
+        "de": "Ein Backup-Anbieter kündigte an, Verkehr über einen neuen Anbieter zu leiten, und führte einen neuen Adressbereich ein, den Agents vor einer festen Frist erreichen mussten. Die offensichtliche Reaktion ist, den Bereich sofort auf der Firewall zu öffnen.",
+        "fa": "یک فروشنده پشتیبان اعلام کرد ترافیک را از طریق یک ارائه‌دهنده جدید هدایت می‌کند و یک محدوده آدرس جدید معرفی کرد که عامل‌ها باید قبل از یک مهلت ثابت به آن می‌رسیدند. واکنش بدیهی این است که محدوده را فوراً روی فایروال باز کنی."
+      },
+      "approach": {
+        "de": "Bevor ich irgendeine Regel anfasste, testete ich, ob der Verkehr tatsächlich funktionierte. Das bedeutete, das Richtige zu testen: Agents nutzen verschlüsselte Verbindungen auf einem bestimmten Port, also beweist ein erfolgreicher Ping nichts. Ich führte echte Verbindungstests auf diesem Port aus zwei verschiedenen Netzsegmenten durch, einschließlich des isolierten, mit Werkzeugen, die zum jeweiligen Betriebssystem passen.",
+        "fa": "قبل از دست زدن به هر قانونی، تست کردم که آیا ترافیک واقعاً کار می‌کند. یعنی تست چیز درست: عامل‌ها از اتصالات رمزنگاری‌شده روی یک پورت خاص استفاده می‌کنند، پس یک پینگ موفق هیچ چیز را ثابت نمی‌کند. تست‌های اتصال واقعی روی آن پورت از دو بخش شبکه مختلف، از جمله بخش ایزوله، با ابزارهای مناسب هر سیستم عامل اجرا کردم."
+      },
+      "solution": {
+        "de": "Beide Segmente erreichten den neuen Bereich erfolgreich und die verschlüsselte Sitzung wurde unverändert aufgebaut, was bedeutete, dass nichts dazwischen störte. Keine Firewall-Änderung war erforderlich. Ich dokumentierte, wie die Änderung ausgesehen hätte, wenn sie nötig gewesen wäre, damit das Wissen existiert, falls die Situation wiederkehrt.",
+        "fa": "هر دو بخش با موفقیت به محدوده جدید رسیدند و نشست رمزنگاری‌شده بدون تغییر برقرار شد، یعنی هیچ چیز در میانه مزاحم نبود. هیچ تغییر فایروال لازم نبود. مستند کردم که تغییر اگر لازم بود چه شکلی می‌داشت، تا دانش وجود داشته باشد اگر وضعیت تکرار شود."
+      },
+      "result": {
+        "de": "Frist eingehalten mit null Änderungen an der Firewall, und ein schriftliches Briefing, das Kollegen erklärt, warum keine Aktion die richtige Aktion war.",
+        "fa": "مهلت با صفر تغییر در فایروال رعایت شد، و یک توضیح کتبی که به همکاران می‌گوید چرا عدم اقدام اقدام درست بود."
+      },
+      "lessons": {
+        "de": [
+          "Teste, bevor du änderst. Eine unnötig hinzugefügte Regel ist permanente Angriffsfläche, an die sich niemand erinnert, sie hinzugefügt zu haben.",
+          "Ping testet Erreichbarkeit, nicht den Port, den deine Anwendung nutzt. Teste den tatsächlichen Port und das tatsächliche Protokoll.",
+          "Dokumentiere die Änderung, die du nicht gemacht hast. Beim nächsten Mal existiert die Antwort bereits."
+        ],
+        "fa": [
+          "قبل از تغییر تست کن. یک قانون غیرضروری اضافه‌شده سطح حمله دائمی است که هیچ‌کس یادش نیست اضافه کرده است.",
+          "پینگ دسترس‌پذیری را تست می‌کند، نه پورتی که برنامه تو استفاده می‌کند. پورت واقعی و پروتکل واقعی را تست کن.",
+          "تغییری که انجام ندادی را مستند کن. دفعه بعد پاسخ از قبل وجود دارد."
+        ]
+      }
+    },
+    "backup-retention-behaviour": {
+      "title": {
+        "de": "Warum die Backup-Anzahl das Aufbewahrungslimit überschreitet",
+        "fa": "چرا تعداد پشتیبان از حد نگهداری فراتر می‌رود"
+      },
+      "summary": {
+        "de": "Eine Aufbewahrungsregel, die auf 28 Backups gesetzt war, zeigte 29. Erklärt, warum, und bestätigt, dass keine Notfallmaßnahme nötig war.",
+        "fa": "یک قانون نگهداری تنظیم‌شده روی ۲۸ پشتیبان، ۲۹ نشان می‌داد. توضیح داد چرا، و تأیید کرد که هیچ اقدام اضطراری لازم نبود."
+      },
+      "problem": {
+        "de": "Der Backup-Plan eines Servers war konfiguriert, 28 Wiederherstellungspunkte zu behalten, aber die Konsole zeigte 29. Mit begrenztem freiem Speicher war die Angst, dass der nächste Lauf ein neues Vollbackup erzeugen und die Platte füllen würde.",
+        "fa": "طرح پشتیبان یک سرور برای نگه داشتن ۲۸ نقطه بازیابی پیکربندی شده بود، اما کنسول ۲۹ نشان می‌داد. با فضای آزاد محدود، ترس این بود که اجرای بعدی یک پشتیبان کامل جدید ایجاد کند و دیسک را پر کند."
+      },
+      "approach": {
+        "de": "Ich arbeitete durch, wie sich der Aufbewahrungsmechanismus tatsächlich verhält, statt der Zahl in der Oberfläche zu vertrauen.",
+        "fa": "بررسی کردم که مکانیزم نگهداری واقعاً چگونه رفتار می‌کند، به جای اعتماد به عدد در رابط کاربری."
+      },
+      "solution": {
+        "de": "Backup-Software überschreitet das Aufbewahrungslimit absichtlich, wenn abhängige inkrementelle Punkte nicht gelöscht werden können, ohne die Kette zu brechen, und die Bereinigung läuft nach Abschluss des neuen Backups statt davor. Eine vorübergehende Überschreitung ist erwartetes Verhalten. Ein neues Vollbackup wird nur durch bestimmte Ereignisse ausgelöst, wie das Ändern von Format, Ziel oder Verschlüsselung, das Hinzufügen einer Quellplatte oder das Neuerstellen des Plans. Nichts davon traf zu, also war der nächste Lauf inkrementell.",
+        "fa": "نرم‌افزار پشتیبان عمداً از حد نگهداری فراتر می‌رود وقتی نقاط افزایشی وابسته بدون شکستن زنجیره قابل حذف نیستند، و پاک‌سازی بعد از اتمام پشتیبان جدید اجرا می‌شود نه قبل از آن. یک فراتر رفتن موقت رفتار مورد انتظار است. یک پشتیبان کامل جدید فقط توسط رویدادهای خاصی فعال می‌شود، مثل تغییر قالب، مقصد یا رمزنگاری، افزودن یک دیسک منبع، یا بازسازی طرح. هیچ‌کدام صدق نمی‌کرد، پس اجرای بعدی افزایشی بود."
+      },
+      "result": {
+        "de": "Keine Notfallintervention, und eine dokumentierte Methode zur Schätzung des täglichen Speicherverbrauchs und der verbleibenden Laufzeit durch Vergleich der Archivgrößen an aufeinanderfolgenden Tagen.",
+        "fa": "هیچ مداخله اضطراری، و یک روش مستند برای تخمین مصرف روزانه ذخیره‌سازی و زمان باقی‌مانده با مقایسه اندازه‌های آرشیو در روزهای متوالی."
+      },
+      "lessons": {
+        "de": [
+          "Bereinigung nach dem Backup, nicht davor, bedeutet, dass freier Speicher die Überschreitung abdecken muss. Dimensioniere Speicher für den Spitzenwert, nicht den Durchschnitt.",
+          "Lösche Archivdateien niemals von Hand. Es bricht die Kette und entwertet still jeden Wiederherstellungspunkt, der davon abhängt.",
+          "Wenn Speicher die echte Beschränkung ist, wechsle die Aufbewahrung von einer Anzahl zu einem Größenlimit."
+        ],
+        "fa": [
+          "پاک‌سازی بعد از پشتیبان، نه قبل از آن، یعنی فضای آزاد باید فراتر رفتن را پوشش دهد. ذخیره‌سازی را برای اوج اندازه بگیر، نه میانگین.",
+          "هرگز فایل‌های آرشیو را دستی حذف نکن. زنجیره را می‌شکند و بی‌صدا هر نقطه بازیابی وابسته به آن را بی‌اعتبار می‌کند.",
+          "اگر ذخیره‌سازی محدودیت واقعی است، نگهداری را از یک تعداد به یک محدودیت اندازه تغییر بده."
+        ]
+      }
+    },
+    "tape-library-maintenance": {
+      "title": {
+        "de": "Eine Tape-Library gesund halten",
+        "fa": "سالم نگه داشتن یک کتابخانه نوار"
+      },
+      "summary": {
+        "de": "Reinigungszyklen, Magazinwechsel und Backup-Ausschlüsse auf einer physischen Tape-Library.",
+        "fa": "چرخه‌های تمیزکاری، تعویض مجله و استثناهای پشتیبان روی یک کتابخانه نوار فیزیکی."
+      },
+      "problem": {
+        "de": "Tape ist immer noch die Offline-Kopie, die Ransomware nicht erreichen kann, was bedeutet, dass die Hardware tatsächlich funktionieren muss, wenn sie gebraucht wird.",
+        "fa": "نوار هنوز همان کپی آفلاینی است که باج‌افزار نمی‌تواند به آن برسد، یعنی سخت‌افزار باید واقعاً وقتی لازم است کار کند."
+      },
+      "approach": {
+        "de": "Regelmäßige Wartung statt reaktiv: Reinigungskassetten-Zyklen, Magazinrotation und Überprüfung, was im Backup-Set enthalten ist, damit Bänder nicht mit Daten gefüllt werden, die nicht dort sein müssen.",
+        "fa": "نگهداری منظم به جای واکنشی: چرخه‌های کاست تمیزکاری، چرخش مجله و بازبینی آنچه در مجموعه پشتیبان گنجانده شده تا نوارها با داده‌ای که لازم نیست آنجا باشد پر نشوند."
+      },
+      "solution": {
+        "de": "Dokumentierte Wartungsroutine für die Library, plus abgestimmte Ausschlüsse in den Backup-Plänen.",
+        "fa": "روال نگهداری مستند برای کتابخانه، به علاوه استثناهای تنظیم‌شده در طرح‌های پشتیبان."
+      },
+      "result": {
+        "de": "Eine physische Offline-Kopie, die verifiziert und gewartet wird statt angenommen.",
+        "fa": "یک کپی آفلاین فیزیکی که تأیید و نگهداری می‌شود نه فرض می‌شود."
+      },
+      "lessons": {
+        "de": [
+          "Die Offline-Kopie ist die, die dich rettet. Teste und warte sie wie Produktion, nicht wie Archiv.",
+          "Backup-Ausschlüsse sind ein Kapazitätswerkzeug. Auszuschließen, was nicht geschützt werden muss, kauft echte Bandkapazität."
+        ],
+        "fa": [
+          "کپی آفلاین همانی است که تو را نجات می‌دهد. آن را مثل تولید تست و نگهداری کن، نه مثل آرشیو.",
+          "استثناهای پشتیبان یک ابزار ظرفیت هستند. حذف آنچه نیاز به محافظت ندارد ظرفیت واقعی نوار می‌خرد."
+        ]
+      }
+    },
+    "outlook-wont-start": {
+      "title": {
+        "de": "Eine strukturierte Methode für einen E-Mail-Client, der nicht startet",
+        "fa": "یک روش ساختاریافته برای یک کلاینت ایمیل که شروع نمی‌شود"
+      },
+      "summary": {
+        "de": "Sieben geordnete Schritte, die in den meisten Fällen die Ursache finden, so angeordnet, dass der billigste Test zuerst kommt.",
+        "fa": "هفت گام مرتب که در بیشتر موارد علت را پیدا می‌کنند، طوری چیده شده که ارزان‌ترین تست اول بیاید."
+      },
+      "problem": {
+        "de": "Ein Kollege meldete, dass der klassische E-Mail-Client überhaupt nicht startete, auch nach einem Neustart. Neuinstallation ist die übliche Reaktion und fast immer der falsche erste Schritt.",
+        "fa": "یک همکار گزارش داد که کلاینت ایمیل کلاسیک اصلاً اجرا نمی‌شود، حتی بعد از راه‌اندازی مجدد. نصب مجدد واکنش رایج است و تقریباً همیشه اولین قدم اشتباه."
+      },
+      "approach": {
+        "de": "Ich baute eine Sequenz, geordnet nach Kosten und Wahrscheinlichkeit, sodass die schnellsten und am wenigsten invasiven Tests zuerst laufen und jeder Schritt entweder die Ursache behebt oder eine Ursache ausschließt.",
+        "fa": "یک توالی ساختم که بر اساس هزینه و احتمال مرتب شده، تا سریع‌ترین و کم‌تهاجمی‌ترین تست‌ها اول اجرا شوند و هر گام یا علت را برطرف کند یا یک علت را حذف کند."
+      },
+      "solution": {
+        "de": "Prüfen, ob ein hängender Prozess die Anwendung noch hält; im abgesicherten Modus starten; Add-ins einzeln deaktivieren; Navigationsbereich und Ansichten über Befehlszeilenschalter zurücksetzen; ein frisches Profil erstellen; eine Schnellreparatur und dann eine Onlinereparatur ausführen; schließlich prüfen, ob ein kürzliches Update mit dem Ausfall zusammenfällt. In der Praxis identifizieren der abgesicherte Modus und die Add-in-Schritte die Ursache meistens, wobei Dokument- oder Besprechungs-Add-ins die üblichen Übeltäter sind.",
+        "fa": "بررسی اینکه آیا یک فرآیند گیرکرده هنوز برنامه را نگه داشته است؛ اجرا در حالت امن؛ غیرفعال کردن افزونه‌ها یکی‌یکی؛ بازنشانی ناحیه ناوبری و نماها از طریق سوئیچ‌های خط فرمان؛ ایجاد یک پروفایل تازه؛ اجرای یک تعمیر سریع و سپس یک تعمیر آنلاین؛ در نهایت بررسی اینکه آیا یک به‌روزرسانی اخیر با خرابی همزمان است. در عمل حالت امن و گام‌های افزونه بیشتر اوقات علت را شناسایی می‌کنند، و افزونه‌های سند یا جلسه مقصران معمول هستند."
+      },
+      "result": {
+        "de": "Eine wiederverwendbare Checkliste statt einer Einmallösung, plus eine kurze Nachrichtenvorlage, damit der Benutzer den ersten Test selbst ausführen kann, bevor jemand eine Remote-Sitzung bucht.",
+        "fa": "یک چک‌لیست قابل استفاده مجدد به جای یک راه‌حل یکباره، به علاوه یک قالب پیام کوتاه تا کاربر بتواند اولین تست را خودش اجرا کند قبل از اینکه کسی یک نشست از راه دور رزرو کند."
+      },
+      "lessons": {
+        "de": [
+          "Ordne Fehlerbehebungsschritte nach Kosten, nicht danach, wie wahrscheinlich sich jeder anfühlt. Die billigen Tests eliminieren ganze Zweige.",
+          "Der abgesicherte Modus ist der schnellste Weg, die Anwendung von ihren Erweiterungen zu trennen. Starte dort.",
+          "Lass den Benutzer den ersten Schritt ausführen. Es spart in der Hälfte der Fälle einen Termin."
+        ],
+        "fa": [
+          "گام‌های عیب‌یابی را بر اساس هزینه مرتب کن، نه بر اساس اینکه هر کدام چقدر محتمل به نظر می‌رسد. تست‌های ارزان کل شاخه‌ها را حذف می‌کنند.",
+          "حالت امن سریع‌ترین راه برای جدا کردن برنامه از افزونه‌هایش است. از آنجا شروع کن.",
+          "بگذار کاربر اولین گام را اجرا کند. در نیمی از موارد یک قرار ملاقات را صرفه‌جویی می‌کند."
+        ]
+      }
+    },
+    "vendor-update-tool-broken": {
+      "title": {
+        "de": "Wenn ein Treiber-Update den Dienst deaktiviert, den es braucht",
+        "fa": "وقتی یک به‌روزرسانی درایور سرویسی را که نیاز دارد غیرفعال می‌کند"
+      },
+      "summary": {
+        "de": "Ein Anbieter-Update-Dienstprogramm startete nicht mehr, nachdem es seine eigenen Updates installiert hatte. Die Ursache war ein Dienst, der im deaktivierten Zustand zurückgelassen wurde.",
+        "fa": "یک ابزار به‌روزرسانی فروشنده بعد از نصب به‌روزرسانی‌های خودش دیگر اجرا نمی‌شد. علت یک سرویس بود که در وضعیت غیرفعال رها شده بود."
+      },
+      "problem": {
+        "de": "Ein Benutzer konnte das Update-Tool des Herstellers nicht mehr starten, nachdem er Updates darüber angewendet hatte. Die Fehlermeldung zeigte nirgendwohin Nützliches.",
+        "fa": "یک کاربر دیگر نمی‌توانست ابزار به‌روزرسانی سازنده را اجرا کند، بعد از اینکه به‌روزرسانی‌ها را از طریق آن اعمال کرده بود. پیام خطا به هیچ جای مفیدی اشاره نمی‌کرد."
+      },
+      "approach": {
+        "de": "Das Tool hängt von einem Hintergrund-Verwaltungsdienst ab. Ich prüfte den Dienstzustand, statt die Anwendung neu zu installieren.",
+        "fa": "ابزار به یک سرویس مدیریت پس‌زمینه وابسته است. وضعیت سرویس را بررسی کردم، به جای نصب مجدد برنامه."
+      },
+      "solution": {
+        "de": "Der Dienst war während des Updates auf deaktiviert gesetzt worden. Das erneute Aktivieren und Starten stellte das Tool wieder her. Weil der Benutzer nicht technisch war und die Zeit begrenzt, bereitete ich drei Optionen im Voraus vor, einen geführten Anruf, eine Remote-Sitzung oder einen Vor-Ort-Besuch, und ließ den Benutzer wählen, statt anzunehmen.",
+        "fa": "سرویس در طول به‌روزرسانی روی غیرفعال تنظیم شده بود. فعال‌سازی و راه‌اندازی مجدد ابزار را بازگرداند. چون کاربر غیرفنی بود و زمان محدود، سه گزینه را از قبل آماده کردم، یک تماس هدایت‌شده، یک نشست از راه دور یا یک بازدید حضوری، و اجازه دادم کاربر انتخاب کند به جای فرض کردن."
+      },
+      "result": {
+        "de": "Ohne Neuinstallation gelöst, und ohne einem nicht-technischen Benutzer das Gefühl zu geben, eine Hausaufgabe aufgedrückt zu bekommen.",
+        "fa": "بدون نصب مجدد حل شد، و بدون اینکه به یک کاربر غیرفنی احساس داده شود که یک تکلیف به او تحمیل شده است."
+      },
+      "lessons": {
+        "de": [
+          "Wenn eine Anwendung nicht startet, prüfe ihre abhängigen Dienste, bevor du neu installierst.",
+          "Biete Support-Optionen an, ohne sie zu bewerten. Den Benutzer den Kanal wählen zu lassen bringt eine schnellere Antwort als den vorzuschlagen, den du bevorzugst."
+        ],
+        "fa": [
+          "وقتی یک برنامه اجرا نمی‌شود، قبل از نصب مجدد سرویس‌های وابسته‌اش را بررسی کن.",
+          "گزینه‌های پشتیبانی را بدون رتبه‌بندی ارائه بده. اجازه دادن به کاربر برای انتخاب کانال پاسخ سریع‌تری می‌دهد تا پیشنهاد کانالی که تو ترجیح می‌دهی."
+        ]
+      }
+    },
+    "sso-group-based-access": {
+      "title": {
+        "de": "Single Sign-on mit gruppenbasiertem Zugriff auf eine Dateiplattform",
+        "fa": "ورود یکپارچه با دسترسی گروه‌محور به یک پلتفرم فایل"
+      },
+      "summary": {
+        "de": "Eine selbst gehostete Dateiplattform an einen zentralen Identitätsanbieter angeschlossen, sodass Gruppenmitgliedschaft, nicht manuelle Zuweisung, den Zugriff steuert.",
+        "fa": "یک پلتفرم فایل خودمیزبان به یک ارائه‌دهنده هویت مرکزی متصل شد تا عضویت گروه، نه تخصیص دستی، دسترسی را کنترل کند."
+      },
+      "problem": {
+        "de": "Der Zugriff auf geteilte Ordner wurde pro Benutzer von Hand zugewiesen. Jeder neue Kollege bedeutete eine manuelle Runde der Berechtigungssetzung, und jeder Abgang bedeutete die Hoffnung, dass niemand eine vergaß.",
+        "fa": "دسترسی به پوشه‌های مشترک به صورت دستی برای هر کاربر تخصیص داده می‌شد. هر همکار جدید یعنی یک دور دستی تنظیم مجوز، و هر خروج یعنی امیدواری به اینکه هیچ‌کس یکی را فراموش نکرده باشد."
+      },
+      "approach": {
+        "de": "Identität zentralisieren: Die Dateiplattform authentifiziert gegen den Identitätsanbieter, und der Ordnerzugriff folgt der Gruppenmitgliedschaft, die bereits im Verzeichnis existiert.",
+        "fa": "متمرکز کردن هویت: پلتفرم فایل در برابر ارائه‌دهنده هویت احراز هویت می‌کند، و دسترسی پوشه از عضویت گروهی پیروی می‌کند که از قبل در دایرکتوری وجود دارد."
+      },
+      "solution": {
+        "de": "Social-Login-Integration zwischen der Dateiplattform und dem Identitätsanbieter, mit Gruppen-Mapping, sodass Zugriff durch Gruppenmitgliedschaft gewährt und entzogen wird. Getrennt davon überprüfte und verschärfte ich die Richtlinie für anonyme Freigabelinks auf der Firmen-Dateiplattform.",
+        "fa": "یکپارچه‌سازی ورود اجتماعی بین پلتفرم فایل و ارائه‌دهنده هویت، با نگاشت گروه تا دسترسی با عضویت گروه اعطا و لغو شود. جدا از آن، سیاست لینک‌های اشتراک ناشناس روی پلتفرم فایل شرکت را بازبینی و سخت‌گیرانه‌تر کردم."
+      },
+      "result": {
+        "de": "Onboarding und Offboarding wurden eine Gruppenmitgliedschaftsänderung statt einer manuellen Berechtigungsprüfung.",
+        "fa": "ورود و خروج به یک تغییر عضویت گروه تبدیل شد به جای یک بازبینی دستی مجوز."
+      },
+      "lessons": {
+        "de": [
+          "Berechtigungen, die pro Benutzer zugewiesen werden, sind Berechtigungen, die irgendwann falsch sein werden. Mappe sie auf Gruppen.",
+          "Anonyme Freigabelinks sind das stille Datenleck in den meisten Organisationen. Setze die Richtlinie bewusst, akzeptiere nicht den Standard."
+        ],
+        "fa": [
+          "مجوزهایی که برای هر کاربر تخصیص داده می‌شوند مجوزهایی هستند که در نهایت اشتباه خواهند بود. آن‌ها را به گروه‌ها نگاشت کن.",
+          "لینک‌های اشتراک ناشناس نشت داده خاموش در بیشتر سازمان‌ها هستند. سیاست را آگاهانه تنظیم کن، پیش‌فرض را نپذیر."
+        ]
+      }
+    },
+    "developer-workstation-onboarding": {
+      "title": {
+        "de": "Einen Entwickler-Arbeitsplatz gegen eine harte Frist liefern",
+        "fa": "تحویل یک ایستگاه کاری توسعه‌دهنده در برابر یک مهلت سخت"
+      },
+      "summary": {
+        "de": "Eine vollständige Entwicklungsumgebung, Berechtigungen, Dienstzugriff und Login-Scripting, bereit für den ersten Tag eines zurückkehrenden Entwicklers.",
+        "fa": "یک محیط توسعه کامل، مجوزها، دسترسی سرویس و اسکریپت ورود، آماده برای روز اول یک توسعه‌دهنده بازگشتی."
+      },
+      "problem": {
+        "de": "Ein Entwickler kehrte zu einem festen Datum in Vollzeit zurück und brauchte einen vollständig konfigurierten Arbeitsplatz: Entwicklungswerkzeuge, Berechtigungen, Gruppenmitgliedschaften, Zugriff auf interne Dienste und ein Login-Skript mit funktionierenden Datenbankverbindungen. Die Frist war nicht verhandelbar.",
+        "fa": "یک توسعه‌دهنده در یک تاریخ ثابت به صورت تمام‌وقت برمی‌گشت و به یک ایستگاه کاری کاملاً پیکربندی‌شده نیاز داشت: ابزارهای توسعه، مجوزها، عضویت‌های گروهی، دسترسی به سرویس‌های داخلی و یک اسکریپت ورود با اتصالات پایگاه داده کارا. مهلت قابل مذاکره نبود."
+      },
+      "approach": {
+        "de": "Ich teilte die Arbeit in das, was ich allein tun konnte, und das, was die Person selbst erforderte. Werkzeuge, die an persönliche Konten und Lizenzen gebunden sind, können nicht im Voraus von einem Administrator installiert werden, also plante ich eine kurze gemeinsame Sitzung genau dafür, an einem Tag, an dem die Person ohnehin vor Ort war.",
+        "fa": "کار را به آنچه می‌توانستم به تنهایی انجام دهم و آنچه خود شخص لازم داشت تقسیم کردم. ابزارهایی که به حساب‌ها و مجوزهای شخصی گره خورده‌اند نمی‌توانند از قبل توسط یک مدیر نصب شوند، پس یک نشست مشترک کوتاه دقیقاً برای آن‌ها برنامه‌ریزی کردم، در روزی که شخص به هر حال در محل بود."
+      },
+      "solution": {
+        "de": "Maschine vorbereitet, Gruppen und Dienstzugriff konfiguriert, Login-Skript und Datenbankverbindungen im Voraus getestet. Die lizenzgebundenen Werkzeuge wurden gemeinsam in einer geplanten Sitzung installiert, und die Hardwarefragen wurden im selben Gespräch geklärt.",
+        "fa": "ماشین آماده شد، گروه‌ها و دسترسی سرویس پیکربندی شد، اسکریپت ورود و اتصالات پایگاه داده از قبل تست شد. ابزارهای وابسته به مجوز با هم در یک نشست برنامه‌ریزی‌شده نصب شدند، و پرسش‌های سخت‌افزاری در همان گفتگو روشن شدند."
+      },
+      "result": {
+        "de": "Vor der Frist geliefert, mit der gemeinsamen Sitzung begrenzt auf die Punkte, die wirklich die Anwesenheit des Benutzers erforderten.",
+        "fa": "قبل از مهلت تحویل شد، با نشست مشترک محدود به مواردی که واقعاً حضور کاربر را می‌طلبیدند."
+      },
+      "lessons": {
+        "de": [
+          "Trenne, was den Benutzer braucht, von dem, was ihn nicht braucht, und bereite alles andere im Voraus vor. Es verwandelt einen ganzen Tag Unterbrechungen in ein kurzes Meeting.",
+          "Plane die gemeinsame Sitzung für einen Tag, an dem die Person ohnehin für etwas anderes vor Ort ist."
+        ],
+        "fa": [
+          "آنچه به کاربر نیاز دارد را از آنچه نیاز ندارد جدا کن و همه چیز دیگر را از قبل آماده کن. یک روز کامل وقفه را به یک جلسه کوتاه تبدیل می‌کند.",
+          "نشست مشترک را برای روزی برنامه‌ریزی کن که شخص به هر حال برای چیز دیگری در محل است."
+        ]
+      }
+    }
+  }
+}

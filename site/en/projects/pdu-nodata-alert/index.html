@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A power alert that was not a power problem</title>
+<meta name="description" content="A rack power distribution unit stopped reporting to monitoring. The trigger said no data, and everyone read that as no power.">
+<link rel="alternate" hreflang="de" href="/de/projects/pdu-nodata-alert/">
+<link rel="alternate" hreflang="en" href="/en/projects/pdu-nodata-alert/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/pdu-nodata-alert/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A power alert that was not a power problem">
+<meta property="og:description" content="A rack power distribution unit stopped reporting to monitoring. The trigger said no data, and everyone read that as no power.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/pdu-nodata-alert/" hreflang="de">Deutsch</a><a href="/en/projects/pdu-nodata-alert/" class="active" hreflang="en">English</a><a href="/fa/projects/pdu-nodata-alert/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/en/">Home</a>
+    <a href="/en/projects/">Projects</a>
+    <a href="/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>A power alert that was not a power problem</h1>
+<p class="lead">A rack power distribution unit stopped reporting to monitoring. The trigger said no data, and everyone read that as no power.</p>
+<h2>Problem</h2>
+<p>A high severity alert fired on a rack PDU. The natural reading of a power device going silent is that the power is gone, which would mean everything on that strip was down.</p>
+<h2>Approach</h2>
+<p>I checked what the trigger actually measures. A no data trigger fires when values stop arriving, which is a reporting problem and says nothing directly about the electrical state. I also looked at the raw values and found impossible readings on the phase items, which pointed at a template mismatch rather than a hardware fault.</p>
+<h2>Solution</h2>
+<p>The likely causes were narrowed to a hung SNMP agent, bulk request handling, poller backlog or items going unsupported, combined with a monitoring template that did not match the actual PDU model. I documented both the diagnosis and a plain language explanation of what a rack PDU is and does, so the next person on call does not start from zero.</p>
+<h2>Result</h2>
+<p>The alert was correctly classified as a monitoring fault, not an outage, and the template mismatch became a fixable ticket instead of a mystery.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>Know the difference between a threshold trigger and a no data trigger before you act on one.</li>
+  <li>Impossible raw values, like a negative reading on a physical measurement, almost always mean a wrong template or wrong OIDs.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Zabbix</span>
+  <span class="tag">SNMP</span>
+  <span class="tag">Rack PDU</span>
+  <span class="tag">Monitoring design</span>
+  <span class="tag">SNMP troubleshooting</span>
+  <span class="tag">Writing for the next person on call</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/en/projects/datacenter-rack-plan/">Mapping a rack and finding a single point of failure →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

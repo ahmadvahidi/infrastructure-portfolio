@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Running a self-hosted password vault, including the day someone gets locked out</title>
+<meta name="description" content="Deployed a Vaultwarden server with mail delivery through Microsoft 365, and learned the hard way why the account recovery policy has to be enabled before anyone needs it.">
+<link rel="alternate" hreflang="de" href="/de/projects/self-hosted-password-vault/">
+<link rel="alternate" hreflang="en" href="/en/projects/self-hosted-password-vault/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/self-hosted-password-vault/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Running a self-hosted password vault, including the day someone gets locked out">
+<meta property="og:description" content="Deployed a Vaultwarden server with mail delivery through Microsoft 365, and learned the hard way why the account recovery policy has to be enabled before anyone needs it.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/self-hosted-password-vault/" hreflang="de">Deutsch</a><a href="/en/projects/self-hosted-password-vault/" class="active" hreflang="en">English</a><a href="/fa/projects/self-hosted-password-vault/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/en/">Home</a>
+    <a href="/en/projects/">Projects</a>
+    <a href="/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Running a self-hosted password vault, including the day someone gets locked out</h1>
+<p class="lead">Deployed a Vaultwarden server with mail delivery through Microsoft 365, and learned the hard way why the account recovery policy has to be enabled before anyone needs it.</p>
+<h2>Problem</h2>
+<p>Shared credentials were being passed around in chat messages and text files. A central vault was needed, self-hosted rather than cloud, with invitations and password resets working through the company mail system.</p>
+<h2>Approach</h2>
+<p>Deployment was straightforward. The interesting part came later: a colleague could no longer unlock his vault although he was sure the master password was correct. I had to work out what is actually recoverable in this architecture.</p>
+<h2>Solution</h2>
+<p>The vault is encrypted client side with the master password, so the server never holds anything that could decrypt it. Administrator recovery only exists if the account recovery policy was enabled beforehand and the user enrolled at that time. It had not been. The honest answer was that the personal vault was unrecoverable, while shared collection entries survived because they are encrypted to the organization key. I deleted and reinvited the account, and enabled the recovery policy for everyone else.</p>
+<h2>Result</h2>
+<p>One user lost personal entries. Nobody else will, because the policy is now active and enforced at enrollment.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>Understand the encryption model of a tool before you deploy it, not when a user is locked out.</li>
+  <li>Recovery policies are worthless retroactively. Enable them on day one.</li>
+  <li>Telling a user plainly that data is gone is better than three days of false hope.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Vaultwarden</span>
+  <span class="tag">Docker</span>
+  <span class="tag">Microsoft 365 SMTP</span>
+  <span class="tag">Zero knowledge encryption models</span>
+  <span class="tag">Policy design</span>
+  <span class="tag">Incident communication</span>
+</div>
+<div class="prevnext">
+  <a href="/en/projects/self-hosted-service-stack/">← Building a self-hosted service stack from scratch</a>
+  <a href="/en/projects/hyperv-vm-locked-out-recovery/">Recovering a virtual machine nobody could log into →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

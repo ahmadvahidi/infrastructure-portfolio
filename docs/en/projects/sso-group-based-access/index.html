@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Single sign-on with group based access to a file platform</title>
+<meta name="description" content="Connected a self-hosted file platform to a central identity provider so that group membership, not manual assignment, controls access.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/sso-group-based-access/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/sso-group-based-access/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/sso-group-based-access/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Single sign-on with group based access to a file platform">
+<meta property="og:description" content="Connected a self-hosted file platform to a central identity provider so that group membership, not manual assignment, controls access.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/sso-group-based-access/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/sso-group-based-access/" class="active" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/sso-group-based-access/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/en/">Home</a>
+    <a href="/infrastructure-portfolio/en/projects/">Projects</a>
+    <a href="/infrastructure-portfolio/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Single sign-on with group based access to a file platform</h1>
+<p class="lead">Connected a self-hosted file platform to a central identity provider so that group membership, not manual assignment, controls access.</p>
+<h2>Problem</h2>
+<p>Access to shared folders was assigned per user by hand. Every new colleague meant a manual round of permission setting, and every departure meant hoping nobody forgot one.</p>
+<h2>Approach</h2>
+<p>Centralize identity: the file platform authenticates against the identity provider, and folder access follows group membership that already exists in the directory.</p>
+<h2>Solution</h2>
+<p>Social login integration between the file platform and the identity provider, with group mapping so access is granted and revoked by group membership. Separately, I reviewed and tightened the policy for anonymous sharing links on the corporate file platform.</p>
+<h2>Result</h2>
+<p>Onboarding and offboarding became a group membership change instead of a manual permission review.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>Permissions that are assigned per user are permissions that will eventually be wrong. Map them to groups.</li>
+  <li>Anonymous sharing links are the quiet data leak in most organizations. Set the policy deliberately, do not accept the default.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Keycloak</span>
+  <span class="tag">Nextcloud</span>
+  <span class="tag">SharePoint</span>
+  <span class="tag">OIDC</span>
+  <span class="tag">Identity and access management</span>
+  <span class="tag">SSO integration</span>
+  <span class="tag">Policy configuration</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/en/projects/vendor-update-tool-broken/">← When a driver update disables the service it needs</a>
+  <a href="/infrastructure-portfolio/en/projects/developer-workstation-onboarding/">Delivering a developer workstation against a hard deadline →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ein Firmeninventar parallel in zwei Systeme migrieren</title>
+<meta name="description" content="606 Assets und 129 Lizenzen aus einer Tabelle in zwei Asset-Management-Systeme verschoben, dann nach einer Evaluierungsphase in eines konsolidiert.">
+<link rel="alternate" hreflang="de" href="/de/projects/dual-system-asset-migration/">
+<link rel="alternate" hreflang="en" href="/en/projects/dual-system-asset-migration/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/dual-system-asset-migration/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ein Firmeninventar parallel in zwei Systeme migrieren">
+<meta property="og:description" content="606 Assets und 129 Lizenzen aus einer Tabelle in zwei Asset-Management-Systeme verschoben, dann nach einer Evaluierungsphase in eines konsolidiert.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/dual-system-asset-migration/" class="active" hreflang="de">Deutsch</a><a href="/en/projects/dual-system-asset-migration/" hreflang="en">English</a><a href="/fa/projects/dual-system-asset-migration/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/de/">Start</a>
+    <a href="/de/projects/">Projekte</a>
+    <a href="/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Ein Firmeninventar parallel in zwei Systeme migrieren</h1>
+<p class="lead">606 Assets und 129 Lizenzen aus einer Tabelle in zwei Asset-Management-Systeme verschoben, dann nach einer Evaluierungsphase in eines konsolidiert.</p>
+<h2>Problem</h2>
+<p>Das komplette IT-Inventar, etwa zwei Millionen Euro wert, lebte in einer Tabelle. Keine Historie, keine Zuordnung zu Benutzern, keine Abschreibung, keine Lizenzübersicht und keine Möglichkeit zu beantworten, wer welches Gerät hat.</p>
+<h2>Vorgehen</h2>
+<p>Statt auf ein Produkt zu setzen, migrierte ich parallel in zwei Kandidatensysteme und betrieb beide für eine Evaluierungsphase. Gleiche Quelldaten, gleiche Kategorien, damit der Vergleich fair war.</p>
+<h2>Lösung</h2>
+<p>System A erhielt die Daten aufgeteilt in Assets, Zubehör, Komponenten und Lizenzen über 15 Kategorien mit einem benutzerdefinierten Feldsatz für firmenspezifische Attribute. System B erhielt neun Objekttypen einschließlich eines benutzerdefinierten Asset-Typs für Möbel, mit Finanzdaten an jedem Objekt. Nach der Evaluierung wurde ein System gewählt und das andere schreibgeschützt als Referenz behalten.</p>
+<h2>Ergebnis</h2>
+<p>Ein vollständiges, abfragbares Inventar mit dokumentiertem Wert, plus eine Entscheidung auf Basis von Evidenz statt einer Anbieter-Demo.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Zwei Systeme mit echten Daten zu evaluieren kostet mehr Zeit als Vergleichsartikel zu lesen und ist die einzige Methode, die eine vertretbare Entscheidung produziert.</li>
+  <li>Feldnamen in einer API stimmen selten mit den Beschriftungen in der Oberfläche überein. Prüfe die API-Referenz, bevor du Spalten mappst.</li>
+  <li>Ein Tippfehler in einem systemgenerierten internen Namen kann dauerhaft sein. Prüfe das Namensfeld, bevor du etwas speicherst, das zu einem Bezeichner wird.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">GLPI</span>
+  <span class="tag">Snipe-IT</span>
+  <span class="tag">n8n</span>
+  <span class="tag">Excel</span>
+  <span class="tag">REST APIs</span>
+  <span class="tag">Data migration</span>
+  <span class="tag">Tool evaluation</span>
+  <span class="tag">IT asset management</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/de/projects/ip-address-plan-import/">Eine IP-Tabelle in eine echte Adressverwaltungs-Datenbank verwandeln →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

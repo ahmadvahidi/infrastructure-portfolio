@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mapping a rack and finding a single point of failure</title>
+<meta name="description" content="Built an interactive rack plan before a data center visit, and the plan itself exposed a power redundancy gap.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/datacenter-rack-plan/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/datacenter-rack-plan/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/datacenter-rack-plan/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mapping a rack and finding a single point of failure">
+<meta property="og:description" content="Built an interactive rack plan before a data center visit, and the plan itself exposed a power redundancy gap.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/datacenter-rack-plan/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/datacenter-rack-plan/" class="active" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/datacenter-rack-plan/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/en/">Home</a>
+    <a href="/infrastructure-portfolio/en/projects/">Projects</a>
+    <a href="/infrastructure-portfolio/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Mapping a rack and finding a single point of failure</h1>
+<p class="lead">Built an interactive rack plan before a data center visit, and the plan itself exposed a power redundancy gap.</p>
+<h2>Problem</h2>
+<p>There was no accurate picture of what sat where in the rack, what it was connected to, and which power feed it used. Every site visit started with reading labels.</p>
+<h2>Approach</h2>
+<p>I built an interactive plan as a standalone HTML page: unit positions, devices, and, crucially, power feed per device. Modelling the feeds made the gap visible immediately.</p>
+<h2>Solution</h2>
+<p>One management device that everything else depends on was connected to a single feed while the rest of the rack was dual fed. A static transfer switch was specified and purchased to close the gap.</p>
+<h2>Result</h2>
+<p>The rack now has a documented plan that can be taken to a site visit, and a known redundancy gap with a purchased fix instead of an unknown one.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>Drawing infrastructure is a diagnostic technique, not documentation busywork. Gaps become visible when you have to place them on a page.</li>
+  <li>Redundancy that is not verified per device is redundancy on paper only.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">HTML</span>
+  <span class="tag">Data center planning</span>
+  <span class="tag">Infrastructure documentation</span>
+  <span class="tag">Redundancy analysis</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/en/projects/pdu-nodata-alert/">← A power alert that was not a power problem</a>
+  <span></span>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

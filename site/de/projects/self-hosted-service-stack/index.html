@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Einen selbst gehosteten Service-Stack von Grund auf aufbauen</title>
+<meta name="description" content="Zehn Open-Source-Dienste hinter einem Reverse Proxy bereitgestellt und dokumentiert, als Ersatz für fehlende oder kostenpflichtige Tools.">
+<link rel="alternate" hreflang="de" href="/de/projects/self-hosted-service-stack/">
+<link rel="alternate" hreflang="en" href="/en/projects/self-hosted-service-stack/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/self-hosted-service-stack/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Einen selbst gehosteten Service-Stack von Grund auf aufbauen">
+<meta property="og:description" content="Zehn Open-Source-Dienste hinter einem Reverse Proxy bereitgestellt und dokumentiert, als Ersatz für fehlende oder kostenpflichtige Tools.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/self-hosted-service-stack/" class="active" hreflang="de">Deutsch</a><a href="/en/projects/self-hosted-service-stack/" hreflang="en">English</a><a href="/fa/projects/self-hosted-service-stack/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/de/">Start</a>
+    <a href="/de/projects/">Projekte</a>
+    <a href="/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Einen selbst gehosteten Service-Stack von Grund auf aufbauen</h1>
+<p class="lead">Zehn Open-Source-Dienste hinter einem Reverse Proxy bereitgestellt und dokumentiert, als Ersatz für fehlende oder kostenpflichtige Tools.</p>
+<h2>Problem</h2>
+<p>Mehrere Grundfunktionen hatten keinen Verantwortlichen: keine Asset-Datenbank, kein internes Wiki, kein Identitätsanbieter, keine Automatisierungsplattform, kein Monitoring. Jede Lücke wurde durch Tabellenkalkulationen oder gar nichts gefüllt.</p>
+<h2>Vorgehen</h2>
+<p>Ich wählte Open-Source-Tools, die auf vorhandener Hardware laufen konnten, stellte jedes als Container bereit und legte alle hinter einen einzigen Reverse Proxy mit ordentlichen Zertifikaten. Jeder Dienst bekam eine geschriebene Dokumentationsseite: wofür er ist, wie er bereitgestellt wird, wie man ihn sichert und wiederherstellt.</p>
+<h2>Lösung</h2>
+<p>Der Stack deckt Asset-Management, Monitoring, SIEM, Identität und Single Sign-on, Dateifreigabe, Automatisierung, Dokumentation und ERP ab, verwaltet über Portainer mit einem Reverse Proxy davor.</p>
+<h2>Ergebnis</h2>
+<p>Funktionen, die vorher in Tabellenkalkulationen lebten, leben jetzt in Systemen mit Zugriffskontrolle und Historie. Weil jeder Dienst zum Zeitpunkt der Bereitstellung dokumentiert wurde, ist keiner eine Blackbox, die nur eine Person bedienen kann.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Dokumentation, die zum Zeitpunkt der Bereitstellung geschrieben wird, dauert zwanzig Minuten. Sechs Monate später geschrieben dauert sie einen Tag und ist falsch.</li>
+  <li>Ein Reverse Proxy und ein Identitätsanbieter vor allem ist mehr wert als jeder einzelne Dienst im Stack.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Docker</span>
+  <span class="tag">Portainer</span>
+  <span class="tag">Nginx Proxy Manager</span>
+  <span class="tag">GLPI</span>
+  <span class="tag">Zabbix</span>
+  <span class="tag">Keycloak</span>
+  <span class="tag">Nextcloud</span>
+  <span class="tag">n8n</span>
+  <span class="tag">BookStack</span>
+  <span class="tag">Dolibarr</span>
+  <span class="tag">Service architecture</span>
+  <span class="tag">Reverse proxy and TLS</span>
+  <span class="tag">Technical documentation</span>
+</div>
+<div class="prevnext">
+  <a href="/de/projects/linux-major-version-upgrade-runbook/">← Einen produktiven Linux-Server um zwei Versionen auf einmal upgraden</a>
+  <a href="/de/projects/self-hosted-password-vault/">Einen selbst gehosteten Passwort-Tresor betreiben, inklusive des Tages, an dem jemand ausgesperrt wird →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

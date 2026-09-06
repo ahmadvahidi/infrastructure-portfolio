@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ahmadvahidi.github.io/infrastructure-portfolio/sitemap.xml

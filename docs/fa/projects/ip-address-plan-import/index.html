@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تبدیل یک صفحه گسترده IP به یک پایگاه داده مدیریت آدرس واقعی</title>
+<meta name="description" content="۱۴ شبکه، ۱۱ VLAN و ۲۴۸ رکورد میزبان وارد شد، از جمله پاک‌سازی ۹۸ نام میزبان که هیچ سیستمی نمی‌پذیرفت.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/ip-address-plan-import/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/ip-address-plan-import/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/ip-address-plan-import/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="تبدیل یک صفحه گسترده IP به یک پایگاه داده مدیریت آدرس واقعی">
+<meta property="og:description" content="۱۴ شبکه، ۱۱ VLAN و ۲۴۸ رکورد میزبان وارد شد، از جمله پاک‌سازی ۹۸ نام میزبان که هیچ سیستمی نمی‌پذیرفت.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">پرش به محتوا</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/fa/">زیرساخت IT و اتوماسیون</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/ip-address-plan-import/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/ip-address-plan-import/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/ip-address-plan-import/" class="active" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/fa/">خانه</a>
+    <a href="/infrastructure-portfolio/fa/projects/">پروژه‌ها</a>
+    <a href="/infrastructure-portfolio/fa/about/">درباره</a>
+  </nav>
+</header>
+<main id="main">
+<h1>تبدیل یک صفحه گسترده IP به یک پایگاه داده مدیریت آدرس واقعی</h1>
+<p class="lead">۱۴ شبکه، ۱۱ VLAN و ۲۴۸ رکورد میزبان وارد شد، از جمله پاک‌سازی ۹۸ نام میزبان که هیچ سیستمی نمی‌پذیرفت.</p>
+<h2>مسئله</h2>
+<p>طرح آدرس IP یک صفحه گسترده با دوازده برگه، نام‌گذاری ناسازگار و ساختار پنهان بود. یک برگه به جای یک بلوک شبکه، سه بلوک شبکه جداگانه داشت، که دقیقاً همان چیزی است که یک صفحه گسترده اجازه می‌دهد از آن فرار کنی.</p>
+<h2>رویکرد</h2>
+<p>اول ساختار منبع را تحلیل کردم و فقط بعد واردسازی را نوشتم. مشکلات کیفیت داده مستند شد نه بی‌صدا اصلاح، چون اصلاح بی‌صدای داده دیگران راه از دست دادن رد حسابرسی است.</p>
+<h2>راه‌حل</h2>
+<p>واردسازی ۱۱ VLAN، ۱۳ شبکه IP، ۲۴۸ شی نام میزبان و ۲۴۸ شی آدرس تولید کرد. ۹۸ نام میزبان باید پاک‌سازی می‌شد چون سیستم هدف آن‌ها را به عنوان نام DNS اعتبارسنجی می‌کند و فاصله، زیرخط و نقطه را رد می‌کند. نام‌های کاملاً واجد شرایط واقعی به درستی به بخش میزبان و دامنه جدا شدند. چهار مشکل کیفیت داده با یک پیشوند بازبینی در فیلد نظر علامت‌گذاری شد نه حدس زده شد.</p>
+<h2>نتیجه</h2>
+<p>یک پایگاه داده آدرس قابل پرس‌وجو به جای یک صفحه گسترده، با رکوردهای نادرست شناخته‌شده به صورت قابل مشاهده برای بازبینی علامت‌گذاری شده.</p>
+<div class="lessons"><h2>چیزی که یاد گرفتم</h2><ul>
+  <li>قبل از نوشتن واردکننده، منبع را تحلیل کن. صفحات گسترده ساختاری را پنهان می‌کنند که هیچ طرحی اجازه نمی‌دهد.</li>
+  <li>داده بد را علامت بزن، بی‌صدا اصلاح نکن. کسی که آن را ساخته تنها کسی است که می‌داند قرار بود چه بگوید.</li>
+  <li>سیستم‌هایی که نام‌ها را به عنوان نام DNS اعتبارسنجی می‌کنند بخش بزرگی از هر فهرست دستی را رد می‌کنند. برای مرحله پاک‌سازی برنامه‌ریزی کن.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">GLPI</span>
+  <span class="tag">IPAM</span>
+  <span class="tag">n8n</span>
+  <span class="tag">Excel</span>
+  <span class="tag">Data cleaning</span>
+  <span class="tag">IPAM</span>
+  <span class="tag">Import design</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/fa/projects/dual-system-asset-migration/">← مهاجرت موجودی شرکت به دو سیستم به صورت موازی</a>
+  <a href="/infrastructure-portfolio/fa/projects/asset-depreciation-setup/">واداشتن پایگاه داده دارایی به پاسخ دادن به یک پرسش بودجه →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>تماس: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

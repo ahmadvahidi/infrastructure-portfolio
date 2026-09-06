@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بازیابی یک ماشین مجازی که هیچ‌کس نمی‌توانست وارد آن شود</title>
+<meta name="description" content="یک دیسک سیستم پر ورود را مسدود کرد و بعد از رفع آن، یک ارائه‌دهنده اعتبار خراب دوباره آن را مسدود کرد. از محیط بازیابی و حالت امن حل شد.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/hyperv-vm-locked-out-recovery/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/hyperv-vm-locked-out-recovery/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/hyperv-vm-locked-out-recovery/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="بازیابی یک ماشین مجازی که هیچ‌کس نمی‌توانست وارد آن شود">
+<meta property="og:description" content="یک دیسک سیستم پر ورود را مسدود کرد و بعد از رفع آن، یک ارائه‌دهنده اعتبار خراب دوباره آن را مسدود کرد. از محیط بازیابی و حالت امن حل شد.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">پرش به محتوا</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/fa/">زیرساخت IT و اتوماسیون</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/hyperv-vm-locked-out-recovery/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/hyperv-vm-locked-out-recovery/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/hyperv-vm-locked-out-recovery/" class="active" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/fa/">خانه</a>
+    <a href="/infrastructure-portfolio/fa/projects/">پروژه‌ها</a>
+    <a href="/infrastructure-portfolio/fa/about/">درباره</a>
+  </nav>
+</header>
+<main id="main">
+<h1>بازیابی یک ماشین مجازی که هیچ‌کس نمی‌توانست وارد آن شود</h1>
+<p class="lead">یک دیسک سیستم پر ورود را مسدود کرد و بعد از رفع آن، یک ارائه‌دهنده اعتبار خراب دوباره آن را مسدود کرد. از محیط بازیابی و حالت امن حل شد.</p>
+<h2>مسئله</h2>
+<p>یک ماشین مجازی ویندوز متصل به دامنه تحت هایپر-وی همه ورودها را رد کرد. دیسک سیستم کاملاً پر بود و هیچ راهی از طریق دسکتاپ عادی برای پاک‌سازی آن وجود نداشت.</p>
+<h2>رویکرد</h2>
+<p>دیسک مجازی را از سمت هایپروایزر بزرگ کردم و سپس در محیط بازیابی ویندوز بوت کردم تا پارتیشن را بزرگ کنم. چیدمان دیسک یک تله داشت: فضای آزاد کنار پارتیشن سیستم روی یک دیسک بود در حالی که یک دیسک مجازی دوم حرف درایو دیگری داشت، پس انتخاب حجم اشتباه شکست می‌خورد یا بدتر. قبل از بزرگ کردن هر چیزی شماره دیسک و پارتیشن را تأیید کردم.</p>
+<h2>راه‌حل</h2>
+<p>پارتیشن از محیط بازیابی بزرگ شد و حدود پنجاه گیگابایت فضای آزاد بازگرداند. ورود همچنان شکست می‌خورد، این بار چون یک ارائه‌دهنده اعتبار چندعاملی خراب بود و صفحه ورود را مسدود می‌کرد. در حالت امن با شبکه بوت کردم، سرویس نصب‌کننده ویندوز را در حالت امن از طریق یک کلید رجیستری فعال کردم تا حذف نصب اصلاً ممکن شود، محصول را حذف کردم، سپس ورودی‌های رجیستری، پوشه‌ها و سرویس‌های باقی‌مانده ارائه‌دهنده اعتبار را پاک کردم و تأیید کردم که ماشین از استقراری که آن را دوباره نصب می‌کرد مستثنا شده است.</p>
+<h2>نتیجه</h2>
+<p>ماشین بدون بازسازی و بدون از دست رفتن داده بازگشت. کل زمان توقف چند ساعت بود به جای نصب مجدد.</p>
+<div class="lessons"><h2>چیزی که یاد گرفتم</h2><ul>
+  <li>همیشه شماره دیسک و پارتیشن را در محیط بازیابی قبل از بزرگ کردن تأیید کن. شماره‌گذاری با سیستم در حال اجرا یکسان نیست.</li>
+  <li>نصب‌کننده ویندوز در حالت امن به صورت پیش‌فرض اجرا نمی‌شود. یک کلید رجیستری حذف نصب را ممکن می‌کند وقتی هیچ چیز دیگری کار نمی‌کند.</li>
+  <li>بعد از حذف یک ارائه‌دهنده اعتبار، ورودی‌های رجیستری آن را هم پاک کن، وگرنه صفحه ورود همچنان سعی می‌کند چیزی را بارگذاری کند که رفته است.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Hyper-V</span>
+  <span class="tag">Windows Server</span>
+  <span class="tag">WinRE</span>
+  <span class="tag">diskpart</span>
+  <span class="tag">Registry</span>
+  <span class="tag">Safe Mode</span>
+  <span class="tag">Offline recovery</span>
+  <span class="tag">Windows internals</span>
+  <span class="tag">Root cause isolation</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/fa/projects/self-hosted-password-vault/">← اجرای یک گاوصندوق رمز عبور خودمیزبان، از جمله روزی که کسی قفل می‌شود</a>
+  <a href="/infrastructure-portfolio/fa/projects/personal-vps-ai-stack/">یک پشته هوش مصنوعی و اتوماسیون خصوصی روی یک VPS واحد →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>تماس: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

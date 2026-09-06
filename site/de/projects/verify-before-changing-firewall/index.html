@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Die Firewall-Änderung, die sich als unnötig herausstellte</title>
+<meta name="description" content="Ein Anbieter kündigte einen neuen IP-Bereich mit einer Frist an. Tests zeigten, dass der Verkehr bereits funktionierte, also wurde nichts geändert.">
+<link rel="alternate" hreflang="de" href="/de/projects/verify-before-changing-firewall/">
+<link rel="alternate" hreflang="en" href="/en/projects/verify-before-changing-firewall/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/verify-before-changing-firewall/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Die Firewall-Änderung, die sich als unnötig herausstellte">
+<meta property="og:description" content="Ein Anbieter kündigte einen neuen IP-Bereich mit einer Frist an. Tests zeigten, dass der Verkehr bereits funktionierte, also wurde nichts geändert.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/verify-before-changing-firewall/" class="active" hreflang="de">Deutsch</a><a href="/en/projects/verify-before-changing-firewall/" hreflang="en">English</a><a href="/fa/projects/verify-before-changing-firewall/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/de/">Start</a>
+    <a href="/de/projects/">Projekte</a>
+    <a href="/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Die Firewall-Änderung, die sich als unnötig herausstellte</h1>
+<p class="lead">Ein Anbieter kündigte einen neuen IP-Bereich mit einer Frist an. Tests zeigten, dass der Verkehr bereits funktionierte, also wurde nichts geändert.</p>
+<h2>Problem</h2>
+<p>Ein Backup-Anbieter kündigte an, Verkehr über einen neuen Anbieter zu leiten, und führte einen neuen Adressbereich ein, den Agents vor einer festen Frist erreichen mussten. Die offensichtliche Reaktion ist, den Bereich sofort auf der Firewall zu öffnen.</p>
+<h2>Vorgehen</h2>
+<p>Bevor ich irgendeine Regel anfasste, testete ich, ob der Verkehr tatsächlich funktionierte. Das bedeutete, das Richtige zu testen: Agents nutzen verschlüsselte Verbindungen auf einem bestimmten Port, also beweist ein erfolgreicher Ping nichts. Ich führte echte Verbindungstests auf diesem Port aus zwei verschiedenen Netzsegmenten durch, einschließlich des isolierten, mit Werkzeugen, die zum jeweiligen Betriebssystem passen.</p>
+<h2>Lösung</h2>
+<p>Beide Segmente erreichten den neuen Bereich erfolgreich und die verschlüsselte Sitzung wurde unverändert aufgebaut, was bedeutete, dass nichts dazwischen störte. Keine Firewall-Änderung war erforderlich. Ich dokumentierte, wie die Änderung ausgesehen hätte, wenn sie nötig gewesen wäre, damit das Wissen existiert, falls die Situation wiederkehrt.</p>
+<h2>Ergebnis</h2>
+<p>Frist eingehalten mit null Änderungen an der Firewall, und ein schriftliches Briefing, das Kollegen erklärt, warum keine Aktion die richtige Aktion war.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Teste, bevor du änderst. Eine unnötig hinzugefügte Regel ist permanente Angriffsfläche, an die sich niemand erinnert, sie hinzugefügt zu haben.</li>
+  <li>Ping testet Erreichbarkeit, nicht den Port, den deine Anwendung nutzt. Teste den tatsächlichen Port und das tatsächliche Protokoll.</li>
+  <li>Dokumentiere die Änderung, die du nicht gemacht hast. Beim nächsten Mal existiert die Antwort bereits.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">WatchGuard</span>
+  <span class="tag">TLS</span>
+  <span class="tag">PowerShell</span>
+  <span class="tag">Bash</span>
+  <span class="tag">curl</span>
+  <span class="tag">Connectivity testing</span>
+  <span class="tag">Change avoidance</span>
+  <span class="tag">Stakeholder briefing</span>
+</div>
+<div class="prevnext">
+  <a href="/de/projects/self-hosted-vpn/">← Ein selbst gehostetes VPN und der Client, der sich weigerte zu verbinden</a>
+  <span></span>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

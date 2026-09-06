@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IT Infrastructure &amp; Automation</title>
+<meta name="description" content="Real problems from daily infrastructure work, written up as reusable solutions.">
+<link rel="alternate" hreflang="de" href="/de/">
+<link rel="alternate" hreflang="en" href="/en/">
+<link rel="alternate" hreflang="fa" href="/fa/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="IT Infrastructure &amp; Automation">
+<meta property="og:description" content="Real problems from daily infrastructure work, written up as reusable solutions.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/" hreflang="de">Deutsch</a><a href="/en/" class="active" hreflang="en">English</a><a href="/fa/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/en/">Home</a>
+    <a href="/en/projects/">Projects</a>
+    <a href="/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>IT Infrastructure & Automation</h1>
+<p class="lead">Real problems from daily infrastructure work, written up as reusable solutions.</p>
+<div class="sec-label">Categories</div>
+<div class="cat-list">
+  <a class="cat-pill" href="/en/projects/#infrastructure">Infrastructure and servers</a>
+  <a class="cat-pill" href="/en/projects/#security">Security</a>
+  <a class="cat-pill" href="/en/projects/#monitoring">Monitoring</a>
+  <a class="cat-pill" href="/en/projects/#automation">Automation and AI</a>
+  <a class="cat-pill" href="/en/projects/#asset-management">IT asset management</a>
+  <a class="cat-pill" href="/en/projects/#network">Network, firewall and VPN</a>
+  <a class="cat-pill" href="/en/projects/#backup">Backup and storage</a>
+  <a class="cat-pill" href="/en/projects/#support">User support</a>
+</div>
+<h2>All projects</h2>
+<ul class="proj-list">
+  <li><a href="/en/projects/wazuh-siem-rollout/"><span class="ptitle">Rolling out a self-hosted SIEM in six phases</span><span class="psum">Introduced Wazuh as a central SIEM on Docker, planned as six phases so the rollout could not stall halfway.</span><span class="pcat">Infrastructure and servers</span></a></li>
+  <li><a href="/en/projects/linux-major-version-upgrade-runbook/"><span class="ptitle">Upgrading a production Linux server two versions at once</span><span class="psum">Ubuntu 22.04 to 24.04 and Java 17 to 25 on a server hosting an integration tool, executed from a written runbook rather than improvised.</span><span class="pcat">Infrastructure and servers</span></a></li>
+  <li><a href="/en/projects/self-hosted-service-stack/"><span class="ptitle">Building a self-hosted service stack from scratch</span><span class="psum">Deployed and documented ten open source services behind a reverse proxy, replacing a set of missing or paid tools.</span><span class="pcat">Infrastructure and servers</span></a></li>
+  <li><a href="/en/projects/self-hosted-password-vault/"><span class="ptitle">Running a self-hosted password vault, including the day someone gets locked out</span><span class="psum">Deployed a Vaultwarden server with mail delivery through Microsoft 365, and learned the hard way why the account recovery policy has to be enabled before anyone needs it.</span><span class="pcat">Infrastructure and servers</span></a></li>
+  <li><a href="/en/projects/hyperv-vm-locked-out-recovery/"><span class="ptitle">Recovering a virtual machine nobody could log into</span><span class="psum">A full system drive blocked login, and after fixing that a broken credential provider blocked it again. Solved from the recovery environment and safe mode.</span><span class="pcat">Infrastructure and servers</span></a></li>
+  <li><a href="/en/projects/personal-vps-ai-stack/"><span class="ptitle">A private AI and automation stack on a single VPS</span><span class="psum">Self-hosted model serving, a chat interface, an automation platform and an autonomous agent on one small server.</span><span class="pcat">Infrastructure and servers</span></a></li>
+  <li><a href="/en/projects/security-report-triage/"><span class="ptitle">Triaging a security report without creating panic</span><span class="psum">Five alerts on domain controllers and a Linux build runner, sorted into real findings, misconfigurations and false positives.</span><span class="pcat">Security</span></a></li>
+  <li><a href="/en/projects/pdu-nodata-alert/"><span class="ptitle">A power alert that was not a power problem</span><span class="psum">A rack power distribution unit stopped reporting to monitoring. The trigger said no data, and everyone read that as no power.</span><span class="pcat">Monitoring</span></a></li>
+  <li><a href="/en/projects/datacenter-rack-plan/"><span class="ptitle">Mapping a rack and finding a single point of failure</span><span class="psum">Built an interactive rack plan before a data center visit, and the plan itself exposed a power redundancy gap.</span><span class="pcat">Monitoring</span></a></li>
+  <li><a href="/en/projects/asset-intake-workflow/"><span class="ptitle">One form, two asset systems, zero manual entry</span><span class="psum">A 98 node automation workflow that registers a new device in two asset management systems at once, assigns the inventory number itself, and can be used by a non technical colleague.</span><span class="pcat">Automation and AI</span></a></li>
+  <li><a href="/en/projects/bulk-inventory-import/"><span class="ptitle">Importing 735 inventory records without creating duplicates</span><span class="psum">An automated import that reads a spreadsheet and writes into an asset system, with deduplication that actually works.</span><span class="pcat">Automation and AI</span></a></li>
+  <li><a href="/en/projects/e-invoicing-workflow/"><span class="ptitle">A prototype for automated electronic invoice processing</span><span class="psum">An MVP for reading structured electronic invoice formats, built with data protection and licensing constraints designed in from the start.</span><span class="pcat">Automation and AI</span></a></li>
+  <li><a href="/en/projects/automated-offsite-backup/"><span class="ptitle">Solving a full disk with automation instead of a bigger disk</span><span class="psum">A server ran out of space. The fix combined an automated offsite copy, a data retention policy change and a disk expansion, in that order.</span><span class="pcat">Automation and AI</span></a></li>
+  <li><a href="/en/projects/video-summary-bot/"><span class="ptitle">A messaging bot that summarizes videos in your own language</span><span class="psum">Send a video link in a chat app, get a useful summary back, built entirely through the automation platform's REST API.</span><span class="pcat">Automation and AI</span></a></li>
+  <li><a href="/en/projects/dual-system-asset-migration/"><span class="ptitle">Migrating a company inventory into two systems in parallel</span><span class="psum">606 assets and 129 licenses moved from a spreadsheet into two asset management systems, then consolidated into one after an evaluation period.</span><span class="pcat">IT asset management</span></a></li>
+  <li><a href="/en/projects/ip-address-plan-import/"><span class="ptitle">Turning an IP spreadsheet into a real address management database</span><span class="psum">14 networks, 11 VLANs and 248 host records imported, including the cleanup of 98 hostnames that no system would accept.</span><span class="pcat">IT asset management</span></a></li>
+  <li><a href="/en/projects/asset-depreciation-setup/"><span class="ptitle">Making the asset database answer a budget question</span><span class="psum">Configured depreciation with a useful life per asset category, so replacement budget can be forecast instead of guessed.</span><span class="pcat">IT asset management</span></a></li>
+  <li><a href="/en/projects/internal-dns-records/"><span class="ptitle">Publishing two new internal portals via DNS</span><span class="psum">Two new hostnames pointing at an existing web server, created as aliases, verified end to end, and documented with a rollback path.</span><span class="pcat">Network, firewall and VPN</span></a></li>
+  <li><a href="/en/projects/self-hosted-vpn/"><span class="ptitle">A self-hosted VPN and the client that refused to connect</span><span class="psum">Set up a modern protocol VPN on a cloud server, then debugged a client rejection that had nothing to do with the configuration.</span><span class="pcat">Network, firewall and VPN</span></a></li>
+  <li><a href="/en/projects/verify-before-changing-firewall/"><span class="ptitle">The firewall change that turned out to be unnecessary</span><span class="psum">A vendor announced a new IP range with a deadline. Testing showed the traffic already worked, so nothing was changed.</span><span class="pcat">Network, firewall and VPN</span></a></li>
+  <li><a href="/en/projects/backup-retention-behaviour/"><span class="ptitle">Why the backup count exceeds the retention limit</span><span class="psum">A retention rule set to 28 backups showed 29. Explaining why, and confirming that no emergency action was needed.</span><span class="pcat">Backup and storage</span></a></li>
+  <li><a href="/en/projects/tape-library-maintenance/"><span class="ptitle">Keeping a tape library healthy</span><span class="psum">Cleaning cycles, magazine swaps and backup exclusions on a physical tape library.</span><span class="pcat">Backup and storage</span></a></li>
+  <li><a href="/en/projects/outlook-wont-start/"><span class="ptitle">A structured method for an email client that will not start</span><span class="psum">Seven ordered steps that find the cause in most cases, arranged so the cheapest test comes first.</span><span class="pcat">User support</span></a></li>
+  <li><a href="/en/projects/vendor-update-tool-broken/"><span class="ptitle">When a driver update disables the service it needs</span><span class="psum">A vendor update utility stopped launching after installing its own updates. The cause was a service left in a disabled state.</span><span class="pcat">User support</span></a></li>
+  <li><a href="/en/projects/sso-group-based-access/"><span class="ptitle">Single sign-on with group based access to a file platform</span><span class="psum">Connected a self-hosted file platform to a central identity provider so that group membership, not manual assignment, controls access.</span><span class="pcat">User support</span></a></li>
+  <li><a href="/en/projects/developer-workstation-onboarding/"><span class="ptitle">Delivering a developer workstation against a hard deadline</span><span class="psum">A full development environment, permissions, service access and login scripting, ready for a returning developer's first day.</span><span class="pcat">User support</span></a></li>
+</ul>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Migrating a company inventory into two systems in parallel</title>
+<meta name="description" content="606 assets and 129 licenses moved from a spreadsheet into two asset management systems, then consolidated into one after an evaluation period.">
+<link rel="alternate" hreflang="de" href="/de/projects/dual-system-asset-migration/">
+<link rel="alternate" hreflang="en" href="/en/projects/dual-system-asset-migration/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/dual-system-asset-migration/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Migrating a company inventory into two systems in parallel">
+<meta property="og:description" content="606 assets and 129 licenses moved from a spreadsheet into two asset management systems, then consolidated into one after an evaluation period.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/dual-system-asset-migration/" hreflang="de">Deutsch</a><a href="/en/projects/dual-system-asset-migration/" class="active" hreflang="en">English</a><a href="/fa/projects/dual-system-asset-migration/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/en/">Home</a>
+    <a href="/en/projects/">Projects</a>
+    <a href="/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Migrating a company inventory into two systems in parallel</h1>
+<p class="lead">606 assets and 129 licenses moved from a spreadsheet into two asset management systems, then consolidated into one after an evaluation period.</p>
+<h2>Problem</h2>
+<p>The complete IT inventory, worth roughly two million euros, lived in a spreadsheet. No history, no assignment to users, no depreciation, no license overview, and no way to answer who has which device.</p>
+<h2>Approach</h2>
+<p>Rather than betting on one product, I migrated into two candidate systems in parallel and ran both for an evaluation period. Same source data, same categories, so the comparison was fair.</p>
+<h2>Solution</h2>
+<p>System A received the data split into assets, accessories, components and licenses across 15 categories with a custom field set for company specific attributes. System B received nine object types including a custom asset type for furniture, with financial data attached to each object. After the evaluation, one system was chosen and the other kept read only as a reference.</p>
+<h2>Result</h2>
+<p>A complete, queryable inventory with documented value, plus a decision made on evidence rather than on a vendor demo.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>Evaluating two systems with real data costs more time than reading comparison articles and is the only method that produces a defensible decision.</li>
+  <li>Field names in an API rarely match the labels in the interface. Check the API reference before mapping columns.</li>
+  <li>A typo in a system generated internal name can be permanent. Check the name field before saving anything that becomes an identifier.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">GLPI</span>
+  <span class="tag">Snipe-IT</span>
+  <span class="tag">n8n</span>
+  <span class="tag">Excel</span>
+  <span class="tag">REST APIs</span>
+  <span class="tag">Data migration</span>
+  <span class="tag">Tool evaluation</span>
+  <span class="tag">IT asset management</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/en/projects/ip-address-plan-import/">Turning an IP spreadsheet into a real address management database →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

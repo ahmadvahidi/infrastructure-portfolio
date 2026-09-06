@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eine strukturierte Methode für einen E-Mail-Client, der nicht startet</title>
+<meta name="description" content="Sieben geordnete Schritte, die in den meisten Fällen die Ursache finden, so angeordnet, dass der billigste Test zuerst kommt.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/outlook-wont-start/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/outlook-wont-start/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/outlook-wont-start/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Eine strukturierte Methode für einen E-Mail-Client, der nicht startet">
+<meta property="og:description" content="Sieben geordnete Schritte, die in den meisten Fällen die Ursache finden, so angeordnet, dass der billigste Test zuerst kommt.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/outlook-wont-start/" class="active" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/outlook-wont-start/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/outlook-wont-start/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/de/">Start</a>
+    <a href="/infrastructure-portfolio/de/projects/">Projekte</a>
+    <a href="/infrastructure-portfolio/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Eine strukturierte Methode für einen E-Mail-Client, der nicht startet</h1>
+<p class="lead">Sieben geordnete Schritte, die in den meisten Fällen die Ursache finden, so angeordnet, dass der billigste Test zuerst kommt.</p>
+<h2>Problem</h2>
+<p>Ein Kollege meldete, dass der klassische E-Mail-Client überhaupt nicht startete, auch nach einem Neustart. Neuinstallation ist die übliche Reaktion und fast immer der falsche erste Schritt.</p>
+<h2>Vorgehen</h2>
+<p>Ich baute eine Sequenz, geordnet nach Kosten und Wahrscheinlichkeit, sodass die schnellsten und am wenigsten invasiven Tests zuerst laufen und jeder Schritt entweder die Ursache behebt oder eine Ursache ausschließt.</p>
+<h2>Lösung</h2>
+<p>Prüfen, ob ein hängender Prozess die Anwendung noch hält; im abgesicherten Modus starten; Add-ins einzeln deaktivieren; Navigationsbereich und Ansichten über Befehlszeilenschalter zurücksetzen; ein frisches Profil erstellen; eine Schnellreparatur und dann eine Onlinereparatur ausführen; schließlich prüfen, ob ein kürzliches Update mit dem Ausfall zusammenfällt. In der Praxis identifizieren der abgesicherte Modus und die Add-in-Schritte die Ursache meistens, wobei Dokument- oder Besprechungs-Add-ins die üblichen Übeltäter sind.</p>
+<h2>Ergebnis</h2>
+<p>Eine wiederverwendbare Checkliste statt einer Einmallösung, plus eine kurze Nachrichtenvorlage, damit der Benutzer den ersten Test selbst ausführen kann, bevor jemand eine Remote-Sitzung bucht.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Ordne Fehlerbehebungsschritte nach Kosten, nicht danach, wie wahrscheinlich sich jeder anfühlt. Die billigen Tests eliminieren ganze Zweige.</li>
+  <li>Der abgesicherte Modus ist der schnellste Weg, die Anwendung von ihren Erweiterungen zu trennen. Starte dort.</li>
+  <li>Lass den Benutzer den ersten Schritt ausführen. Es spart in der Hälfte der Fälle einen Termin.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Microsoft Outlook</span>
+  <span class="tag">Microsoft Office</span>
+  <span class="tag">Event Viewer</span>
+  <span class="tag">Structured troubleshooting</span>
+  <span class="tag">First level support</span>
+  <span class="tag">Documentation</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/infrastructure-portfolio/de/projects/vendor-update-tool-broken/">Wenn ein Treiber-Update den Dienst deaktiviert, den es braucht →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

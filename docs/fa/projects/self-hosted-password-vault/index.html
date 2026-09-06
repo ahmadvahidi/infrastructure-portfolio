@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>اجرای یک گاوصندوق رمز عبور خودمیزبان، از جمله روزی که کسی قفل می‌شود</title>
+<meta name="description" content="یک سرور والت‌واردن با ارسال ایمیل از طریق مایکروسافت ۳۶۵ مستقر شد و به سختی یاد گرفتم چرا سیاست بازیابی حساب باید قبل از نیاز کسی فعال باشد.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/self-hosted-password-vault/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/self-hosted-password-vault/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/self-hosted-password-vault/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="اجرای یک گاوصندوق رمز عبور خودمیزبان، از جمله روزی که کسی قفل می‌شود">
+<meta property="og:description" content="یک سرور والت‌واردن با ارسال ایمیل از طریق مایکروسافت ۳۶۵ مستقر شد و به سختی یاد گرفتم چرا سیاست بازیابی حساب باید قبل از نیاز کسی فعال باشد.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">پرش به محتوا</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/fa/">زیرساخت IT و اتوماسیون</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/self-hosted-password-vault/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/self-hosted-password-vault/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/self-hosted-password-vault/" class="active" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/fa/">خانه</a>
+    <a href="/infrastructure-portfolio/fa/projects/">پروژه‌ها</a>
+    <a href="/infrastructure-portfolio/fa/about/">درباره</a>
+  </nav>
+</header>
+<main id="main">
+<h1>اجرای یک گاوصندوق رمز عبور خودمیزبان، از جمله روزی که کسی قفل می‌شود</h1>
+<p class="lead">یک سرور والت‌واردن با ارسال ایمیل از طریق مایکروسافت ۳۶۵ مستقر شد و به سختی یاد گرفتم چرا سیاست بازیابی حساب باید قبل از نیاز کسی فعال باشد.</p>
+<h2>مسئله</h2>
+<p>اعتبارنامه‌های مشترک در پیام‌های چت و فایل‌های متنی دست به دست می‌شد. یک گاوصندوق مرکزی لازم بود، خودمیزبان به جای ابری، با دعوت‌نامه‌ها و بازنشانی رمز عبور از طریق سیستم ایمیل شرکت.</p>
+<h2>رویکرد</h2>
+<p>استقرار ساده بود. بخش جالب بعداً آمد: یک همکار دیگر نمی‌توانست گاوصندوقش را باز کند، هرچند مطمئن بود رمز اصلی درست است. باید می‌فهمیدم در این معماری واقعاً چه چیزی قابل بازیابی است.</p>
+<h2>راه‌حل</h2>
+<p>گاوصندوق سمت کلاینت با رمز اصلی رمزنگاری می‌شود، پس سرور هرگز چیزی که بتواند آن را رمزگشایی کند نگه نمی‌دارد. بازیابی توسط مدیر فقط وقتی وجود دارد که سیاست بازیابی از قبل فعال شده و کاربر در آن زمان ثبت‌نام کرده باشد. این‌طور نبود. پاسخ صادقانه این بود که گاوصندوق شخصی قابل بازیابی نیست، در حالی که ورودی‌های مجموعه مشترک باقی ماندند چون با کلید سازمان رمزنگاری شده‌اند. حساب را حذف و دوباره دعوت کردم و سیاست بازیابی را برای بقیه فعال کردم.</p>
+<h2>نتیجه</h2>
+<p>یک کاربر ورودی‌های شخصی را از دست داد. هیچ‌کس دیگری از دست نخواهد داد، چون سیاست اکنون فعال است و در زمان ثبت‌نام اعمال می‌شود.</p>
+<div class="lessons"><h2>چیزی که یاد گرفتم</h2><ul>
+  <li>مدل رمزنگاری یک ابزار را قبل از استقرار بفهم، نه وقتی کاربر قفل شده است.</li>
+  <li>سیاست‌های بازیابی به صورت گذشته‌نگر بی‌ارزش‌اند. از روز اول فعالشان کن.</li>
+  <li>گفتن صریح به کاربر که داده‌ها از بین رفته‌اند بهتر از سه روز امید واهی است.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Vaultwarden</span>
+  <span class="tag">Docker</span>
+  <span class="tag">Microsoft 365 SMTP</span>
+  <span class="tag">Zero knowledge encryption models</span>
+  <span class="tag">Policy design</span>
+  <span class="tag">Incident communication</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/fa/projects/self-hosted-service-stack/">← ساخت یک پشته سرویس خودمیزبان از صفر</a>
+  <a href="/infrastructure-portfolio/fa/projects/hyperv-vm-locked-out-recovery/">بازیابی یک ماشین مجازی که هیچ‌کس نمی‌توانست وارد آن شود →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>تماس: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

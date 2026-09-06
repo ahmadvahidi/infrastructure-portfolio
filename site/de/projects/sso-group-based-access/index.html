@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Single Sign-on mit gruppenbasiertem Zugriff auf eine Dateiplattform</title>
+<meta name="description" content="Eine selbst gehostete Dateiplattform an einen zentralen Identitätsanbieter angeschlossen, sodass Gruppenmitgliedschaft, nicht manuelle Zuweisung, den Zugriff steuert.">
+<link rel="alternate" hreflang="de" href="/de/projects/sso-group-based-access/">
+<link rel="alternate" hreflang="en" href="/en/projects/sso-group-based-access/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/sso-group-based-access/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Single Sign-on mit gruppenbasiertem Zugriff auf eine Dateiplattform">
+<meta property="og:description" content="Eine selbst gehostete Dateiplattform an einen zentralen Identitätsanbieter angeschlossen, sodass Gruppenmitgliedschaft, nicht manuelle Zuweisung, den Zugriff steuert.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/sso-group-based-access/" class="active" hreflang="de">Deutsch</a><a href="/en/projects/sso-group-based-access/" hreflang="en">English</a><a href="/fa/projects/sso-group-based-access/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/de/">Start</a>
+    <a href="/de/projects/">Projekte</a>
+    <a href="/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Single Sign-on mit gruppenbasiertem Zugriff auf eine Dateiplattform</h1>
+<p class="lead">Eine selbst gehostete Dateiplattform an einen zentralen Identitätsanbieter angeschlossen, sodass Gruppenmitgliedschaft, nicht manuelle Zuweisung, den Zugriff steuert.</p>
+<h2>Problem</h2>
+<p>Der Zugriff auf geteilte Ordner wurde pro Benutzer von Hand zugewiesen. Jeder neue Kollege bedeutete eine manuelle Runde der Berechtigungssetzung, und jeder Abgang bedeutete die Hoffnung, dass niemand eine vergaß.</p>
+<h2>Vorgehen</h2>
+<p>Identität zentralisieren: Die Dateiplattform authentifiziert gegen den Identitätsanbieter, und der Ordnerzugriff folgt der Gruppenmitgliedschaft, die bereits im Verzeichnis existiert.</p>
+<h2>Lösung</h2>
+<p>Social-Login-Integration zwischen der Dateiplattform und dem Identitätsanbieter, mit Gruppen-Mapping, sodass Zugriff durch Gruppenmitgliedschaft gewährt und entzogen wird. Getrennt davon überprüfte und verschärfte ich die Richtlinie für anonyme Freigabelinks auf der Firmen-Dateiplattform.</p>
+<h2>Ergebnis</h2>
+<p>Onboarding und Offboarding wurden eine Gruppenmitgliedschaftsänderung statt einer manuellen Berechtigungsprüfung.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Berechtigungen, die pro Benutzer zugewiesen werden, sind Berechtigungen, die irgendwann falsch sein werden. Mappe sie auf Gruppen.</li>
+  <li>Anonyme Freigabelinks sind das stille Datenleck in den meisten Organisationen. Setze die Richtlinie bewusst, akzeptiere nicht den Standard.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Keycloak</span>
+  <span class="tag">Nextcloud</span>
+  <span class="tag">SharePoint</span>
+  <span class="tag">OIDC</span>
+  <span class="tag">Identity and access management</span>
+  <span class="tag">SSO integration</span>
+  <span class="tag">Policy configuration</span>
+</div>
+<div class="prevnext">
+  <a href="/de/projects/vendor-update-tool-broken/">← Wenn ein Treiber-Update den Dienst deaktiviert, den es braucht</a>
+  <a href="/de/projects/developer-workstation-onboarding/">Einen Entwickler-Arbeitsplatz gegen eine harte Frist liefern →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

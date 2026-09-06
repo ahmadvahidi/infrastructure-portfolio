@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تغییر فایروال که معلوم شد غیرضروری است</title>
+<meta name="description" content="یک فروشنده یک محدوده IP جدید با یک مهلت اعلام کرد. تست‌ها نشان دادند ترافیک از قبل کار می‌کند، پس هیچ چیز تغییر نکرد.">
+<link rel="alternate" hreflang="de" href="/de/projects/verify-before-changing-firewall/">
+<link rel="alternate" hreflang="en" href="/en/projects/verify-before-changing-firewall/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/verify-before-changing-firewall/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="تغییر فایروال که معلوم شد غیرضروری است">
+<meta property="og:description" content="یک فروشنده یک محدوده IP جدید با یک مهلت اعلام کرد. تست‌ها نشان دادند ترافیک از قبل کار می‌کند، پس هیچ چیز تغییر نکرد.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">پرش به محتوا</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/fa/">زیرساخت IT و اتوماسیون</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/verify-before-changing-firewall/" hreflang="de">Deutsch</a><a href="/en/projects/verify-before-changing-firewall/" hreflang="en">English</a><a href="/fa/projects/verify-before-changing-firewall/" class="active" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/fa/">خانه</a>
+    <a href="/fa/projects/">پروژه‌ها</a>
+    <a href="/fa/about/">درباره</a>
+  </nav>
+</header>
+<main id="main">
+<h1>تغییر فایروال که معلوم شد غیرضروری است</h1>
+<p class="lead">یک فروشنده یک محدوده IP جدید با یک مهلت اعلام کرد. تست‌ها نشان دادند ترافیک از قبل کار می‌کند، پس هیچ چیز تغییر نکرد.</p>
+<h2>مسئله</h2>
+<p>یک فروشنده پشتیبان اعلام کرد ترافیک را از طریق یک ارائه‌دهنده جدید هدایت می‌کند و یک محدوده آدرس جدید معرفی کرد که عامل‌ها باید قبل از یک مهلت ثابت به آن می‌رسیدند. واکنش بدیهی این است که محدوده را فوراً روی فایروال باز کنی.</p>
+<h2>رویکرد</h2>
+<p>قبل از دست زدن به هر قانونی، تست کردم که آیا ترافیک واقعاً کار می‌کند. یعنی تست چیز درست: عامل‌ها از اتصالات رمزنگاری‌شده روی یک پورت خاص استفاده می‌کنند، پس یک پینگ موفق هیچ چیز را ثابت نمی‌کند. تست‌های اتصال واقعی روی آن پورت از دو بخش شبکه مختلف، از جمله بخش ایزوله، با ابزارهای مناسب هر سیستم عامل اجرا کردم.</p>
+<h2>راه‌حل</h2>
+<p>هر دو بخش با موفقیت به محدوده جدید رسیدند و نشست رمزنگاری‌شده بدون تغییر برقرار شد، یعنی هیچ چیز در میانه مزاحم نبود. هیچ تغییر فایروال لازم نبود. مستند کردم که تغییر اگر لازم بود چه شکلی می‌داشت، تا دانش وجود داشته باشد اگر وضعیت تکرار شود.</p>
+<h2>نتیجه</h2>
+<p>مهلت با صفر تغییر در فایروال رعایت شد، و یک توضیح کتبی که به همکاران می‌گوید چرا عدم اقدام اقدام درست بود.</p>
+<div class="lessons"><h2>چیزی که یاد گرفتم</h2><ul>
+  <li>قبل از تغییر تست کن. یک قانون غیرضروری اضافه‌شده سطح حمله دائمی است که هیچ‌کس یادش نیست اضافه کرده است.</li>
+  <li>پینگ دسترس‌پذیری را تست می‌کند، نه پورتی که برنامه تو استفاده می‌کند. پورت واقعی و پروتکل واقعی را تست کن.</li>
+  <li>تغییری که انجام ندادی را مستند کن. دفعه بعد پاسخ از قبل وجود دارد.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">WatchGuard</span>
+  <span class="tag">TLS</span>
+  <span class="tag">PowerShell</span>
+  <span class="tag">Bash</span>
+  <span class="tag">curl</span>
+  <span class="tag">Connectivity testing</span>
+  <span class="tag">Change avoidance</span>
+  <span class="tag">Stakeholder briefing</span>
+</div>
+<div class="prevnext">
+  <a href="/fa/projects/self-hosted-vpn/">← یک VPN خودمیزبان و کلاینتی که از اتصال امتناع می‌کرد</a>
+  <span></span>
+</div>
+</main>
+<footer class="site-footer">
+  <p>تماس: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

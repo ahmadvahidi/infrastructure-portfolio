@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Upgrading a production Linux server two versions at once</title>
+<meta name="description" content="Ubuntu 22.04 to 24.04 and Java 17 to 25 on a server hosting an integration tool, executed from a written runbook rather than improvised.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/linux-major-version-upgrade-runbook/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/linux-major-version-upgrade-runbook/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/linux-major-version-upgrade-runbook/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Upgrading a production Linux server two versions at once">
+<meta property="og:description" content="Ubuntu 22.04 to 24.04 and Java 17 to 25 on a server hosting an integration tool, executed from a written runbook rather than improvised.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/linux-major-version-upgrade-runbook/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/linux-major-version-upgrade-runbook/" class="active" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/linux-major-version-upgrade-runbook/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/en/">Home</a>
+    <a href="/infrastructure-portfolio/en/projects/">Projects</a>
+    <a href="/infrastructure-portfolio/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Upgrading a production Linux server two versions at once</h1>
+<p class="lead">Ubuntu 22.04 to 24.04 and Java 17 to 25 on a server hosting an integration tool, executed from a written runbook rather than improvised.</p>
+<h2>Problem</h2>
+<p>A synchronization tool that keeps two issue tracking systems in sync needed a newer version. That version required a newer Java runtime, which in turn required a newer distribution release. Three upgrades stacked on top of each other, on a server that other teams depended on during working hours.</p>
+<h2>Approach</h2>
+<p>I wrote a runbook before starting: current state inventory, snapshot and rollback point, dependency check for every installed package, then the upgrade split into phases with a verification step after each one. I deliberately did not chain the steps so that a failure at any point would leave a system that still booted and still served the old version.</p>
+<h2>Solution</h2>
+<p>Distribution upgrade first, then the Java runtime, then the application. Along the way I fixed a systemd unit that had been producing a false monitoring alarm for months because the service reported ready before it actually was.</p>
+<h2>Result</h2>
+<p>The upgrade path was executed phase by phase with no unplanned downtime, and one long-standing false alarm disappeared as a side effect.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>When three upgrades depend on each other, write the order down. The dependency chain is not obvious under time pressure.</li>
+  <li>A monitoring alarm that everyone has learned to ignore is a bug, not background noise.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Ubuntu</span>
+  <span class="tag">Java</span>
+  <span class="tag">systemd</span>
+  <span class="tag">Zabbix</span>
+  <span class="tag">Runbook writing</span>
+  <span class="tag">Change management</span>
+  <span class="tag">Linux administration</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/en/projects/wazuh-siem-rollout/">← Rolling out a self-hosted SIEM in six phases</a>
+  <a href="/infrastructure-portfolio/en/projects/self-hosted-service-stack/">Building a self-hosted service stack from scratch →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

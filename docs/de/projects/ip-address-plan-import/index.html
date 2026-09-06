@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eine IP-Tabelle in eine echte Adressverwaltungs-Datenbank verwandeln</title>
+<meta name="description" content="14 Netze, 11 VLANs und 248 Host-Datensätze importiert, einschließlich der Bereinigung von 98 Hostnamen, die kein System akzeptieren würde.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/ip-address-plan-import/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/ip-address-plan-import/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/ip-address-plan-import/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Eine IP-Tabelle in eine echte Adressverwaltungs-Datenbank verwandeln">
+<meta property="og:description" content="14 Netze, 11 VLANs und 248 Host-Datensätze importiert, einschließlich der Bereinigung von 98 Hostnamen, die kein System akzeptieren würde.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/ip-address-plan-import/" class="active" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/ip-address-plan-import/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/ip-address-plan-import/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/de/">Start</a>
+    <a href="/infrastructure-portfolio/de/projects/">Projekte</a>
+    <a href="/infrastructure-portfolio/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Eine IP-Tabelle in eine echte Adressverwaltungs-Datenbank verwandeln</h1>
+<p class="lead">14 Netze, 11 VLANs und 248 Host-Datensätze importiert, einschließlich der Bereinigung von 98 Hostnamen, die kein System akzeptieren würde.</p>
+<h2>Problem</h2>
+<p>Der IP-Adressplan war eine Tabelle mit zwölf Blättern, inkonsistenter Benennung und versteckter Struktur. Ein Blatt enthielt drei getrennte Netzblöcke statt einem, was genau die Art von Sache ist, mit der eine Tabelle dich davonkommen lässt.</p>
+<h2>Vorgehen</h2>
+<p>Ich analysierte zuerst die Quellstruktur und schrieb erst dann den Import. Datenqualitätsprobleme wurden dokumentiert statt stillschweigend korrigiert, weil das stille Korrigieren fremder Daten der Weg ist, den Audit-Trail zu verlieren.</p>
+<h2>Lösung</h2>
+<p>Der Import erzeugte 11 VLANs, 13 IP-Netze, 248 Hostnamen-Objekte und 248 Adressobjekte. 98 Hostnamen mussten bereinigt werden, weil das Zielsystem sie als DNS-Namen validiert und Leerzeichen, Unterstriche und Punkte ablehnt. Echte vollqualifizierte Namen wurden korrekt in Host- und Domänenteil getrennt. Vier Datenqualitätsprobleme wurden mit einem Prüf-Präfix im Kommentarfeld markiert statt geraten.</p>
+<h2>Ergebnis</h2>
+<p>Eine abfragbare Adressdatenbank statt einer Tabelle, mit den bekannten fehlerhaften Datensätzen sichtbar zur Prüfung markiert.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Analysiere die Quelle, bevor du den Importer schreibst. Tabellen verstecken Struktur, die kein Schema erlauben würde.</li>
+  <li>Markiere schlechte Daten, korrigiere sie nicht still. Die Person, die sie erstellt hat, ist die einzige, die weiß, was sie bedeuten sollten.</li>
+  <li>Systeme, die Namen als DNS-Namen validieren, lehnen einen großen Teil jeder handgepflegten Liste ab. Plane den Bereinigungsschritt ein.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">GLPI</span>
+  <span class="tag">IPAM</span>
+  <span class="tag">n8n</span>
+  <span class="tag">Excel</span>
+  <span class="tag">Data cleaning</span>
+  <span class="tag">IPAM</span>
+  <span class="tag">Import design</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/de/projects/dual-system-asset-migration/">← Ein Firmeninventar parallel in zwei Systeme migrieren</a>
+  <a href="/infrastructure-portfolio/de/projects/asset-depreciation-setup/">Die Asset-Datenbank eine Budgetfrage beantworten lassen →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

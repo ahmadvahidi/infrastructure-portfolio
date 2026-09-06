@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When a driver update disables the service it needs</title>
+<meta name="description" content="A vendor update utility stopped launching after installing its own updates. The cause was a service left in a disabled state.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/vendor-update-tool-broken/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/vendor-update-tool-broken/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/vendor-update-tool-broken/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="When a driver update disables the service it needs">
+<meta property="og:description" content="A vendor update utility stopped launching after installing its own updates. The cause was a service left in a disabled state.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/vendor-update-tool-broken/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/vendor-update-tool-broken/" class="active" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/vendor-update-tool-broken/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/en/">Home</a>
+    <a href="/infrastructure-portfolio/en/projects/">Projects</a>
+    <a href="/infrastructure-portfolio/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>When a driver update disables the service it needs</h1>
+<p class="lead">A vendor update utility stopped launching after installing its own updates. The cause was a service left in a disabled state.</p>
+<h2>Problem</h2>
+<p>A user could no longer start the manufacturer's update tool after applying updates through it. The error message pointed nowhere useful.</p>
+<h2>Approach</h2>
+<p>The tool depends on a background management service. I checked the service state rather than reinstalling the application.</p>
+<h2>Solution</h2>
+<p>The service had been set to disabled during the update. Re enabling and starting it restored the tool. Because the user was not technical and time was limited, I prepared three options in advance, a guided phone call, a remote session, or an on site visit, and let the user choose rather than assuming.</p>
+<h2>Result</h2>
+<p>Resolved without a reinstall, and without making a non technical user feel like they were being handed a homework assignment.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>When an application will not start, check its dependent services before you reinstall.</li>
+  <li>Offer support options without ranking them. Letting the user choose the channel gets a faster answer than proposing the one you prefer.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Windows Services</span>
+  <span class="tag">Vendor management tooling</span>
+  <span class="tag">Dependency analysis</span>
+  <span class="tag">Support communication</span>
+  <span class="tag">Working with non technical users</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/en/projects/outlook-wont-start/">← A structured method for an email client that will not start</a>
+  <a href="/infrastructure-portfolio/en/projects/sso-group-based-access/">Single sign-on with group based access to a file platform →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

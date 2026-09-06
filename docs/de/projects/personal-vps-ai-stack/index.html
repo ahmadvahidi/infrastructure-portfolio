@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ein privater KI- und Automatisierungs-Stack auf einem einzigen VPS</title>
+<meta name="description" content="Selbst gehostetes Modell-Serving, eine Chat-Oberfläche, eine Automatisierungsplattform und ein autonomer Agent auf einem kleinen Server.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/personal-vps-ai-stack/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/personal-vps-ai-stack/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/personal-vps-ai-stack/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ein privater KI- und Automatisierungs-Stack auf einem einzigen VPS">
+<meta property="og:description" content="Selbst gehostetes Modell-Serving, eine Chat-Oberfläche, eine Automatisierungsplattform und ein autonomer Agent auf einem kleinen Server.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/personal-vps-ai-stack/" class="active" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/personal-vps-ai-stack/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/personal-vps-ai-stack/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/de/">Start</a>
+    <a href="/infrastructure-portfolio/de/projects/">Projekte</a>
+    <a href="/infrastructure-portfolio/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Ein privater KI- und Automatisierungs-Stack auf einem einzigen VPS</h1>
+<p class="lead">Selbst gehostetes Modell-Serving, eine Chat-Oberfläche, eine Automatisierungsplattform und ein autonomer Agent auf einem kleinen Server.</p>
+<h2>Problem</h2>
+<p>Ich wollte ein Labor, in dem ich KI-gestützte Automatisierung testen konnte, ohne Firmen- oder persönliche Daten an Drittanbieter zu senden und ohne eine monatliche Rechnung pro Tool.</p>
+<h2>Vorgehen</h2>
+<p>Alles läuft als Container auf einem VPS, verwaltet über Portainer, hinter einem Reverse Proxy. Lokales Modell-Serving für kleine Aufgaben, eine Aggregationsschicht für externe Free-Tier-Anbieter, wo ein größeres Modell nötig ist, eine Web-Chat-Oberfläche darüber und eine Automatisierungsplattform, die der Agent steuern kann.</p>
+<h2>Lösung</h2>
+<p>Der Stack umfasst lokales Modell-Serving, ein Web-Chat-Frontend, einen API-Aggregationsdienst, eine Automatisierungsplattform und einen autonomen Agenten, der mit einer Messaging-App verbunden ist, damit Aufgaben vom Telefon gesendet werden können.</p>
+<h2>Ergebnis</h2>
+<p>Ein funktionierendes privates Labor, das jetzt der Ort ist, an dem jede Automatisierungsidee prototypisiert wird, bevor sie in die Nähe von Produktion kommt.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Free-Tier-Modellanbieter unterscheiden sich enorm im Durchsatz. Für Agenten-Workloads zählt Tokens pro Sekunde mehr als Benchmark-Werte.</li>
+  <li>Führe Experimente auf einem persönlichen VPS aus, nicht auf Firmeninfrastruktur. Das hält den Explosionsradius und die Compliance-Frage einfach.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Docker</span>
+  <span class="tag">Portainer</span>
+  <span class="tag">Ollama</span>
+  <span class="tag">Open WebUI</span>
+  <span class="tag">n8n</span>
+  <span class="tag">Reverse proxy</span>
+  <span class="tag">Self-hosting</span>
+  <span class="tag">LLM tooling</span>
+  <span class="tag">Cost control</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/de/projects/hyperv-vm-locked-out-recovery/">← Eine virtuelle Maschine wiederherstellen, in die sich niemand einloggen konnte</a>
+  <span></span>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

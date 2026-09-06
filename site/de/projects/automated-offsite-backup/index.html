@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eine volle Platte mit Automatisierung statt einer größeren Platte lösen</title>
+<meta name="description" content="Ein Server lief aus dem Speicher. Die Lösung kombinierte eine automatisierte Offsite-Kopie, eine Änderung der Datenaufbewahrungsrichtlinie und eine Plattenexpansion, in dieser Reihenfolge.">
+<link rel="alternate" hreflang="de" href="/de/projects/automated-offsite-backup/">
+<link rel="alternate" hreflang="en" href="/en/projects/automated-offsite-backup/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/automated-offsite-backup/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Eine volle Platte mit Automatisierung statt einer größeren Platte lösen">
+<meta property="og:description" content="Ein Server lief aus dem Speicher. Die Lösung kombinierte eine automatisierte Offsite-Kopie, eine Änderung der Datenaufbewahrungsrichtlinie und eine Plattenexpansion, in dieser Reihenfolge.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/automated-offsite-backup/" class="active" hreflang="de">Deutsch</a><a href="/en/projects/automated-offsite-backup/" hreflang="en">English</a><a href="/fa/projects/automated-offsite-backup/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/de/">Start</a>
+    <a href="/de/projects/">Projekte</a>
+    <a href="/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Eine volle Platte mit Automatisierung statt einer größeren Platte lösen</h1>
+<p class="lead">Ein Server lief aus dem Speicher. Die Lösung kombinierte eine automatisierte Offsite-Kopie, eine Änderung der Datenaufbewahrungsrichtlinie und eine Plattenexpansion, in dieser Reihenfolge.</p>
+<h2>Problem</h2>
+<p>Ein loglastiger Server füllte seine Platte und hörte auf, Daten anzunehmen. Einfach Speicher hinzuzufügen hätte denselben Ausfall um ein paar Wochen verzögert.</p>
+<h2>Vorgehen</h2>
+<p>Ich behandelte die volle Platte als drei getrennte Probleme: die Daten, die bereits existierten und erhalten werden mussten, die Richtlinie, die Daten unbegrenzt ansammeln ließ, und die Kapazität, die wirklich zu klein war.</p>
+<h2>Lösung</h2>
+<p>Ein automatisierter Workflow kopiert Daten nach Zeitplan auf einen dedizierten Backup-Server über SSH, die Index-Lifecycle-Richtlinie wurde angepasst, damit alte Daten automatisch ausgemustert werden, und erst dann wurde die Platte auf eine sinnvolle Größe erweitert.</p>
+<h2>Ergebnis</h2>
+<p>Der Server erholte sich, historische Daten wurden erhalten, und das Wachstum ist jetzt durch Richtlinie begrenzt statt durch die Größe der Platte.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Eine volle Platte ist meist ein Aufbewahrungsrichtlinien-Problem im Kapazitätskostüm.</li>
+  <li>Einige SSH-Implementierungen verlangen einen Schlüssel im klassischen PEM-Format. Wenn die Schlüssel-Authentifizierung ohne sichtbaren Grund fehlschlägt, prüfe das Schlüsselformat, bevor du Berechtigungen debuggst.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">n8n</span>
+  <span class="tag">rsync</span>
+  <span class="tag">SSH</span>
+  <span class="tag">Index lifecycle management</span>
+  <span class="tag">Capacity planning</span>
+  <span class="tag">Automated backup</span>
+  <span class="tag">Incident remediation</span>
+</div>
+<div class="prevnext">
+  <a href="/de/projects/e-invoicing-workflow/">← Ein Prototyp für automatisierte elektronische Rechnungsverarbeitung</a>
+  <a href="/de/projects/video-summary-bot/">Ein Messaging-Bot, der Videos in deiner eigenen Sprache zusammenfasst →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

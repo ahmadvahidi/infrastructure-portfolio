@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One form, two asset systems, zero manual entry</title>
+<meta name="description" content="A 98 node automation workflow that registers a new device in two asset management systems at once, assigns the inventory number itself, and can be used by a non technical colleague.">
+<link rel="alternate" hreflang="de" href="/de/projects/asset-intake-workflow/">
+<link rel="alternate" hreflang="en" href="/en/projects/asset-intake-workflow/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/asset-intake-workflow/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="One form, two asset systems, zero manual entry">
+<meta property="og:description" content="A 98 node automation workflow that registers a new device in two asset management systems at once, assigns the inventory number itself, and can be used by a non technical colleague.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/asset-intake-workflow/" hreflang="de">Deutsch</a><a href="/en/projects/asset-intake-workflow/" class="active" hreflang="en">English</a><a href="/fa/projects/asset-intake-workflow/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/en/">Home</a>
+    <a href="/en/projects/">Projects</a>
+    <a href="/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>One form, two asset systems, zero manual entry</h1>
+<p class="lead">A 98 node automation workflow that registers a new device in two asset management systems at once, assigns the inventory number itself, and can be used by a non technical colleague.</p>
+<h2>Problem</h2>
+<p>Registering a new device meant opening two systems, checking manually which inventory number was free, deciding which object type it belongs to in each system, and typing the same data twice. It was slow and it produced inconsistencies between the two systems.</p>
+<h2>Approach</h2>
+<p>The first attempt was an over engineered design with an AI agent orchestrating fifteen nodes, and it failed repeatedly by looping without a stopping condition. I threw it away and rebuilt it as a linear workflow: one form trigger, then write to system A, then write to system B. I built it in seven phases and reviewed each phase before starting the next.</p>
+<h2>Solution</h2>
+<p>A form asks for the device data. The workflow scans every source in both systems, including the object types where inventory numbers are stored in a free text notes field, determines the next free number, decides the correct module and object type based on whether the device has a serial number and which category it falls into, creates the record in both systems with all custom fields, attaches financial data and group assignment, and returns a confirmation.</p>
+<h2>Result</h2>
+<p>In production and used by the IT team. Real devices were registered through it during acceptance testing, including edge cases like an accessory without a serial number and a spare part assigned to a specific user.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>An API that returns localized values will break your comparison logic. Compare against what the API actually returns, not against the English term in the documentation.</li>
+  <li>Creating a new workflow version is not the same as publishing it. If the live form behaves differently from your test run, check what is actually published.</li>
+  <li>Give an autonomous agent a definitive stopping condition or it will loop forever. This is the single most repeated lesson of the whole project.</li>
+  <li>Merge nodes behave unpredictably when one input branch never executed. Design so both branches always run.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">n8n</span>
+  <span class="tag">REST APIs</span>
+  <span class="tag">GLPI</span>
+  <span class="tag">Snipe-IT</span>
+  <span class="tag">JavaScript</span>
+  <span class="tag">Workflow automation</span>
+  <span class="tag">API integration</span>
+  <span class="tag">Iterative delivery</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/en/projects/bulk-inventory-import/">Importing 735 inventory records without creating duplicates →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

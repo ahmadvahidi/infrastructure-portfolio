@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>یک هشدار برق که مشکل برق نبود</title>
+<meta name="description" content="یک واحد توزیع برق رک دیگر به مانیتورینگ گزارش نمی‌داد. تریگر گفت داده‌ای نیست و همه آن را به عنوان نبود برق خواندند.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/pdu-nodata-alert/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/pdu-nodata-alert/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/pdu-nodata-alert/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="یک هشدار برق که مشکل برق نبود">
+<meta property="og:description" content="یک واحد توزیع برق رک دیگر به مانیتورینگ گزارش نمی‌داد. تریگر گفت داده‌ای نیست و همه آن را به عنوان نبود برق خواندند.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">پرش به محتوا</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/fa/">زیرساخت IT و اتوماسیون</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/pdu-nodata-alert/" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/pdu-nodata-alert/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/pdu-nodata-alert/" class="active" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/fa/">خانه</a>
+    <a href="/infrastructure-portfolio/fa/projects/">پروژه‌ها</a>
+    <a href="/infrastructure-portfolio/fa/about/">درباره</a>
+  </nav>
+</header>
+<main id="main">
+<h1>یک هشدار برق که مشکل برق نبود</h1>
+<p class="lead">یک واحد توزیع برق رک دیگر به مانیتورینگ گزارش نمی‌داد. تریگر گفت داده‌ای نیست و همه آن را به عنوان نبود برق خواندند.</p>
+<h2>مسئله</h2>
+<p>یک هشدار با شدت بالا روی یک PDU رک فعال شد. خوانش طبیعی یک دستگاه برق که ساکت می‌شود این است که برق رفته است، یعنی همه چیز روی آن نوار پایین بوده است.</p>
+<h2>رویکرد</h2>
+<p>بررسی کردم تریگر واقعاً چه چیزی را اندازه می‌گیرد. یک تریگر بدون داده وقتی فعال می‌شود که مقادیر دیگر نمی‌رسند، که یک مشکل گزارش‌دهی است و مستقیماً چیزی درباره وضعیت الکتریکی نمی‌گوید. مقادیر خام را هم نگاه کردم و خوانش‌های غیرممکن روی آیتم‌های فاز پیدا کردم که به ناهماهنگی قالب اشاره داشت نه خطای سخت‌افزاری.</p>
+<h2>راه‌حل</h2>
+<p>علل محتمل به یک عامل SNMP گیرکرده، پردازش درخواست انبوه، عقب‌ماندگی پولر یا آیتم‌های غیرپشتیبانی‌شده محدود شد، همراه با یک قالب مانیتورینگ که با مدل واقعی PDU مطابقت نداشت. هم تشخیص و هم یک توضیح ساده از اینکه PDU رک چیست و چه می‌کند را مستند کردم تا نفر بعدی در شیفت آماده‌باش از صفر شروع نکند.</p>
+<h2>نتیجه</h2>
+<p>هشدار به درستی به عنوان خطای مانیتورینگ طبقه‌بندی شد، نه قطعی، و ناهماهنگی قالب به یک تیکت قابل رفع تبدیل شد نه یک معما.</p>
+<div class="lessons"><h2>چیزی که یاد گرفتم</h2><ul>
+  <li>تفاوت بین تریگر آستانه و تریگر بدون داده را قبل از واکنش به یکی بدان.</li>
+  <li>مقادیر خام غیرممکن، مثل یک خوانش منفی در یک اندازه‌گیری فیزیکی، تقریباً همیشه به معنای قالب اشتباه یا OIDهای اشتباه است.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Zabbix</span>
+  <span class="tag">SNMP</span>
+  <span class="tag">Rack PDU</span>
+  <span class="tag">Monitoring design</span>
+  <span class="tag">SNMP troubleshooting</span>
+  <span class="tag">Writing for the next person on call</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/infrastructure-portfolio/fa/projects/datacenter-rack-plan/">نقشه‌برداری از یک رک و یافتن یک نقطه شکست واحد →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>تماس: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ein Stromalarm, der kein Stromproblem war</title>
+<meta name="description" content="Eine Rack-Stromverteilungseinheit meldete sich nicht mehr beim Monitoring. Der Trigger sagte keine Daten, und alle lasen das als kein Strom.">
+<link rel="alternate" hreflang="de" href="/de/projects/pdu-nodata-alert/">
+<link rel="alternate" hreflang="en" href="/en/projects/pdu-nodata-alert/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/pdu-nodata-alert/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ein Stromalarm, der kein Stromproblem war">
+<meta property="og:description" content="Eine Rack-Stromverteilungseinheit meldete sich nicht mehr beim Monitoring. Der Trigger sagte keine Daten, und alle lasen das als kein Strom.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/pdu-nodata-alert/" class="active" hreflang="de">Deutsch</a><a href="/en/projects/pdu-nodata-alert/" hreflang="en">English</a><a href="/fa/projects/pdu-nodata-alert/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/de/">Start</a>
+    <a href="/de/projects/">Projekte</a>
+    <a href="/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Ein Stromalarm, der kein Stromproblem war</h1>
+<p class="lead">Eine Rack-Stromverteilungseinheit meldete sich nicht mehr beim Monitoring. Der Trigger sagte keine Daten, und alle lasen das als kein Strom.</p>
+<h2>Problem</h2>
+<p>Ein Alarm hoher Schwere feuerte auf einer Rack-PDU. Die natürliche Lesart eines still werdenden Stromgeräts ist, dass der Strom weg ist, was bedeuten würde, dass alles auf dieser Leiste unten war.</p>
+<h2>Vorgehen</h2>
+<p>Ich prüfte, was der Trigger tatsächlich misst. Ein No-Data-Trigger feuert, wenn Werte aufhören anzukommen, was ein Melde-Problem ist und nichts direkt über den elektrischen Zustand sagt. Ich schaute mir auch die Rohwerte an und fand unmögliche Messwerte auf den Phasen-Items, was auf eine Template-Fehlanpassung statt auf einen Hardwarefehler hindeutete.</p>
+<h2>Lösung</h2>
+<p>Die wahrscheinlichen Ursachen wurden auf einen hängenden SNMP-Agenten, Bulk-Request-Verarbeitung, Poller-Rückstau oder nicht mehr unterstützte Items eingegrenzt, kombiniert mit einem Monitoring-Template, das nicht zum tatsächlichen PDU-Modell passte. Ich dokumentierte sowohl die Diagnose als auch eine verständliche Erklärung, was eine Rack-PDU ist und tut, damit die nächste Person im Bereitschaftsdienst nicht bei null anfängt.</p>
+<h2>Ergebnis</h2>
+<p>Der Alarm wurde korrekt als Monitoring-Fehler klassifiziert, nicht als Ausfall, und die Template-Fehlanpassung wurde ein behebbares Ticket statt eines Rätsels.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Kenne den Unterschied zwischen einem Schwellenwert-Trigger und einem No-Data-Trigger, bevor du auf einen reagierst.</li>
+  <li>Unmögliche Rohwerte, wie ein negativer Messwert bei einer physikalischen Messung, bedeuten fast immer ein falsches Template oder falsche OIDs.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Zabbix</span>
+  <span class="tag">SNMP</span>
+  <span class="tag">Rack PDU</span>
+  <span class="tag">Monitoring design</span>
+  <span class="tag">SNMP troubleshooting</span>
+  <span class="tag">Writing for the next person on call</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/de/projects/datacenter-rack-plan/">Ein Rack kartieren und einen Single Point of Failure finden →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

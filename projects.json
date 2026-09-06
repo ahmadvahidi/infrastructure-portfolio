@@ -1,0 +1,486 @@
+{
+  "meta": {
+    "source_language": "en",
+    "target_languages": ["de", "en", "fa"],
+    "purpose": "Public portfolio and knowledge base. Audience: hiring managers, Ausbildungsbetriebe, freelance clients, and other sysadmins looking for solutions.",
+    "sanitization_rules": [
+      "Never add employer name, colleague names, hostnames, internal IP addresses, internal domains, license keys or ticket numbers.",
+      "Describe environments generically: 'a mid-sized company network', 'a Windows domain with two domain controllers'.",
+      "Numbers about scale (record counts, node counts) are fine. Money values are fine only as rounded ranges.",
+      "If a detail cannot be written without identifying the employer, drop the detail, not the article."
+    ],
+    "author_profile": {
+      "role": "IT administrator",
+      "focus": "Windows and Linux infrastructure, IT automation, monitoring, asset management",
+      "core_stack": ["Active Directory", "Hyper-V", "Docker", "Portainer", "n8n", "Zabbix", "Wazuh", "GLPI", "Keycloak", "Nextcloud", "Acronis", "WatchGuard", "PowerShell", "Bash"]
+    }
+  },
+
+  "categories": [
+    {"id": "infrastructure", "title": "Infrastructure and servers"},
+    {"id": "security", "title": "Security"},
+    {"id": "monitoring", "title": "Monitoring"},
+    {"id": "automation", "title": "Automation and AI"},
+    {"id": "asset-management", "title": "IT asset management"},
+    {"id": "network", "title": "Network, firewall and VPN"},
+    {"id": "backup", "title": "Backup and storage"},
+    {"id": "support", "title": "User support"}
+  ],
+
+  "projects": [
+
+    {
+      "slug": "wazuh-siem-rollout",
+      "category": "infrastructure",
+      "title": "Rolling out a self-hosted SIEM in six phases",
+      "summary": "Introduced Wazuh as a central SIEM on Docker, planned as six phases so the rollout could not stall halfway.",
+      "problem": "The company network had endpoint protection and firewall logging, but no central place where security events from Windows servers, Linux hosts and network devices could be correlated. Nobody could answer the question 'what happened on that machine last Tuesday' without logging into the machine itself.",
+      "approach": "Instead of a big-bang installation I wrote a six-phase plan and got it approved before touching anything: phase 0 sizing and host preparation, phase 1 single-node deployment on Docker via Portainer, phase 2 agent rollout on servers, later phases for integrating backup software, Active Directory and the firewall. Each phase had its own success criteria so the project could be paused between phases without leaving a half-configured system.",
+      "solution": "Wazuh manager, indexer and dashboard run as a containerized stack managed through Portainer on a dedicated Linux host. Agents were deployed to the server estate first, workstations later. I also built an interactive bilingual dashboard so colleagues who do not read English security jargon could still understand the alert picture.",
+      "result": "Phases 0 to 2 are complete and the SIEM is in daily use for alert triage. The phased structure turned out to be the most valuable part: it made the project reviewable by management at every step.",
+      "lessons": [
+        "A rollout plan with explicit stop points survives interruptions. A single long installation script does not.",
+        "A SIEM without someone reading it is just disk usage. Plan the triage routine at the same time as the deployment."
+      ],
+      "stack": ["Wazuh", "Docker", "Portainer", "Linux", "Elasticsearch/OpenSearch"],
+      "skills": ["SIEM design", "Containerized deployments", "Project phasing"]
+    },
+
+    {
+      "slug": "linux-major-version-upgrade-runbook",
+      "category": "infrastructure",
+      "title": "Upgrading a production Linux server two versions at once",
+      "summary": "Ubuntu 22.04 to 24.04 and Java 17 to 25 on a server hosting an integration tool, executed from a written runbook rather than improvised.",
+      "problem": "A synchronization tool that keeps two issue tracking systems in sync needed a newer version. That version required a newer Java runtime, which in turn required a newer distribution release. Three upgrades stacked on top of each other, on a server that other teams depended on during working hours.",
+      "approach": "I wrote a runbook before starting: current state inventory, snapshot and rollback point, dependency check for every installed package, then the upgrade split into phases with a verification step after each one. I deliberately did not chain the steps so that a failure at any point would leave a system that still booted and still served the old version.",
+      "solution": "Distribution upgrade first, then the Java runtime, then the application. Along the way I fixed a systemd unit that had been producing a false monitoring alarm for months because the service reported ready before it actually was.",
+      "result": "The upgrade path was executed phase by phase with no unplanned downtime, and one long-standing false alarm disappeared as a side effect.",
+      "lessons": [
+        "When three upgrades depend on each other, write the order down. The dependency chain is not obvious under time pressure.",
+        "A monitoring alarm that everyone has learned to ignore is a bug, not background noise."
+      ],
+      "stack": ["Ubuntu", "Java", "systemd", "Zabbix"],
+      "skills": ["Runbook writing", "Change management", "Linux administration"]
+    },
+
+    {
+      "slug": "self-hosted-service-stack",
+      "category": "infrastructure",
+      "title": "Building a self-hosted service stack from scratch",
+      "summary": "Deployed and documented ten open source services behind a reverse proxy, replacing a set of missing or paid tools.",
+      "problem": "Several basic functions had no owner: no asset database, no internal wiki, no identity provider, no automation platform, no monitoring. Every gap was being filled by spreadsheets or by nothing at all.",
+      "approach": "I picked open source tools that could run on existing hardware, deployed each one as a container, and put them all behind a single reverse proxy with proper certificates. Every service got a written documentation page covering what it is for, how it is deployed, how to back it up and how to restore it.",
+      "solution": "The stack covers asset management, monitoring, SIEM, identity and single sign-on, file sharing, automation, documentation and ERP, managed through Portainer with a reverse proxy in front.",
+      "result": "Functions that previously lived in spreadsheets now live in systems with access control and history. Because every service was documented at deployment time, none of them is a black box that only one person can operate.",
+      "lessons": [
+        "Documentation written at deployment time takes twenty minutes. Written six months later it takes a day and is wrong.",
+        "One reverse proxy and one identity provider in front of everything is worth more than any individual service in the stack."
+      ],
+      "stack": ["Docker", "Portainer", "Nginx Proxy Manager", "GLPI", "Zabbix", "Keycloak", "Nextcloud", "n8n", "BookStack", "Dolibarr"],
+      "skills": ["Service architecture", "Reverse proxy and TLS", "Technical documentation"]
+    },
+
+    {
+      "slug": "self-hosted-password-vault",
+      "category": "infrastructure",
+      "title": "Running a self-hosted password vault, including the day someone gets locked out",
+      "summary": "Deployed a Vaultwarden server with mail delivery through Microsoft 365, and learned the hard way why the account recovery policy has to be enabled before anyone needs it.",
+      "problem": "Shared credentials were being passed around in chat messages and text files. A central vault was needed, self-hosted rather than cloud, with invitations and password resets working through the company mail system.",
+      "approach": "Deployment was straightforward. The interesting part came later: a colleague could no longer unlock his vault although he was sure the master password was correct. I had to work out what is actually recoverable in this architecture.",
+      "solution": "The vault is encrypted client side with the master password, so the server never holds anything that could decrypt it. Administrator recovery only exists if the account recovery policy was enabled beforehand and the user enrolled at that time. It had not been. The honest answer was that the personal vault was unrecoverable, while shared collection entries survived because they are encrypted to the organization key. I deleted and reinvited the account, and enabled the recovery policy for everyone else.",
+      "result": "One user lost personal entries. Nobody else will, because the policy is now active and enforced at enrollment.",
+      "lessons": [
+        "Understand the encryption model of a tool before you deploy it, not when a user is locked out.",
+        "Recovery policies are worthless retroactively. Enable them on day one.",
+        "Telling a user plainly that data is gone is better than three days of false hope."
+      ],
+      "stack": ["Vaultwarden", "Docker", "Microsoft 365 SMTP"],
+      "skills": ["Zero knowledge encryption models", "Policy design", "Incident communication"]
+    },
+
+    {
+      "slug": "hyperv-vm-locked-out-recovery",
+      "category": "infrastructure",
+      "title": "Recovering a virtual machine nobody could log into",
+      "summary": "A full system drive blocked login, and after fixing that a broken credential provider blocked it again. Solved from the recovery environment and safe mode.",
+      "problem": "A domain joined Windows VM under Hyper-V refused all logins. The system drive was completely full, and there was no way in through the normal desktop to clean it up.",
+      "approach": "I expanded the virtual disk from the hypervisor side, then booted into the Windows recovery environment to grow the partition. The disk layout had a trap: the free space sat next to the system partition on one disk while a second virtual disk carried another drive letter, so selecting the wrong volume would have failed or worse. I verified the disk and partition numbers before extending anything.",
+      "solution": "Partition extended from the recovery environment, which restored roughly fifty gigabytes of headroom. Login still failed, this time because a multifactor credential provider had broken and was blocking the logon screen. I booted into safe mode with networking, enabled the Windows Installer service inside safe mode through a registry key so that uninstallation was even possible, removed the product, then cleaned the leftover credential provider registry entries, folders and services, and confirmed the machine was excluded from the deployment that would have reinstalled it.",
+      "result": "The machine came back without a rebuild and without data loss. Total downtime was a few hours instead of a reinstall.",
+      "lessons": [
+        "Always confirm disk and partition numbers in the recovery environment before extending. The numbering is not the same as in the running system.",
+        "Windows Installer does not run in safe mode by default. One registry key makes uninstall possible when nothing else works.",
+        "After removing a credential provider, clean its registry entries too, otherwise the logon screen keeps trying to load something that is gone."
+      ],
+      "stack": ["Hyper-V", "Windows Server", "WinRE", "diskpart", "Registry", "Safe Mode"],
+      "skills": ["Offline recovery", "Windows internals", "Root cause isolation"]
+    },
+
+    {
+      "slug": "personal-vps-ai-stack",
+      "category": "infrastructure",
+      "title": "A private AI and automation stack on a single VPS",
+      "summary": "Self-hosted model serving, a chat interface, an automation platform and an autonomous agent on one small server.",
+      "problem": "I wanted a lab where I could test AI assisted automation without sending company or personal data to third party services, and without a monthly bill per tool.",
+      "approach": "Everything runs as containers on one VPS, managed through Portainer, behind a reverse proxy. Local model serving for small tasks, an aggregation layer for external free tier providers where a bigger model is needed, a web chat interface on top, and an automation platform that the agent can drive.",
+      "solution": "The stack includes local model serving, a web chat frontend, an API aggregation service, an automation platform and an autonomous agent connected to a messaging app so tasks can be sent from a phone.",
+      "result": "A working private lab that is now the place where every automation idea gets prototyped before it goes anywhere near production.",
+      "lessons": [
+        "Free tier model providers differ enormously in throughput. For agent workloads, tokens per second matters more than benchmark scores.",
+        "Run experiments on a personal VPS, not on company infrastructure. It keeps the blast radius and the compliance question simple."
+      ],
+      "stack": ["Docker", "Portainer", "Ollama", "Open WebUI", "n8n", "Reverse proxy"],
+      "skills": ["Self-hosting", "LLM tooling", "Cost control"]
+    },
+
+    {
+      "slug": "security-report-triage",
+      "category": "security",
+      "title": "Triaging a security report without creating panic",
+      "summary": "Five alerts on domain controllers and a Linux build runner, sorted into real findings, misconfigurations and false positives.",
+      "problem": "A generated security analysis landed on my desk listing pass the hash alerts on both domain controllers, a performance counter error, a virtualization tool error, low hardening scores and a full disk warning. Read literally, it looked like an active intrusion.",
+      "approach": "I worked through the findings one by one instead of reacting to the headline. For each alert the question was the same: what would this look like if it were normal behavior, and what would it look like if it were real.",
+      "solution": "The pass the hash alerts matched the pattern of ordinary directory replication between two domain controllers and were false positives from a detection rule that does not know which accounts are replication accounts. The disk warning on the build runner turned out to be transient, but investigating it surfaced a real finding: over a hundred pending updates including security patches. The virtualization error came from an incompletely removed toolset left over from an earlier platform migration, on a machine that no longer runs on that platform at all. The hardening scores were genuine and became a separate backlog item.",
+      "result": "Two false positives closed with an explanation, two real findings scheduled, and no emergency reboot of a domain controller on a Monday morning. The remediation was moved to the regular maintenance window later in the week.",
+      "lessons": [
+        "A detection rule that does not know your environment will call your replication traffic an attack. Tune it or document it.",
+        "Refusing to reboot a domain controller at the start of the week is a technical decision, not procrastination.",
+        "Leftovers from an old migration keep generating alerts for years. Removal is part of migration, not a nice to have."
+      ],
+      "stack": ["Active Directory", "Wazuh", "PowerShell", "CIS Benchmarks"],
+      "skills": ["Alert triage", "False positive analysis", "Risk based scheduling"]
+    },
+
+    {
+      "slug": "pdu-nodata-alert",
+      "category": "monitoring",
+      "title": "A power alert that was not a power problem",
+      "summary": "A rack power distribution unit stopped reporting to monitoring. The trigger said no data, and everyone read that as no power.",
+      "problem": "A high severity alert fired on a rack PDU. The natural reading of a power device going silent is that the power is gone, which would mean everything on that strip was down.",
+      "approach": "I checked what the trigger actually measures. A no data trigger fires when values stop arriving, which is a reporting problem and says nothing directly about the electrical state. I also looked at the raw values and found impossible readings on the phase items, which pointed at a template mismatch rather than a hardware fault.",
+      "solution": "The likely causes were narrowed to a hung SNMP agent, bulk request handling, poller backlog or items going unsupported, combined with a monitoring template that did not match the actual PDU model. I documented both the diagnosis and a plain language explanation of what a rack PDU is and does, so the next person on call does not start from zero.",
+      "result": "The alert was correctly classified as a monitoring fault, not an outage, and the template mismatch became a fixable ticket instead of a mystery.",
+      "lessons": [
+        "Know the difference between a threshold trigger and a no data trigger before you act on one.",
+        "Impossible raw values, like a negative reading on a physical measurement, almost always mean a wrong template or wrong OIDs."
+      ],
+      "stack": ["Zabbix", "SNMP", "Rack PDU"],
+      "skills": ["Monitoring design", "SNMP troubleshooting", "Writing for the next person on call"]
+    },
+
+    {
+      "slug": "datacenter-rack-plan",
+      "category": "monitoring",
+      "title": "Mapping a rack and finding a single point of failure",
+      "summary": "Built an interactive rack plan before a data center visit, and the plan itself exposed a power redundancy gap.",
+      "problem": "There was no accurate picture of what sat where in the rack, what it was connected to, and which power feed it used. Every site visit started with reading labels.",
+      "approach": "I built an interactive plan as a standalone HTML page: unit positions, devices, and, crucially, power feed per device. Modelling the feeds made the gap visible immediately.",
+      "solution": "One management device that everything else depends on was connected to a single feed while the rest of the rack was dual fed. A static transfer switch was specified and purchased to close the gap.",
+      "result": "The rack now has a documented plan that can be taken to a site visit, and a known redundancy gap with a purchased fix instead of an unknown one.",
+      "lessons": [
+        "Drawing infrastructure is a diagnostic technique, not documentation busywork. Gaps become visible when you have to place them on a page.",
+        "Redundancy that is not verified per device is redundancy on paper only."
+      ],
+      "stack": ["HTML", "Data center planning"],
+      "skills": ["Infrastructure documentation", "Redundancy analysis"]
+    },
+
+    {
+      "slug": "asset-intake-workflow",
+      "category": "automation",
+      "title": "One form, two asset systems, zero manual entry",
+      "summary": "A 98 node automation workflow that registers a new device in two asset management systems at once, assigns the inventory number itself, and can be used by a non technical colleague.",
+      "problem": "Registering a new device meant opening two systems, checking manually which inventory number was free, deciding which object type it belongs to in each system, and typing the same data twice. It was slow and it produced inconsistencies between the two systems.",
+      "approach": "The first attempt was an over engineered design with an AI agent orchestrating fifteen nodes, and it failed repeatedly by looping without a stopping condition. I threw it away and rebuilt it as a linear workflow: one form trigger, then write to system A, then write to system B. I built it in seven phases and reviewed each phase before starting the next.",
+      "solution": "A form asks for the device data. The workflow scans every source in both systems, including the object types where inventory numbers are stored in a free text notes field, determines the next free number, decides the correct module and object type based on whether the device has a serial number and which category it falls into, creates the record in both systems with all custom fields, attaches financial data and group assignment, and returns a confirmation.",
+      "result": "In production and used by the IT team. Real devices were registered through it during acceptance testing, including edge cases like an accessory without a serial number and a spare part assigned to a specific user.",
+      "lessons": [
+        "An API that returns localized values will break your comparison logic. Compare against what the API actually returns, not against the English term in the documentation.",
+        "Creating a new workflow version is not the same as publishing it. If the live form behaves differently from your test run, check what is actually published.",
+        "Give an autonomous agent a definitive stopping condition or it will loop forever. This is the single most repeated lesson of the whole project.",
+        "Merge nodes behave unpredictably when one input branch never executed. Design so both branches always run."
+      ],
+      "stack": ["n8n", "REST APIs", "GLPI", "Snipe-IT", "JavaScript"],
+      "skills": ["Workflow automation", "API integration", "Iterative delivery"]
+    },
+
+    {
+      "slug": "bulk-inventory-import",
+      "category": "automation",
+      "title": "Importing 735 inventory records without creating duplicates",
+      "summary": "An automated import that reads a spreadsheet and writes into an asset system, with deduplication that actually works.",
+      "problem": "The entire inventory existed as a spreadsheet with 735 rows and had to end up in a real system. Manual entry was out of the question, and a naive import would have created duplicates on every rerun.",
+      "approach": "I built the import as an automation workflow rather than a one off script so it could be rerun safely and adapted for the second target system. The deduplication was the hard part.",
+      "solution": "Deduplication runs against a paginated fetch of all existing records rather than the search endpoint, because fuzzy search returned near matches that were not the same asset. The import maps spreadsheet columns to categories, custom fields and object types.",
+      "result": "735 records imported into two systems in parallel, split across 15 categories with a custom field set for company specific attributes.",
+      "lessons": [
+        "For deduplication, fetch and compare exactly. Do not trust a search endpoint that does fuzzy matching.",
+        "A batching pattern that works for 50 items can silently break past 100. Test the import at full size, not with a sample.",
+        "Build imports to be idempotent. You will run them more than once."
+      ],
+      "stack": ["n8n", "Excel", "REST APIs"],
+      "skills": ["Data migration", "Idempotent design", "Deduplication logic"]
+    },
+
+    {
+      "slug": "e-invoicing-workflow",
+      "category": "automation",
+      "title": "A prototype for automated electronic invoice processing",
+      "summary": "An MVP for reading structured electronic invoice formats, built with data protection and licensing constraints designed in from the start.",
+      "problem": "Electronic invoicing in structured formats is becoming mandatory in Germany. Incoming invoices in these formats still had to be read and entered by hand.",
+      "approach": "I built a minimum viable workflow that parses the structured formats, extracts the fields that matter, and prepares them for booking. Before choosing any AI component I worked through two constraints: whether invoice data may legally leave the company under data protection rules, and whether the model provider's licensing allows commercial use.",
+      "solution": "A working prototype with a documented evaluation of model providers, including which free tiers are usable commercially and which throughput is realistic for this kind of workload.",
+      "result": "A prototype plus a decision document. The compliance analysis turned out to be as valuable as the code, because it is the part that decides whether the project can go live at all.",
+      "lessons": [
+        "For any automation touching invoices or personal data, answer the data protection question before writing code. Retrofitting compliance means rewriting.",
+        "Free tier does not mean free to use commercially. Read the license, not the pricing page."
+      ],
+      "stack": ["n8n", "XRechnung", "ZUGFeRD", "LLM APIs"],
+      "skills": ["E-invoicing standards", "Data protection assessment", "Vendor evaluation"]
+    },
+
+    {
+      "slug": "automated-offsite-backup",
+      "category": "automation",
+      "title": "Solving a full disk with automation instead of a bigger disk",
+      "summary": "A server ran out of space. The fix combined an automated offsite copy, a data retention policy change and a disk expansion, in that order.",
+      "problem": "A log heavy server filled its disk and stopped accepting data. Simply adding space would have delayed the same failure by a few weeks.",
+      "approach": "I treated the full disk as three separate problems: the data that already existed and had to be preserved, the policy that let data accumulate without limit, and the capacity that was genuinely too small.",
+      "solution": "An automated workflow copies data on a schedule to a dedicated backup server over SSH, the index lifecycle policy was adjusted so old data is aged out automatically, and only then was the disk expanded to a sensible size.",
+      "result": "The server recovered, historical data was preserved, and the growth is now bounded by policy instead of by the size of the disk.",
+      "lessons": [
+        "A full disk is usually a retention policy problem wearing a capacity costume.",
+        "Some SSH implementations require a key generated in the classic PEM format. If key authentication fails for no visible reason, check the key format before debugging permissions."
+      ],
+      "stack": ["n8n", "rsync", "SSH", "Index lifecycle management"],
+      "skills": ["Capacity planning", "Automated backup", "Incident remediation"]
+    },
+
+    {
+      "slug": "video-summary-bot",
+      "category": "automation",
+      "title": "A messaging bot that summarizes videos in your own language",
+      "summary": "Send a video link in a chat app, get a useful summary back, built entirely through the automation platform's REST API.",
+      "problem": "I wanted a personal tool that turns long technical videos into something readable in a few minutes, in my own language.",
+      "approach": "The chain is deliberately simple: message trigger, extract the video id, validate the link, download the subtitle track, strip the timing and formatting tags, send the clean text to a language model with a summarization prompt, reply in the chat. I had the agent build it directly against the automation platform's REST API rather than through an intermediate protocol layer, because the API path is the one that actually reports its errors.",
+      "solution": "A working bot with error handling, plus a reusable pattern for having an agent create and activate workflows programmatically.",
+      "result": "Used personally, and more importantly it produced the template for how I now have agents build automations: talk to the REST API, check existing credentials first, self correct on error, activate, then run a real test.",
+      "lessons": [
+        "When an agent builds infrastructure, give it the interface with the clearest error messages. Debuggability beats elegance.",
+        "Credential creation is the one step that usually cannot be automated. Design the workflow so that step happens once, up front."
+      ],
+      "stack": ["n8n", "REST API", "yt-dlp", "LLM API", "Telegram"],
+      "skills": ["API driven automation", "Agent orchestration", "Prompt design"]
+    },
+
+    {
+      "slug": "dual-system-asset-migration",
+      "category": "asset-management",
+      "title": "Migrating a company inventory into two systems in parallel",
+      "summary": "606 assets and 129 licenses moved from a spreadsheet into two asset management systems, then consolidated into one after an evaluation period.",
+      "problem": "The complete IT inventory, worth roughly two million euros, lived in a spreadsheet. No history, no assignment to users, no depreciation, no license overview, and no way to answer who has which device.",
+      "approach": "Rather than betting on one product, I migrated into two candidate systems in parallel and ran both for an evaluation period. Same source data, same categories, so the comparison was fair.",
+      "solution": "System A received the data split into assets, accessories, components and licenses across 15 categories with a custom field set for company specific attributes. System B received nine object types including a custom asset type for furniture, with financial data attached to each object. After the evaluation, one system was chosen and the other kept read only as a reference.",
+      "result": "A complete, queryable inventory with documented value, plus a decision made on evidence rather than on a vendor demo.",
+      "lessons": [
+        "Evaluating two systems with real data costs more time than reading comparison articles and is the only method that produces a defensible decision.",
+        "Field names in an API rarely match the labels in the interface. Check the API reference before mapping columns.",
+        "A typo in a system generated internal name can be permanent. Check the name field before saving anything that becomes an identifier."
+      ],
+      "stack": ["GLPI", "Snipe-IT", "n8n", "Excel", "REST APIs"],
+      "skills": ["Data migration", "Tool evaluation", "IT asset management"]
+    },
+
+    {
+      "slug": "ip-address-plan-import",
+      "category": "asset-management",
+      "title": "Turning an IP spreadsheet into a real address management database",
+      "summary": "14 networks, 11 VLANs and 248 host records imported, including the cleanup of 98 hostnames that no system would accept.",
+      "problem": "The IP address plan was a spreadsheet with twelve sheets, inconsistent naming and hidden structure. One sheet turned out to contain three separate network blocks rather than one, which is exactly the kind of thing a spreadsheet lets you get away with.",
+      "approach": "I analyzed the source structure first and only then wrote the import. Data quality problems were documented rather than silently corrected, because silently fixing someone else's data is how you lose the audit trail.",
+      "solution": "The import produced 11 VLANs, 13 IP networks, 248 host name objects and 248 address objects. 98 hostnames had to be sanitized because the target system validates them as DNS names and rejects spaces, underscores and dots. Genuine fully qualified names were split correctly into host and domain parts. Four data quality issues were flagged with a review prefix in the comment field instead of being guessed at.",
+      "result": "A queryable address database instead of a spreadsheet, with the known bad records visibly marked for review.",
+      "lessons": [
+        "Analyze the source before writing the importer. Spreadsheets hide structure that no schema would allow.",
+        "Flag bad data, do not fix it silently. The person who created it is the only one who knows what it was supposed to say.",
+        "Systems that validate names as DNS names will reject a large part of any hand maintained list. Plan for the sanitization step."
+      ],
+      "stack": ["GLPI", "IPAM", "n8n", "Excel"],
+      "skills": ["Data cleaning", "IPAM", "Import design"]
+    },
+
+    {
+      "slug": "asset-depreciation-setup",
+      "category": "asset-management",
+      "title": "Making the asset database answer a budget question",
+      "summary": "Configured depreciation with a useful life per asset category, so replacement budget can be forecast instead of guessed.",
+      "problem": "An inventory tells you what you own. It does not tell you what you will have to replace next year, which is the question finance actually asks.",
+      "approach": "I defined a useful life per asset category and configured depreciation on the financial records so that current book value and end of life date are calculated automatically.",
+      "solution": "Depreciation settings per category, applied across an asset base with a documented value in the low millions.",
+      "result": "Replacement budget planning is now a report instead of a meeting.",
+      "lessons": [
+        "An asset database becomes valuable at the moment it can answer a financial question, not at the moment it is complete.",
+        "Useful life per category is a business decision. Get it agreed, do not invent it in the configuration screen."
+      ],
+      "stack": ["GLPI", "Financial records"],
+      "skills": ["Depreciation modelling", "Budget planning support"]
+    },
+
+    {
+      "slug": "internal-dns-records",
+      "category": "network",
+      "title": "Publishing two new internal portals via DNS",
+      "summary": "Two new hostnames pointing at an existing web server, created as aliases, verified end to end, and documented with a rollback path.",
+      "problem": "Two new internal portals needed their own hostnames. The web server bindings already existed, so only name resolution was missing.",
+      "approach": "First verify the target: confirm the web server resolves to the expected address in both directions, and check which ports actually respond. Then decide between a direct address record and an alias record. I chose aliases so that if the web server ever moves, one record changes instead of several.",
+      "solution": "Two alias records created via PowerShell, after discovering the DNS module was not available on the first machine and switching to one where it was. Verified in the management console, in the subdomain node, and with a real HTTP request returning a success status.",
+      "result": "Both portals reachable by name, existing records untouched, and a written runbook covering the decision rationale, the commands, the interface steps and the rollback.",
+      "lessons": [
+        "Alias records over address records when several names point at one host. It turns a future migration into a one line change.",
+        "Verify the target before creating the record. A name pointing at something that does not answer is worse than no name.",
+        "Write the rollback command in the runbook while you still remember what you changed."
+      ],
+      "stack": ["Windows DNS", "PowerShell", "IIS"],
+      "skills": ["DNS administration", "Verification discipline", "Runbook writing"]
+    },
+
+    {
+      "slug": "self-hosted-vpn",
+      "category": "network",
+      "title": "A self-hosted VPN and the client that refused to connect",
+      "summary": "Set up a modern protocol VPN on a cloud server, then debugged a client rejection that had nothing to do with the configuration.",
+      "problem": "I needed a private, self-hosted VPN endpoint. The server side came up quickly, but the Android client rejected the connection with an unhelpful message while other clients worked.",
+      "approach": "Because the server accepted other clients, the problem had to be client side or version related. I compared what the server advertised against what the client supported.",
+      "solution": "The server was enforcing a minimum client version. The Android client in use was below it and was refused before any real handshake happened. Updating the client resolved it. Separately, the cloud provider's own firewall operates completely independently from the firewall inside the operating system, which is a recurring trap: a port can be open locally and still be unreachable.",
+      "result": "A working private VPN endpoint, and two debugging rules I now apply automatically.",
+      "lessons": [
+        "A cloud provider firewall and a host firewall are two separate walls. Opening one proves nothing about the other.",
+        "When one client fails and others work, compare versions before you compare configurations."
+      ],
+      "stack": ["Xray", "VLESS", "Reality", "3x-ui", "ufw"],
+      "skills": ["VPN deployment", "Layered firewall debugging"]
+    },
+
+    {
+      "slug": "verify-before-changing-firewall",
+      "category": "network",
+      "title": "The firewall change that turned out to be unnecessary",
+      "summary": "A vendor announced a new IP range with a deadline. Testing showed the traffic already worked, so nothing was changed.",
+      "problem": "A backup vendor announced it was routing traffic through a new provider, introducing a new address range that agents had to reach before a fixed deadline. The obvious reaction is to open the range on the firewall immediately.",
+      "approach": "Before touching any rule I tested whether the traffic actually worked. That meant testing the right thing: agents use encrypted connections on a specific port, so a successful ping proves nothing. I ran real connection tests on that port from two different network segments, including the isolated one, using tools appropriate to each operating system.",
+      "solution": "Both segments reached the new range successfully and the encrypted session was established unmodified, meaning nothing in between was interfering. No firewall change was required. I documented what the change would have looked like if it had been needed, so the knowledge exists if the situation recurs.",
+      "result": "Deadline met with zero changes to the firewall, and a written briefing explaining to colleagues why no action was the correct action.",
+      "lessons": [
+        "Test before you change. A rule added unnecessarily is permanent attack surface that nobody remembers adding.",
+        "Ping tests reachability, not the port your application uses. Test the actual port and the actual protocol.",
+        "Document the change you did not make. Next time the question comes up, the answer already exists."
+      ],
+      "stack": ["WatchGuard", "TLS", "PowerShell", "Bash", "curl"],
+      "skills": ["Connectivity testing", "Change avoidance", "Stakeholder briefing"]
+    },
+
+    {
+      "slug": "backup-retention-behaviour",
+      "category": "backup",
+      "title": "Why the backup count exceeds the retention limit",
+      "summary": "A retention rule set to 28 backups showed 29. Explaining why, and confirming that no emergency action was needed.",
+      "problem": "A server's backup plan was configured to keep 28 recovery points, but the console showed 29. With limited free storage, the fear was that the next run would create a new full backup and fill the disk.",
+      "approach": "I worked through how the retention mechanism actually behaves rather than trusting the number in the interface.",
+      "solution": "Backup software intentionally exceeds the retention limit when dependent incremental points cannot be deleted without breaking the chain, and cleanup runs after the new backup completes rather than before. A temporary overage is expected behavior. A new full backup is only triggered by specific events such as changing the format, destination or encryption, adding a source disk, or recreating the plan. None applied, so the next run was incremental.",
+      "result": "No emergency intervention, and a documented method for estimating daily storage consumption and remaining runway by comparing archive sizes on consecutive days.",
+      "lessons": [
+        "Cleanup after the backup, not before, means free space must cover the overage. Size storage for the peak, not the average.",
+        "Never delete archive files by hand. It breaks the chain and silently invalidates every recovery point that depends on it.",
+        "If storage is the real constraint, switch retention from a count to a size limit."
+      ],
+      "stack": ["Acronis Cyber Protect", "Incremental backup chains"],
+      "skills": ["Backup strategy", "Storage forecasting"]
+    },
+
+    {
+      "slug": "tape-library-maintenance",
+      "category": "backup",
+      "title": "Keeping a tape library healthy",
+      "summary": "Cleaning cycles, magazine swaps and backup exclusions on a physical tape library.",
+      "problem": "Tape is still the offline copy that ransomware cannot reach, which means the hardware has to actually work when it is needed.",
+      "approach": "Regular maintenance rather than reactive: cleaning cartridge cycles, magazine rotation, and reviewing what is included in the backup set so that tapes are not filled with data that does not need to be there.",
+      "solution": "Documented maintenance routine for the library, plus tuned exclusions in the backup plans.",
+      "result": "A physical offline copy that is verified and maintained rather than assumed.",
+      "lessons": [
+        "The offline copy is the one that saves you. Test and maintain it like production, not like archive.",
+        "Backup exclusions are a capacity tool. Excluding what does not need protecting buys real tape capacity."
+      ],
+      "stack": ["HPE MSL2024", "Acronis Cyber Protect", "LTO"],
+      "skills": ["Physical backup infrastructure", "Preventive maintenance"]
+    },
+
+    {
+      "slug": "outlook-wont-start",
+      "category": "support",
+      "title": "A structured method for an email client that will not start",
+      "summary": "Seven ordered steps that find the cause in most cases, arranged so the cheapest test comes first.",
+      "problem": "A colleague reported that the classic email client would not launch at all, even after a restart. Reinstalling is the common reaction and is almost always the wrong first move.",
+      "approach": "I built a sequence ordered by cost and by likelihood, so the fastest and least invasive tests run first and every step either fixes it or eliminates a cause.",
+      "solution": "Check for a hung process still holding the application; start in safe mode; disable add-ins one at a time; reset the navigation pane and views via command line switches; create a fresh profile; run a quick repair and then an online repair; finally check whether a recent update coincides with the failure. In practice the safe mode and add-in steps identify the cause most of the time, with document or meeting add-ins being the usual culprits.",
+      "result": "A reusable checklist rather than a one time fix, plus a short message template so the user can run the first test themselves before anyone books a remote session.",
+      "lessons": [
+        "Order troubleshooting steps by cost, not by how likely each one feels. The cheap tests eliminate whole branches.",
+        "Safe mode is the fastest way to separate the application from its extensions. Start there.",
+        "Let the user run the first step. It saves an appointment in half the cases."
+      ],
+      "stack": ["Microsoft Outlook", "Microsoft Office", "Event Viewer"],
+      "skills": ["Structured troubleshooting", "First level support", "Documentation"]
+    },
+
+    {
+      "slug": "vendor-update-tool-broken",
+      "category": "support",
+      "title": "When a driver update disables the service it needs",
+      "summary": "A vendor update utility stopped launching after installing its own updates. The cause was a service left in a disabled state.",
+      "problem": "A user could no longer start the manufacturer's update tool after applying updates through it. The error message pointed nowhere useful.",
+      "approach": "The tool depends on a background management service. I checked the service state rather than reinstalling the application.",
+      "solution": "The service had been set to disabled during the update. Re enabling and starting it restored the tool. Because the user was not technical and time was limited, I prepared three options in advance, a guided phone call, a remote session, or an on site visit, and let the user choose rather than assuming.",
+      "result": "Resolved without a reinstall, and without making a non technical user feel like they were being handed a homework assignment.",
+      "lessons": [
+        "When an application will not start, check its dependent services before you reinstall.",
+        "Offer support options without ranking them. Letting the user choose the channel gets a faster answer than proposing the one you prefer."
+      ],
+      "stack": ["Windows Services", "Vendor management tooling"],
+      "skills": ["Dependency analysis", "Support communication", "Working with non technical users"]
+    },
+
+    {
+      "slug": "sso-group-based-access",
+      "category": "support",
+      "title": "Single sign-on with group based access to a file platform",
+      "summary": "Connected a self-hosted file platform to a central identity provider so that group membership, not manual assignment, controls access.",
+      "problem": "Access to shared folders was assigned per user by hand. Every new colleague meant a manual round of permission setting, and every departure meant hoping nobody forgot one.",
+      "approach": "Centralize identity: the file platform authenticates against the identity provider, and folder access follows group membership that already exists in the directory.",
+      "solution": "Social login integration between the file platform and the identity provider, with group mapping so access is granted and revoked by group membership. Separately, I reviewed and tightened the policy for anonymous sharing links on the corporate file platform.",
+      "result": "Onboarding and offboarding became a group membership change instead of a manual permission review.",
+      "lessons": [
+        "Permissions that are assigned per user are permissions that will eventually be wrong. Map them to groups.",
+        "Anonymous sharing links are the quiet data leak in most organizations. Set the policy deliberately, do not accept the default."
+      ],
+      "stack": ["Keycloak", "Nextcloud", "SharePoint", "OIDC"],
+      "skills": ["Identity and access management", "SSO integration", "Policy configuration"]
+    },
+
+    {
+      "slug": "developer-workstation-onboarding",
+      "category": "support",
+      "title": "Delivering a developer workstation against a hard deadline",
+      "summary": "A full development environment, permissions, service access and login scripting, ready for a returning developer's first day.",
+      "problem": "A developer was returning full time on a fixed date and needed a completely configured workstation: development tools, permissions, group memberships, access to internal services, and a login script with working database connections. The deadline was not negotiable.",
+      "approach": "I split the work into what I could do alone and what required the person themselves. Tools bound to personal accounts and licenses cannot be installed by an administrator in advance, so I scheduled a short joint session for exactly those, on a day the person was already on site.",
+      "solution": "Machine prepared, groups and service access configured, login script and database connections tested in advance. The license bound tools were installed together in a scheduled session, and the hardware questions were clarified in the same conversation.",
+      "result": "Delivered before the deadline, with the joint session limited to the items that genuinely required the user's presence.",
+      "lessons": [
+        "Separate what needs the user from what does not, and prepare everything else in advance. It turns a full day of interruptions into one short meeting.",
+        "Schedule the joint session for a day the person is already on site for something else."
+      ],
+      "stack": ["Active Directory", "Windows", "Login scripts", "Database connections"],
+      "skills": ["Onboarding", "Deadline planning", "Coordination"]
+    }
+  ]
+}

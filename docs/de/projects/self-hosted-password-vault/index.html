@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Einen selbst gehosteten Passwort-Tresor betreiben, inklusive des Tages, an dem jemand ausgesperrt wird</title>
+<meta name="description" content="Einen Vaultwarden-Server mit Mail-Zustellung über Microsoft 365 bereitgestellt und auf die harte Tour gelernt, warum die Konto-Wiederherstellungsrichtlinie aktiviert sein muss, bevor jemand sie braucht.">
+<link rel="alternate" hreflang="de" href="/infrastructure-portfolio/de/projects/self-hosted-password-vault/">
+<link rel="alternate" hreflang="en" href="/infrastructure-portfolio/en/projects/self-hosted-password-vault/">
+<link rel="alternate" hreflang="fa" href="/infrastructure-portfolio/fa/projects/self-hosted-password-vault/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Einen selbst gehosteten Passwort-Tresor betreiben, inklusive des Tages, an dem jemand ausgesperrt wird">
+<meta property="og:description" content="Einen Vaultwarden-Server mit Mail-Zustellung über Microsoft 365 bereitgestellt und auf die harte Tour gelernt, warum die Konto-Wiederherstellungsrichtlinie aktiviert sein muss, bevor jemand sie braucht.">
+<link rel="stylesheet" href="/infrastructure-portfolio/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/infrastructure-portfolio/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/infrastructure-portfolio/de/projects/self-hosted-password-vault/" class="active" hreflang="de">Deutsch</a><a href="/infrastructure-portfolio/en/projects/self-hosted-password-vault/" hreflang="en">English</a><a href="/infrastructure-portfolio/fa/projects/self-hosted-password-vault/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/infrastructure-portfolio/de/">Start</a>
+    <a href="/infrastructure-portfolio/de/projects/">Projekte</a>
+    <a href="/infrastructure-portfolio/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Einen selbst gehosteten Passwort-Tresor betreiben, inklusive des Tages, an dem jemand ausgesperrt wird</h1>
+<p class="lead">Einen Vaultwarden-Server mit Mail-Zustellung über Microsoft 365 bereitgestellt und auf die harte Tour gelernt, warum die Konto-Wiederherstellungsrichtlinie aktiviert sein muss, bevor jemand sie braucht.</p>
+<h2>Problem</h2>
+<p>Geteilte Zugangsdaten wurden in Chat-Nachrichten und Textdateien herumgereicht. Ein zentraler Tresor war nötig, selbst gehostet statt Cloud, mit Einladungen und Passwort-Resets über das Firmen-Mail-System.</p>
+<h2>Vorgehen</h2>
+<p>Die Bereitstellung war unkompliziert. Der interessante Teil kam später: Ein Kollege konnte seinen Tresor nicht mehr entsperren, obwohl er sicher war, dass das Master-Passwort stimmte. Ich musste herausfinden, was in dieser Architektur tatsächlich wiederherstellbar ist.</p>
+<h2>Lösung</h2>
+<p>Der Tresor ist clientseitig mit dem Master-Passwort verschlüsselt, der Server hält also nie etwas, das ihn entschlüsseln könnte. Administrator-Wiederherstellung existiert nur, wenn die Wiederherstellungsrichtlinie vorher aktiviert wurde und der Benutzer sich zu diesem Zeitpunkt registriert hat. Das war nicht der Fall. Die ehrliche Antwort war, dass der persönliche Tresor nicht wiederherstellbar war, während geteilte Sammlungseinträge überlebten, weil sie mit dem Organisationsschlüssel verschlüsselt sind. Ich löschte und lud das Konto neu ein und aktivierte die Wiederherstellungsrichtlinie für alle anderen.</p>
+<h2>Ergebnis</h2>
+<p>Ein Benutzer verlor persönliche Einträge. Niemand sonst wird das, weil die Richtlinie jetzt aktiv ist und bei der Registrierung durchgesetzt wird.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Verstehe das Verschlüsselungsmodell eines Tools, bevor du es bereitstellst, nicht erst wenn ein Benutzer ausgesperrt ist.</li>
+  <li>Wiederherstellungsrichtlinien sind rückwirkend wertlos. Aktiviere sie am ersten Tag.</li>
+  <li>Einem Benutzer klar zu sagen, dass Daten weg sind, ist besser als drei Tage falsche Hoffnung.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Vaultwarden</span>
+  <span class="tag">Docker</span>
+  <span class="tag">Microsoft 365 SMTP</span>
+  <span class="tag">Zero knowledge encryption models</span>
+  <span class="tag">Policy design</span>
+  <span class="tag">Incident communication</span>
+</div>
+<div class="prevnext">
+  <a href="/infrastructure-portfolio/de/projects/self-hosted-service-stack/">← Einen selbst gehosteten Service-Stack von Grund auf aufbauen</a>
+  <a href="/infrastructure-portfolio/de/projects/hyperv-vm-locked-out-recovery/">Eine virtuelle Maschine wiederherstellen, in die sich niemand einloggen konnte →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolling out a self-hosted SIEM in six phases</title>
+<meta name="description" content="Introduced Wazuh as a central SIEM on Docker, planned as six phases so the rollout could not stall halfway.">
+<link rel="alternate" hreflang="de" href="/de/projects/wazuh-siem-rollout/">
+<link rel="alternate" hreflang="en" href="/en/projects/wazuh-siem-rollout/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/wazuh-siem-rollout/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rolling out a self-hosted SIEM in six phases">
+<meta property="og:description" content="Introduced Wazuh as a central SIEM on Docker, planned as six phases so the rollout could not stall halfway.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/en/">IT Infrastructure & Automation</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/wazuh-siem-rollout/" hreflang="de">Deutsch</a><a href="/en/projects/wazuh-siem-rollout/" class="active" hreflang="en">English</a><a href="/fa/projects/wazuh-siem-rollout/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/en/">Home</a>
+    <a href="/en/projects/">Projects</a>
+    <a href="/en/about/">About</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Rolling out a self-hosted SIEM in six phases</h1>
+<p class="lead">Introduced Wazuh as a central SIEM on Docker, planned as six phases so the rollout could not stall halfway.</p>
+<h2>Problem</h2>
+<p>The company network had endpoint protection and firewall logging, but no central place where security events from Windows servers, Linux hosts and network devices could be correlated. Nobody could answer the question 'what happened on that machine last Tuesday' without logging into the machine itself.</p>
+<h2>Approach</h2>
+<p>Instead of a big-bang installation I wrote a six-phase plan and got it approved before touching anything: phase 0 sizing and host preparation, phase 1 single-node deployment on Docker via Portainer, phase 2 agent rollout on servers, later phases for integrating backup software, Active Directory and the firewall. Each phase had its own success criteria so the project could be paused between phases without leaving a half-configured system.</p>
+<h2>Solution</h2>
+<p>Wazuh manager, indexer and dashboard run as a containerized stack managed through Portainer on a dedicated Linux host. Agents were deployed to the server estate first, workstations later. I also built an interactive bilingual dashboard so colleagues who do not read English security jargon could still understand the alert picture.</p>
+<h2>Result</h2>
+<p>Phases 0 to 2 are complete and the SIEM is in daily use for alert triage. The phased structure turned out to be the most valuable part: it made the project reviewable by management at every step.</p>
+<div class="lessons"><h2>What I learned</h2><ul>
+  <li>A rollout plan with explicit stop points survives interruptions. A single long installation script does not.</li>
+  <li>A SIEM without someone reading it is just disk usage. Plan the triage routine at the same time as the deployment.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">Wazuh</span>
+  <span class="tag">Docker</span>
+  <span class="tag">Portainer</span>
+  <span class="tag">Linux</span>
+  <span class="tag">Elasticsearch/OpenSearch</span>
+  <span class="tag">SIEM design</span>
+  <span class="tag">Containerized deployments</span>
+  <span class="tag">Project phasing</span>
+</div>
+<div class="prevnext">
+  <span></span>
+  <a href="/en/projects/linux-major-version-upgrade-runbook/">Upgrading a production Linux server two versions at once →</a>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Contact: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>

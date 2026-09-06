@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ein Rack kartieren und einen Single Point of Failure finden</title>
+<meta name="description" content="Einen interaktiven Rack-Plan vor einem Rechenzentrumsbesuch gebaut, und der Plan selbst deckte eine Stromredundanz-Lücke auf.">
+<link rel="alternate" hreflang="de" href="/de/projects/datacenter-rack-plan/">
+<link rel="alternate" hreflang="en" href="/en/projects/datacenter-rack-plan/">
+<link rel="alternate" hreflang="fa" href="/fa/projects/datacenter-rack-plan/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ein Rack kartieren und einen Single Point of Failure finden">
+<meta property="og:description" content="Einen interaktiven Rack-Plan vor einem Rechenzentrumsbesuch gebaut, und der Plan selbst deckte eine Stromredundanz-Lücke auf.">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/de/">IT-Infrastruktur & Automatisierung</a>
+    <nav class="lang-switch" aria-label="Language"><a href="/de/projects/datacenter-rack-plan/" class="active" hreflang="de">Deutsch</a><a href="/en/projects/datacenter-rack-plan/" hreflang="en">English</a><a href="/fa/projects/datacenter-rack-plan/" hreflang="fa">فارسی</a></nav>
+  </div>
+  <nav class="main-nav" aria-label="Main">
+    <a href="/de/">Start</a>
+    <a href="/de/projects/">Projekte</a>
+    <a href="/de/about/">Über mich</a>
+  </nav>
+</header>
+<main id="main">
+<h1>Ein Rack kartieren und einen Single Point of Failure finden</h1>
+<p class="lead">Einen interaktiven Rack-Plan vor einem Rechenzentrumsbesuch gebaut, und der Plan selbst deckte eine Stromredundanz-Lücke auf.</p>
+<h2>Problem</h2>
+<p>Es gab kein genaues Bild davon, was wo im Rack saß, womit es verbunden war und welche Stromzuführung es nutzte. Jeder Standortbesuch begann mit dem Lesen von Etiketten.</p>
+<h2>Vorgehen</h2>
+<p>Ich baute einen interaktiven Plan als eigenständige HTML-Seite: Einheitenpositionen, Geräte und, entscheidend, die Stromzuführung pro Gerät. Das Modellieren der Zuführungen machte die Lücke sofort sichtbar.</p>
+<h2>Lösung</h2>
+<p>Ein Verwaltungsgerät, von dem alles andere abhängt, war an eine einzelne Zuführung angeschlossen, während der Rest des Racks doppelt gespeist war. Ein statischer Transferschalter wurde spezifiziert und gekauft, um die Lücke zu schließen.</p>
+<h2>Ergebnis</h2>
+<p>Das Rack hat jetzt einen dokumentierten Plan, der zu einem Standortbesuch mitgenommen werden kann, und eine bekannte Redundanzlücke mit einer gekauften Lösung statt einer unbekannten.</p>
+<div class="lessons"><h2>Was ich gelernt habe</h2><ul>
+  <li>Infrastruktur zu zeichnen ist eine Diagnosetechnik, keine Dokumentationsbeschäftigung. Lücken werden sichtbar, wenn man sie auf einer Seite platzieren muss.</li>
+  <li>Redundanz, die nicht pro Gerät verifiziert ist, ist Redundanz nur auf dem Papier.</li>
+</ul></div>
+<div class="tags">
+  <span class="tag">HTML</span>
+  <span class="tag">Data center planning</span>
+  <span class="tag">Infrastructure documentation</span>
+  <span class="tag">Redundancy analysis</span>
+</div>
+<div class="prevnext">
+  <a href="/de/projects/pdu-nodata-alert/">← Ein Stromalarm, der kein Stromproblem war</a>
+  <span></span>
+</div>
+</main>
+<footer class="site-footer">
+  <p>Kontakt: ahmad.vahidi1203@gmail.com</p>
+</footer>
+</body>
+</html>
