@@ -1,0 +1,29 @@
+name: Build site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Rebuild from projects.json
+        run: python build.py
+      - name: Fail if docs/ is out of sync with the source data
+        run: |
+          if [ -n "$(git status --porcelain docs)" ]; then
+            echo "docs/ is stale — run 'python build.py' locally and commit the result."
+            git --no-pager diff --stat docs
+            exit 1
+          fi
+          echo "docs/ is in sync."

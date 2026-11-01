@@ -293,6 +293,8 @@ def _prefix_urls():
             c = re.sub(r'(href|src)="/', r'\1="' + BASE + '/', c)
             # JS redirect
             c = c.replace("location.replace('/'+t+'/')", f"location.replace('{BASE}/'+t+'/')")
+            # no-JS meta refresh (must carry the Pages base path too)
+            c = c.replace('content="0;url=/en/"', f'content="0;url={BASE}/en/"')
             with open(fp, "w", encoding="utf-8") as f:
                 f.write(c)
 
